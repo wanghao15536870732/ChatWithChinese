@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    android { compileOptions.encoding = "utf8" }
+
+    defaultConfig {
+        applicationId "com.example.lab.android.nuc.chat"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            lintOptions {
+
+                checkReleaseBuilds false
+
+                abortOnError false
+
+            }
+        }
+    }
+
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.alibaba:fastjson:1.2.47'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'me.drakeet.multitype:multitype:3.4.4'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.lzy.net:okserver:2.0.5'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.wenwenwen888:searchbox:1.0.0'
+    implementation 'com.jakewharton:butterknife:8.8.0'
+    implementation 'com.jakewharton:butterknife-annotations:8.8.0'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.zhy:autolayout:1.4.5'
+    implementation 'com.lzy.widget:imagepicker:0.6.1'
+    implementation 'com.zzti.fengyongge:imagepicker:1.2.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation 'com.github.nyakokishi:ChatImageView:1.0.2'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    implementation 'com.novaapps:FloatingActionMenu:1.0'
+    implementation files('libs/qiniu-java-sdk-7.2.13.jar')
+    implementation files('libs/qiniu-android-sdk-7.3.12.jar')
+    configurations {
+        all*.exclude group: 'com.nostra13.universalimageloader'
+    }
+}
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
+}
+dependencies {
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+}
+dependencies {
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.getbase:floatingactionbutton:1.10.1'
+    implementation 'com.sackcentury:shinebutton:0.2.0'
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}

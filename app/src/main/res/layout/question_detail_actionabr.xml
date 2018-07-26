@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/question_add_back"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_before"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/question_detail_actionBar"
+        android:textSize="26sp"
+        android:textColor="#ffffff"/>
+
+
+
+</RelativeLayout>

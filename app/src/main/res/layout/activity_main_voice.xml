@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/timg"
+    android:layout_alignParentBottom="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="180dp">
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/base_edit_input"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="5dp"
+            android:paddingStart="5dp" />
+        <Button
+            android:id="@+id/btn_with_dialog"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_selector"
+            android:layout_margin="20dp"
+            android:text="语音识别"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/btn_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开不带窗口的语音识别"
+            android:background="@drawable/bt_selector"
+            android:layout_margin="15dp"
+            tools:ignore="NewApi"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_synthetize"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/bt_selector"
+            android:text="语音合成"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基于科大讯飞提供的服务"
+            android:gravity="left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

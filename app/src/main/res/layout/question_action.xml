@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="?attr/actionBarSize"
+android:orientation="horizontal"
+android:background="@color/colorPrimary">
+
+<ImageView
+    android:id="@+id/question_add_back"
+    android:layout_width="?attr/actionBarSize"
+    android:layout_height="match_parent"
+    android:src="@drawable/ic_before"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true" />
+
+<TextView
+    android:id="@+id/chat_prople_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:text="@string/add_question"
+    android:textSize="26sp"
+    android:textColor="#ffffff"/>
+
+
+<TextView
+    android:id="@+id/put_in_question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_centerVertical="true"
+    android:layout_marginEnd="12dp"
+    android:text="@string/put_in_question"
+    android:textColor="#ffffff"
+    android:textSize="20sp"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="12dp" />
+
+
+</RelativeLayout>

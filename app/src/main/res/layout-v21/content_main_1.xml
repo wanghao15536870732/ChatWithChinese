@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".view.activity.ChatMainActivity"
+        tools:showIn="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_original"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="自动"
+                    android:textColor="#FF212121"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/triangle"/>
+
+                <ImageButton
+                    android:id="@+id/iv_tran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/tran" />
+                <Button
+                    android:id="@+id/btn_ts"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@id/btn_original"
+                    android:text="中文"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:textColor="#FF212121"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/triangle"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:background="#000000"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_below="@id/ll_ll"
+            android:paddingTop="20dp">
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="2"
+                android:hint="请输入要翻译的内容"
+                android:gravity="clip_horizontal"
+                android:maxLines="5"
+                android:padding="10dp"
+                android:background="@drawable/rounded_rectangle"/>
+
+            <Button
+                android:id="@+id/btn_translation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bt_selector"
+                android:paddingTop="10dp"
+                android:text="翻译" />
+            <Button
+                android:id="@+id/btn_speech"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bt_selector"
+                android:paddingTop="10dp"
+                android:text="语音合成"/>
+
+            <TextView
+                android:id="@+id/tv_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                android:textIsSelectable="true"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_22">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
+

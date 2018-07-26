@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.lab.android.nuc.chat">
+
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 权限声明 -->
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 外置存储存取权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 多媒体相关 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 如果需要实时音视频通话模块，下面的权限也是必须的。否则，可以不加 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <!-- 基于位置服务的所有权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
+    <permission
+        android:name="com.example.lab.android.nuc.chat.permission.RECEIVE_MSG"
+        android:protectionLevel="signature" />
+    <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <uses-permission android:name="com.example.lab.android.nuc.chat.permission.RECEIVE_MSG" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".Application.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator">
+        <meta-data
+            android:name="com.netease.nim.appKey"
+            android:value="5d308854c147f0f1cc2e8429b6176cdb" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="pPfq7FwlpAl709S4rN9nli5tEsRE8kjD" />
+
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.cameraalbumtest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".view.activity.ContactActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".view.activity.Question_Add_Activity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".view.activity.Question_detail_Activity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Translation.activity.Main_Voice_Activity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Translation.activity.IDActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Translation.Glossary.MyWordRecycleViewActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Translation.activity.Main_Translation_Activity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".view.activity.PhotoSelectorActivity" />
+        <activity android:name=".view.activity.BasePhotoPreviewActivity" />
+        <activity android:name=".view.activity.PhotoPreviewActivity" />
+        <activity
+            android:name=".Communicatiom.ui.ServiceChatActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".Communicatiom.ui.ImageBrowserActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:exported="true"
+            android:process=":remote"
+            tools:ignore="ExportedService" />
+
+        <activity android:name=".view.activity.LocationActivity" />
+        <activity android:name=".view.activity.ChatActivity" />
+        <activity android:name=".view.activity.ChangePassword" />
+        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.RegisterActivity" />
+        <activity android:name=".view.activity.ChatMainActivity" />
+        <activity android:name=".Practice.Test.Ise_Demo" />
+        <activity android:name=".Practice.Test.Ise_Demo_Zi" />
+        <activity android:name=".Practice.Test.Ise_Demo_Zh" />
+        <activity android:name=".Practice.Test.Ise_Demo_Sentence" />
+        <activity android:name=".view.activity.TopicActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.cameraalbumtest.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".view.activity.dynamic_item_activity" />
+        <activity android:name=".view.activity.AiTeActivity" />
+        <activity android:name=".view.activity.ArticleActivity" />
+        <activity android:name=".view.activity.VideoChatActivity"></activity>
+    </application>
+
+</manifest>

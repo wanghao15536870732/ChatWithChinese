@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/news_image_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_question_answer" />
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_marginTop="2dp"
+            android:textSize="12sp"
+            android:textColor="@color/color_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="SmallSp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+</LinearLayout>
