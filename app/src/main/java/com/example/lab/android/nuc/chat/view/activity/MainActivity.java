@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         initView();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_main);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -129,21 +129,21 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_Info) {
-
-        } else if (id == R.id.nav_setting) {
-            Intent intent = new Intent(MainActivity.this, IDActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_help) {
-
-        }else if (id == R.id.nav_word) {
-            Intent intent = new Intent(MainActivity.this, MyWordRecycleViewActivity.class);
-            startActivity(intent);
+        switch (item.getItemId()){
+            case R.id.nav_Info:
+                startActivity( new Intent( MainActivity.this,InformationActivity.class ) );
+                break;
+            case R.id.nav_word:
+                startActivity(new Intent( MainActivity.this,MyWordRecycleViewActivity.class ));
+                break;
+            case R.id.nav_help:
+                startActivity( new Intent( MainActivity.this,HelpActivity.class ));
+                break;
+            case R.id.nav_setting:
+                startActivity( new Intent( MainActivity.this,SettingActivity.class ) );
+                break;
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_main);
         drawer.closeDrawer( GravityCompat.START);
         return true;
     }

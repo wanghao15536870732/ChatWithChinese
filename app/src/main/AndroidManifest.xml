@@ -129,6 +129,7 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.Glossary.MyWordRecycleViewActivity"
+            android:theme="@style/WordTheme"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.activity.Main_Translation_Activity"
@@ -151,7 +152,9 @@
         <activity android:name=".view.activity.ChatActivity" />
         <activity android:name=".view.activity.ChangePassword" />
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.RegisterActivity" />
+        <activity
+            android:name=".view.activity.RegisterActivity"
+            android:theme="@style/RegisterActivityTheme" />
         <activity android:name=".Practice.Test.Ise_Demo" />
         <activity android:name=".Practice.Test.Ise_Demo_Zi" />
         <activity android:name=".Practice.Test.Ise_Demo_Zh" />
@@ -171,7 +174,16 @@
         <activity android:name=".view.activity.dynamic_item_activity" />
         <activity android:name=".view.activity.AiTeActivity" />
         <activity android:name=".view.activity.ArticleActivity" />
-        <activity android:name=".view.activity.VideoChatActivity"></activity>
+        <activity android:name=".view.activity.VideoChatActivity" />
+        <activity
+            android:name=".view.activity.HelpActivity"
+            android:theme="@style/WordTheme"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".view.activity.InformationActivity"
+            android:theme="@style/WordTheme" />
+        <activity android:name=".view.activity.SettingActivity"
+            android:theme="@style/WordTheme"/>
     </application>
 
 </manifest>

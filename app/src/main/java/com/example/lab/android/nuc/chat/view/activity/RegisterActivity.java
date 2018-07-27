@@ -282,7 +282,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageuri));
                         picture.setImageBitmap(bitmap);
                         path = new File(imageuri.getPath());
-                        putPicture();
+//                        putPicture();
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
@@ -323,7 +323,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         disPlayImage(imagepath);
         path = new File(imagepath);
-        putPicture();
+//        putPicture();
     }
 
     private void handleImageBeforeKitKat(Intent data) {
@@ -331,7 +331,7 @@ public class RegisterActivity extends AppCompatActivity {
         String imagepath = getImagePath(uri, null);
         disPlayImage(imagepath);
         path = new File(imagepath);
-        putPicture();
+//        putPicture();
     }
 
     private String getImagePath(Uri uri, String selection) {
@@ -355,6 +355,5 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "failed to get image", Toast.LENGTH_SHORT);
         }
     }
-
 
 }

@@ -223,7 +223,9 @@
                 android:id="@+id/native_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"></Spinner>
+                android:layout_marginLeft="23dp">
+
+            </Spinner>
         </LinearLayout>
 
         <LinearLayout
@@ -243,7 +245,9 @@
                 android:id="@+id/study_language"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"></Spinner>
+                android:layout_marginLeft="20dp">
+
+            </Spinner>
         </LinearLayout>
 
         <LinearLayout
@@ -263,7 +267,9 @@
                 android:id="@+id/level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"></Spinner>
+                android:layout_marginLeft="20dp">
+
+            </Spinner>
         </LinearLayout>
 
         <Button
