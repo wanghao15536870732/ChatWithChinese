@@ -39,7 +39,7 @@
                 android:background="@mipmap/ic_btn_voice"
                 android:padding="4dp"/>
 
-            <com.example.lab.android.nuc.chat.Communicatiom.widget.EmotionEditText
+            <com.example.lab.android.nuc.chat.Communication.widget.EmotionEditText
                 android:id="@+id/et_msg"
                 android:layout_width="0dp"
                 android:layout_height="36dp"
@@ -55,7 +55,7 @@
                 android:minHeight="40dp"
                 android:singleLine="false"/>
 
-            <com.example.lab.android.nuc.chat.Communicatiom.widget.AudioRecordButton
+            <com.example.lab.android.nuc.chat.Communication.widget.AudioRecordButton
                 android:id="@+id/voice_btn"
                 android:layout_width="0dp"
                 android:layout_height="36dp"
@@ -110,7 +110,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp">
 
-                <com.example.lab.android.nuc.chat.Communicatiom.widget.CircleIndicator
+                <com.example.lab.android.nuc.chat.Communication.widget.CircleIndicator
                     android:id="@+id/ci_banner"
                     android:layout_width="60dp"
                     android:layout_height="20dp"
@@ -138,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.lab.android.nuc.chat.Communicatiom.widget.ChatBottomView
+            <com.example.lab.android.nuc.chat.Communication.widget.ChatBottomView
                 android:id="@+id/cbv_other"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"

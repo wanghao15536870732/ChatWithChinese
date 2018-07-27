@@ -137,9 +137,9 @@
         <activity android:name=".view.activity.BasePhotoPreviewActivity" />
         <activity android:name=".view.activity.PhotoPreviewActivity" />
         <activity
-            android:name=".Communicatiom.ui.ServiceChatActivity"
+            android:name=".Communication.ui.ServiceChatActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".Communicatiom.ui.ImageBrowserActivity" />
+        <activity android:name=".Communication.ui.ImageBrowserActivity" />
 
         <service
             android:name="com.baidu.location.f"
@@ -152,7 +152,6 @@
         <activity android:name=".view.activity.ChangePassword" />
         <activity android:name=".view.activity.MainActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.ChatMainActivity" />
         <activity android:name=".Practice.Test.Ise_Demo" />
         <activity android:name=".Practice.Test.Ise_Demo_Zi" />
         <activity android:name=".Practice.Test.Ise_Demo_Zh" />

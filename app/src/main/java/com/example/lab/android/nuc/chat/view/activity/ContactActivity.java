@@ -22,7 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.Base.JSON.UserBaseInfo;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.utils.views.RoundRectangleImageView;
-import com.example.lab.android.nuc.chat.Communicatiom.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;

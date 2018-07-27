@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -389,16 +388,16 @@ public class Ise_Demo_Zi extends AppCompatActivity {
 
     private void initData_Zi() {
         lists_zi = new ArrayList<>();
-        lists_zi.add(new DataBean("龙", "[ lóng ]", R.drawable.timg));
-        lists_zi.add(new DataBean("禅", "[ chán ]", R.drawable.timg));
-        lists_zi.add(new DataBean("法", "[ fǎ ]", R.drawable.timg));
-        lists_zi.add(new DataBean("瓷", "[ cí ]", R.drawable.timg));
-        lists_zi.add(new DataBean("仁", "[ rén ]", R.drawable.timg));
-        lists_zi.add(new DataBean("智", "[ zhì ]", R.drawable.timg));
-        lists_zi.add(new DataBean("孝", "[ xiào ]", R.drawable.timg));
-        lists_zi.add(new DataBean("福", "[ fú ]", R.drawable.timg));
-        lists_zi.add(new DataBean("德", "[ dé ]", R.drawable.timg));
-        lists_zi.add(new DataBean("侠", "[ xiá ]", R.drawable.timg));
+        lists_zi.add(new DataBean("龙", "[ lóng ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("禅", "[ chán ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("法", "[ fǎ ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("瓷", "[ cí ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("仁", "[ rén ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("智", "[ zhì ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("孝", "[ xiào ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("福", "[ fú ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("德", "[ dé ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("侠", "[ xiá ]", R.drawable.voice_background ));
     }
 
 }

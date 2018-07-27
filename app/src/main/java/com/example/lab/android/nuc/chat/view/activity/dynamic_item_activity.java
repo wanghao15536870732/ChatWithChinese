@@ -203,7 +203,7 @@ public class dynamic_item_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(dynamic_item_activity.this,TopicActivity.class );
+                intent.setClass(dynamic_item_activity.this,ArticleActivity.class );
                 Bundle bundle = new Bundle();
                 intent.putExtras(bundle);
                 startActivityForResult(intent, 1);

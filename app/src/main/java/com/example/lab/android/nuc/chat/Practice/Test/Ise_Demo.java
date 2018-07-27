@@ -4,7 +4,6 @@ import android.Manifest;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
@@ -19,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,9 +38,6 @@ import com.iflytek.cloud.SpeechEvaluator;
 import com.iflytek.cloud.SpeechUtility;
 import com.iflytek.sunflower.FlowerCollector;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -403,15 +398,15 @@ public class Ise_Demo extends AppCompatActivity {
 
     private void initData() {
         lists = new ArrayList<>();
-        lists.add(new DataBean("中国","[zhōng/guó]",R.drawable.timg));
-        lists.add(new DataBean("亚洲","[yà/zhōu ]",R.drawable.timg));
-        lists.add(new DataBean("和平","[hé/píng]",R.drawable.timg));
-        lists.add(new DataBean("音乐","[hóng/qí ]",R.drawable.timg));
-        lists.add(new DataBean("爱情", "[ài/qíng] ",R.drawable.timg));
-        lists.add(new DataBean("友谊", "[yǒu/yì] ",R.drawable.timg));
-        lists.add(new DataBean("亲人", "[qīn/rén]  ",R.drawable.timg));
-        lists.add(new DataBean("朋友", "[péng/yǒu]  ",R.drawable.timg));
-        lists.add(new DataBean("人生", "[péng/yǒu]  ",R.drawable.timg));
-        lists.add(new DataBean("命运", "[mìng/yùn] ",R.drawable.timg));
+        lists.add(new DataBean("中国","[zhōng/guó]",R.drawable.voice_background ));
+        lists.add(new DataBean("亚洲","[yà/zhōu ]",R.drawable.voice_background ));
+        lists.add(new DataBean("和平","[hé/píng]",R.drawable.voice_background ));
+        lists.add(new DataBean("音乐","[hóng/qí ]",R.drawable.voice_background ));
+        lists.add(new DataBean("爱情", "[ài/qíng] ",R.drawable.voice_background ));
+        lists.add(new DataBean("友谊", "[yǒu/yì] ",R.drawable.voice_background ));
+        lists.add(new DataBean("亲人", "[qīn/rén]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("朋友", "[péng/yǒu]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("人生", "[péng/yǒu]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("命运", "[mìng/yùn] ",R.drawable.voice_background ));
     }
 }

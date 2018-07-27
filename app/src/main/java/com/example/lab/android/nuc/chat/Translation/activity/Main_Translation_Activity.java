@@ -44,8 +44,8 @@ import com.example.lab.android.nuc.chat.Translation.Glossary.MyWordRecycleViewAc
 import com.example.lab.android.nuc.chat.Translation.ToastUtil;
 import com.example.lab.android.nuc.chat.Translation.getContent;
 import com.example.lab.android.nuc.chat.Translation.getContentYouDao;
-import com.example.lab.android.nuc.chat.Communicatiom.ui.ServiceChatActivity;
-import com.example.lab.android.nuc.chat.Communicatiom.utils.KeyBoardUtils;
+import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.utils.KeyBoardUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

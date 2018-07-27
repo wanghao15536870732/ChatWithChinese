@@ -22,7 +22,7 @@
     </android.support.v4.widget.SwipeRefreshLayout>
 
 
-    <com.example.lab.android.nuc.chat.Communicatiom.widget.InputBarLayout
+    <com.example.lab.android.nuc.chat.Communication.widget.InputBarLayout
         android:id="@+id/input_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

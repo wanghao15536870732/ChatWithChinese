@@ -337,7 +337,7 @@ public class ContactFragment extends Fragment implements SwipeRefreshLayout.OnCl
     public void showSingleChioceDialog(View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("选择国家:");
-        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setIcon(R.drawable.logo);
         final String[] items = new String[]{"中国","美国",
                 "日本","韩国","法国","俄国","泰国","阿拉伯","越南","希腊"};
         builder.setSingleChoiceItems(items, 2, new DialogInterface.OnClickListener() {/*设置单选条件的点击事件*/
@@ -352,7 +352,6 @@ public class ContactFragment extends Fragment implements SwipeRefreshLayout.OnCl
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getActivity(), "OK", Toast.LENGTH_SHORT).show();
                 countryButton.setText( country_selector );
-
 
             }
         });

@@ -17,7 +17,7 @@ import com.example.lab.android.nuc.chat.Base.Search.SearchTag;
 import com.example.lab.android.nuc.chat.utils.views.DragBubbleView;
 import com.example.lab.android.nuc.chat.view.fragment.MessageFragment;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.Communicatiom.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 
 import java.util.ArrayList;
 

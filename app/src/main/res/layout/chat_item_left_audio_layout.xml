@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <com.example.lab.android.nuc.chat.Communicatiom.widget.PlayButton
+    <com.example.lab.android.nuc.chat.Communication.widget.PlayButton
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:custom="http://schemas.android.com/apk/res-auto"
         android:id="@+id/chat_item_audio_play_btn"

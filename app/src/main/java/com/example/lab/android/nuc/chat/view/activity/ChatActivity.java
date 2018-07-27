@@ -10,9 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lab.android.nuc.chat.Communicatiom.AlertDialog;
+import com.example.lab.android.nuc.chat.Communication.AlertDialog;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.Communicatiom.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 

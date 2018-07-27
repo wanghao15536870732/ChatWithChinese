@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -401,15 +400,15 @@ public class Ise_Demo_Zh extends AppCompatActivity {
 
     private void initData() {
         lists = new ArrayList<>();
-        lists.add(new DataBean("仁", "[ rén ]", R.drawable.timg));
-        lists.add(new DataBean("智", "[ zhì ]", R.drawable.timg));
-        lists.add(new DataBean("孝", "[ xiào]", R.drawable.timg));
-        lists.add(new DataBean("福", "[ fú ]", R.drawable.timg));
-        lists.add(new DataBean("爱情", "[ ài qíng ] ", R.drawable.timg));
-        lists.add(new DataBean("友谊", "[ yǒu yì ] ", R.drawable.timg));
-        lists.add(new DataBean("亲人", "[ qīn rén ]  ", R.drawable.timg));
-        lists.add(new DataBean("朋友", "[ péng yǒu ]  ", R.drawable.timg));
-        lists.add(new DataBean("少年强，则国强", "[ shǎo nián qiáng ，zé guó qiáng ]", R.drawable.timg));
-        lists.add(new DataBean("曾经沧海难为水", "[céng jīng cāng hǎi nán wéi shuǐ ]", R.drawable.timg));
+        lists.add(new DataBean("仁", "[ rén ]", R.drawable.voice_background ));
+        lists.add(new DataBean("智", "[ zhì ]", R.drawable.voice_background ));
+        lists.add(new DataBean("孝", "[ xiào]", R.drawable.voice_background ));
+        lists.add(new DataBean("福", "[ fú ]", R.drawable.voice_background ));
+        lists.add(new DataBean("爱情", "[ ài qíng ] ", R.drawable.voice_background ));
+        lists.add(new DataBean("友谊", "[ yǒu yì ] ", R.drawable.voice_background ));
+        lists.add(new DataBean("亲人", "[ qīn rén ]  ", R.drawable.voice_background ));
+        lists.add(new DataBean("朋友", "[ péng yǒu ]  ", R.drawable.voice_background ));
+        lists.add(new DataBean("少年强，则国强", "[ shǎo nián qiáng ，zé guó qiáng ]", R.drawable.voice_background ));
+        lists.add(new DataBean("曾经沧海难为水", "[céng jīng cāng hǎi nán wéi shuǐ ]", R.drawable.voice_background ));
     }
 }

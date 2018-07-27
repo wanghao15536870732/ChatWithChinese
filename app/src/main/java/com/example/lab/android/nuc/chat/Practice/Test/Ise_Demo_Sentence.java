@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
-import android.widget.EditText;
 
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -403,16 +402,16 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
 
     private void initData_Sentence() {
         lists_sentence = new ArrayList<>();
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.timg));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
     }
 
 }
