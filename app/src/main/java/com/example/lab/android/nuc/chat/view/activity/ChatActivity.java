@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.lab.android.nuc.chat.Base.Contacts.Contact;
 import com.example.lab.android.nuc.chat.Communication.AlertDialog;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -89,6 +91,8 @@ public class ChatActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ServiceChatActivity.class);
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, name);
+                intent.putExtra( ServiceChatActivity.CONTACT_IMAGE, picurl);
+                ChatConst.TAG = 1;
                 startActivity(intent);
             }
         });

@@ -75,7 +75,6 @@ public class TeacherFragment extends Fragment {
 
         List<SetTeacher> teacherInfo = getTeacher.getSetTeachers();
         Log.e("size", teacherInfo.size() + "");
-
         mAdapter = new MultiTypeAdapter();
         mAdapter.register(Teacher.class, new TeacherViewBinder());
         mRecyclerView.setAdapter(mAdapter);
@@ -87,9 +86,5 @@ public class TeacherFragment extends Fragment {
 
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();
-
-
     }
-
-
 }

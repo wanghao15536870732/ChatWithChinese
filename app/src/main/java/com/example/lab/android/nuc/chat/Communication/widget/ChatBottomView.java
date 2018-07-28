@@ -14,10 +14,14 @@ public class ChatBottomView extends LinearLayout{
 	private LinearLayout locationGroup;
 	private LinearLayout imageGroup;
 	private LinearLayout cameraGroup;
+	private LinearLayout videoGroup;
+	private LinearLayout voiceGroup;
 	private HeadIconSelectorView.OnHeadIconClickListener onHeadIconClickListener;
 	public static final int FROM_CAMERA = 1;
 	public static final int FROM_GALLERY = 2;
 	public static final int FROM_LOCATION = 3;
+	public static final int FROM_VIDEO = 4;
+	public static final int FROM_VOICE = 5;
 	public ChatBottomView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -30,6 +34,8 @@ public class ChatBottomView extends LinearLayout{
 		imageGroup = (LinearLayout) baseView.findViewById(R.id.image_bottom_group);
 		cameraGroup = (LinearLayout) baseView.findViewById(R.id.camera_group);
 		locationGroup = (LinearLayout) baseView.findViewById( R.id.location_bottom_group );
+		videoGroup = (LinearLayout) baseView.findViewById( R.id.video_bottom_group );
+		voiceGroup = (LinearLayout) baseView.findViewById( R.id.voice_bottom_group );
 	}
 	private void init(){
 		cameraGroup.setOnClickListener(new OnClickListener() {
@@ -56,6 +62,22 @@ public class ChatBottomView extends LinearLayout{
 			public void onClick(View v) {
 				if (null != onHeadIconClickListener){
 					onHeadIconClickListener.onClick( FROM_LOCATION );
+				}
+			}
+		} );
+		videoGroup.setOnClickListener( new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (null != onHeadIconClickListener){
+					onHeadIconClickListener.onClick( FROM_VIDEO );
+				}
+			}
+		} );
+		voiceGroup.setOnClickListener( new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (null != onHeadIconClickListener){
+					onHeadIconClickListener.onClick( FROM_VOICE );
 				}
 			}
 		} );

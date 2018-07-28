@@ -37,7 +37,7 @@ public class TeacherViewBinder extends ItemViewBinder<Teacher, TeacherViewBinder
 
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull Teacher teacher) {
+    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull final Teacher teacher) {
         setTeacher = teacher.getSetTeacher();
         initView();
         root.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,7 @@
 package com.example.lab.android.nuc.chat.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.ContactActivity;
+import com.example.lab.android.nuc.chat.view.activity.MainActivity;
 import com.example.lab.android.nuc.chat.view.adapter.model.NineGridTestModel;
 
 import java.util.List;
@@ -20,6 +23,7 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
     private Context mContext;
     private List<NineGridTestModel> mList;
     protected LayoutInflater inflater;
+    NineGridTestModel nineGridTestModel;
 
     public NineGridTest2Adapter(Context context){
         mContext = context;
@@ -39,13 +43,22 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        NineGridTestModel nineGridTestModel = mList.get( position );
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        nineGridTestModel = mList.get( position );
         holder.layout.setIsShowAll( nineGridTestModel.isShowAll );
         holder.layout.setUrlList( nineGridTestModel.urlList );
         Glide.with( mContext ).load(nineGridTestModel.image).into( holder.mImageView );
         holder.contact_name.setText( nineGridTestModel.name );
         holder.time.setText( nineGridTestModel.time );
+        holder.mImageView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( mContext, ContactActivity.class );
+                intent.putExtra( ContactActivity.CONTACT_IAMGE_ID,nineGridTestModel.image );
+                intent.putExtra( ContactActivity.CONTACT_NAME,nineGridTestModel.name );
+                mContext.startActivity( intent );
+            }
+        } );
     }
 
     @Override

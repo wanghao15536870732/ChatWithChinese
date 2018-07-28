@@ -141,7 +141,7 @@
             <com.example.lab.android.nuc.chat.Communication.widget.ChatBottomView
                 android:id="@+id/cbv_other"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="240dp"
                 android:visibility="gone" />
 
         </FrameLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.lab.android.nuc.chat.R;
@@ -19,6 +20,13 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
     private Button changePicture;
     Spinner native_language, study_language, level;
     private Context context;
+    Button changeInfoBtn;
+    private EditText nicheng;
+
+    public static String MOTHER_LANGUAGE = "汉语";
+    public static String LEARN_LANGUAGE = "英语";
+    public static String NICHENG = "末年之夏";
+
 
     final String[] ctype = new String[]{"汉语", "英语", "俄语", "西班牙语", "法语", "柬埔寨语", "捷克语", "匈牙利语"
             , "印度尼西亚语", "哈萨克语", "老挝语", "蒙古语", "波兰语", "塞尔维亚语", "土耳其语", "越南语", "日语", "韩语"};
@@ -44,6 +52,17 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         native_language = findViewById(R.id.native_language);
         study_language = findViewById(R.id.study_language);
         level = findViewById(R.id.level);
+        changeInfoBtn = (Button) findViewById( R.id.change_Info );
+        changeInfoBtn.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        } );
+        nicheng = (EditText) findViewById( R.id.nick_name_edt );
+        if (nicheng.getText() != null){
+            NICHENG = nicheng.getText().toString();
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ctype);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, ctype1);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -54,7 +73,7 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         native_language.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                MOTHER_LANGUAGE = ctype[position];
             }
 
             @Override
@@ -65,7 +84,7 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
         study_language.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                LEARN_LANGUAGE = ctype[position];
             }
 
             @Override

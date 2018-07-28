@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lab.android.nuc.chat.Base.Contacts.Contact;
+import com.example.lab.android.nuc.chat.Communication.utils.Constants;
 import com.example.lab.android.nuc.chat.view.activity.LocationActivity;
 import com.example.lab.android.nuc.chat.Application.MyApplication;
 import com.example.lab.android.nuc.chat.R;
@@ -38,6 +41,8 @@ import com.example.lab.android.nuc.chat.Communication.utils.KeyBoardUtils;
 import com.example.lab.android.nuc.chat.Communication.utils.PathUtils;
 import com.example.lab.android.nuc.chat.Communication.widget.ChatBottomView;
 import com.example.lab.android.nuc.chat.Communication.widget.InputBarLayout;
+import com.example.lab.android.nuc.chat.view.activity.VideoChatActivity;
+import com.example.lab.android.nuc.chat.view.activity.VoiceChatActivity;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
@@ -59,7 +64,7 @@ public class ServiceChatActivity extends AppCompatActivity {
 
 
     public static final String CHAT_LOCATION = "chat_location";
-
+    public static final String CONTACT_IMAGE = "contact_image";
     public static final String CONTACT_NAME = "contact_name";
     public static final String TRANSLATION_RESULT = "result_translation";
     private static final int TAKE_TRANSLATION = 4;
@@ -128,10 +133,15 @@ public class ServiceChatActivity extends AppCompatActivity {
                 KeyBoardUtils.hideKeyBoard( ServiceChatActivity.this,mEditTextContent );
             }
         } );
-        contact_back = (ImageView) findViewById( R.id.question_add_back );
+        contact_back = (ImageView) findViewById( R.id.new_return );
         contact_name = (TextView) findViewById( R.id.contact_name );
         Intent intent = getIntent();
         String contactname = intent.getStringExtra( CONTACT_NAME );
+        if (intent.getStringExtra( CONTACT_IMAGE ) != null ){
+            ChatConst.RESPONSE_HEAD_IMAGE = intent.getStringExtra( CONTACT_IMAGE );
+        }else {
+            ChatConst.RESPONSE_HEAD_IMAGEVIEW = intent.getIntExtra( CONTACT_IMAGE,0 );
+        }
         contact_name.setText( contactname );
         contact_back.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -185,7 +195,16 @@ public class ServiceChatActivity extends AppCompatActivity {
                         break;
                     case ChatBottomView.FROM_LOCATION: ///位置
                         Intent intent = new Intent( ServiceChatActivity.this, LocationActivity.class );
-                        startActivityForResult( intent, TAKE_LOCATION);
+                        startActivityForResult(intent,TAKE_LOCATION);
+                        break;
+                    case ChatBottomView.FROM_VIDEO: //视频通话
+                        startActivity(new Intent( ServiceChatActivity.this, VideoChatActivity.class ));
+                        break;
+                    case ChatBottomView.FROM_VOICE: //语音通话
+                        startActivity( new Intent( ServiceChatActivity.this, VoiceChatActivity.class ) );
+                        break;
+                    default:
+                        break;
                 }
             }
         });

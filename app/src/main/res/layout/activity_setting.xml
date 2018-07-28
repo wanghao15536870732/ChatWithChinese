@@ -1,9 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.SettingActivity">
+    android:orientation="vertical"
+    android:background="@drawable/ic_background01">
+    <RelativeLayout
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:id="@+id/line_0"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/logo"
+        android:alpha="0.6"
+        android:layout_marginTop="18dp"
+        android:fitsSystemWindows="true" />
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_voice"
+            android:text="声音"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            />
+        <Switch
+            android:id="@+id/voice_switch"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <View
+            android:id="@+id/line00"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/voice_switch"
+            android:alpha="0.6"
+            android:layout_marginTop="18dp"
+            android:fitsSystemWindows="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_message"
+            android:text="消息通知"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            />
+        <Switch
+            android:id="@+id/message_switch"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <View
+            android:id="@+id/line02"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/message_switch"
+            android:alpha="0.6"
+            android:layout_marginTop="18dp"
+            android:fitsSystemWindows="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_location"
+            android:text="我的位置"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            />
+        <Switch
+            android:id="@+id/location_switch"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <View
+            android:id="@+id/line01"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/location_switch"
+            android:alpha="0.6"
+            android:layout_marginTop="18dp"
+            android:fitsSystemWindows="true" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/my_version"
+            android:text="WiFi下自动在后台下载新版本"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            />
+        <Switch
+            android:id="@+id/version_switch"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            />
+        <View
+            android:id="@+id/line03"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/version_switch"
+            android:alpha="0.6"
+            android:layout_marginTop="18dp"
+            android:fitsSystemWindows="true" />
+    </RelativeLayout>
+
+</LinearLayout>

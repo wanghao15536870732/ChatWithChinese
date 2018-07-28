@@ -149,7 +149,8 @@
             tools:ignore="ExportedService" />
 
         <activity android:name=".view.activity.LocationActivity" />
-        <activity android:name=".view.activity.ChatActivity" />
+        <activity android:name=".view.activity.ChatActivity"
+            android:theme="@style/ChatTheme"/>
         <activity android:name=".view.activity.ChangePassword" />
         <activity android:name=".view.activity.MainActivity" />
         <activity
@@ -177,13 +178,19 @@
         <activity android:name=".view.activity.VideoChatActivity" />
         <activity
             android:name=".view.activity.HelpActivity"
-            android:theme="@style/WordTheme"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/WordTheme" />
         <activity
             android:name=".view.activity.InformationActivity"
             android:theme="@style/WordTheme" />
-        <activity android:name=".view.activity.SettingActivity"
-            android:theme="@style/WordTheme"/>
+        <activity
+            android:name=".view.activity.SettingActivity"
+            android:theme="@style/WordTheme" />
+        <activity
+            android:name=".view.activity.AboutActivity"
+            android:theme="@style/WordTheme" />
+        <activity android:name=".view.activity.VoiceChatActivity"
+            android:theme="@style/RegisterActivityTheme"/>
     </application>
 
 </manifest>

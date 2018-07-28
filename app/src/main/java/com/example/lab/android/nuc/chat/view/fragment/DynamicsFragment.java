@@ -38,6 +38,7 @@ public class DynamicsFragment extends Fragment {
     private List<NineGridTestModel> mList = new ArrayList<>( );
 
 
+
     /*与悬浮按钮相关*/
     private FloatingActionsMenu mFloatingActionsMenu;
     private FloatingActionButton mActionMap;

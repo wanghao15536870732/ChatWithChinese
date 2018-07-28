@@ -319,6 +319,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/change_Info"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="提交"
@@ -327,8 +328,7 @@
             android:textColor="@color/white"
             android:padding="8dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/bt_selector"
-            android:onClick="editInfoPost"/>
+            android:background="@drawable/bt_selector" />
 
     </LinearLayout>
 

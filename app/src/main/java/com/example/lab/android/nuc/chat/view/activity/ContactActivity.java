@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.Base.JSON.UserBaseInfo;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.utils.views.RoundRectangleImageView;
 import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
@@ -58,10 +59,10 @@ public class ContactActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_contact );
         initView();
-        //获取点击前的图片跟姓名图片
-        final Intent intent = getIntent();
+        //获取点击前的图片跟姓名
+         Intent intent = getIntent();
         final String contactName = intent.getStringExtra( CONTACT_NAME );
-        int contactNameId = intent.getIntExtra( CONTACT_IAMGE_ID, 0 );
+        final int contactNameId = intent.getIntExtra( CONTACT_IAMGE_ID, 0 );
         userID = intent.getStringExtra( USERID );
         learnLanguage = intent.getStringExtra( "learnLanguage" );
         nativeLanguage = intent.getStringExtra( "nativeLanguage" );
@@ -78,7 +79,7 @@ public class ContactActivity extends AppCompatActivity {
         setSupportActionBar( toolbar );
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById( R.id.collapsing_toolbar );
-        RoundRectangleImageView contactImageView = (RoundRectangleImageView) findViewById( R.id.contact_ImageView );
+        final RoundRectangleImageView contactImageView = (RoundRectangleImageView) findViewById( R.id.contact_ImageView );
 
         Atbutton = (Button) findViewById( R.id.test_bt );
 
@@ -100,9 +101,10 @@ public class ContactActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled( true );
         }
+        // /将文字加载到图片上
         collapsingToolbar.setTitle( contactName );
 
-        //将文字加载到图片上
+
         Glide.with( this ).load( contactNameId ).into( contactImageView );
 
         FloatingActionButton floatingActionButton_chat = (FloatingActionButton) findViewById( R.id.floatingActionBar_chat );
@@ -111,6 +113,8 @@ public class ContactActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent( ContactActivity.this, ServiceChatActivity.class );
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, contactName);
+                intent.putExtra(ServiceChatActivity.CONTACT_IMAGE, contactNameId );
+                ChatConst.TAG  = 0;
                 startActivity( intent );
             }
         } );
