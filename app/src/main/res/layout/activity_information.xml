@@ -158,7 +158,6 @@
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:paddingLeft="10dp"
-                android:text="陌年之夏"
                 android:textColor="@color/text_grey"
                 android:textSize="17sp" />
 

@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -58,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
     Spinner native_language, study_language, level;
     Button finish_button;
     String s1, s2, s3;
-    String n, p, ep, e, h, c, pi, id, g;
+    String a,n, p, ep, e, h, c, pi, id, g;
     int l;
     TextView take_picture;
     ImageView picture;
@@ -175,14 +176,19 @@ public class RegisterActivity extends AppCompatActivity {
         finish_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                InformationActivity.ACCOUNT = account.getText().toString();
                 n = name.getText().toString();
+                InformationActivity.NICHENG = n;
                 p = password.getText().toString();
                 ep = ensure_password.getText().toString();
                 e = email.getText().toString();
+                InformationActivity.EMAIL = e;
                 h = hobby.getText().toString();
                 c = chat_person.getText().toString();
                 id = account.getText().toString();
                 g = goal.getText().toString();
+                InformationActivity.MOTHER_LANGUAGE = s1;
+                InformationActivity.LEARN_LANGUAGE = s2;
                 if (!p.equals(ep)) {
                     Toast.makeText(RegisterActivity.this, "密码不匹配", Toast.LENGTH_SHORT).show();
                 } else {

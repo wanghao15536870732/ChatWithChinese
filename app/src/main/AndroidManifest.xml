@@ -182,7 +182,8 @@
             android:theme="@style/WordTheme" />
         <activity
             android:name=".view.activity.InformationActivity"
-            android:theme="@style/WordTheme" />
+            android:theme="@style/WordTheme"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".view.activity.SettingActivity"
             android:theme="@style/WordTheme" />

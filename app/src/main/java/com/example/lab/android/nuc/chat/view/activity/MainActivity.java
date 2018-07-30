@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     public static final int CHOOSE_PHOTO = 2;
     private CustomTabView mCustomTabView;
     private List<Fragment> mFragments = new ArrayList<>();
-    private TextView ni_cheng,mother_language,learn_language;
+    private TextView ni_cheng,mother_language,learn_language,account,email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,10 +87,10 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         View headerView = mNavigationView.inflateHeaderView( R.layout.nav_header_main );
         change_head_image = headerView.findViewById( R.id.imageView );
         ni_cheng = (TextView)  headerView.findViewById( R.id.new_nicheng );
-
         mother_language = (TextView)  headerView.findViewById( R.id.new_mother_language );
-
         learn_language = (TextView)  headerView.findViewById( R.id.new_learn_language );
+        account = (TextView) headerView.findViewById( R.id.new_Info );
+        email = (TextView) headerView.findViewById( R.id.new_email );
 
         change_head_image.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -338,5 +338,7 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         ni_cheng.setText( InformationActivity.NICHENG );
         mother_language.setText( InformationActivity.MOTHER_LANGUAGE );
         learn_language.setText( InformationActivity.LEARN_LANGUAGE );
+        account.setText( InformationActivity.ACCOUNT );
+        email.setText( InformationActivity.EMAIL );
     }
 }

@@ -26,6 +26,9 @@ public class InformationActivity extends AppCompatActivity implements View.OnCli
     public static String MOTHER_LANGUAGE = "汉语";
     public static String LEARN_LANGUAGE = "英语";
     public static String NICHENG = "末年之夏";
+    public static String ACCOUNT = "1484290617";
+    public static String EMAIL = "hyyyrwang@gmain.com";
+
 
 
     final String[] ctype = new String[]{"汉语", "英语", "俄语", "西班牙语", "法语", "柬埔寨语", "捷克语", "匈牙利语"
