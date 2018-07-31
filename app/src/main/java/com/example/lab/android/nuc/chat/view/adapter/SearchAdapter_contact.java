@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.lab.android.nuc.chat.Base.Contacts.Contact;
+import com.example.lab.android.nuc.chat.Base.contacts.Contact;
 import com.example.lab.android.nuc.chat.R;
 
 import java.util.ArrayList;

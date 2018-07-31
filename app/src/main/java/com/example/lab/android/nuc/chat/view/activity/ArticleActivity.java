@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.example.lab.android.nuc.chat.Base.Contacts.People;
+import com.example.lab.android.nuc.chat.Base.contacts.People;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.view.adapter.holder.AdapterViewHolder;
 import com.example.lab.android.nuc.chat.view.adapter.RecyclerViewAdapter;

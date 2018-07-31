@@ -4,25 +4,21 @@
     <color name="colorPrimary">#63b8ff</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="base_color_text_black">#3e3e39</color>
     <color name="base_color_text_white">#ffffff</color>
+    <color name="base_yellow">#f9b516</color>
+
     <!-- zxing -->
     <!-- emot -->
     <color name="transparent">#00000000</color>
-
     <color name="color_theme">#489cfa</color>
-
     <color name="dialog_color_title">#f82c22</color>
-
     <color name="whites">#ffffff</color>
     <color name="blue">#499BF7</color>
 
 
     //相册的颜色
-
     <color name="white">#FFFFFFFF</color>
-
     <color name="light_gray_2">#f0f2f6</color>
     <color name="zz_half_transparent">#7f000000</color>
     <color name="click_bg">#d9d9d9</color>

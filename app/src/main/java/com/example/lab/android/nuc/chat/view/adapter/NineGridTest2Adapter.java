@@ -12,9 +12,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.CommentActivity;
 import com.example.lab.android.nuc.chat.view.activity.ContactActivity;
-import com.example.lab.android.nuc.chat.view.activity.MainActivity;
 import com.example.lab.android.nuc.chat.view.adapter.model.NineGridTestModel;
+import com.sackcentury.shinebuttonlib.ShineButton;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         View convertView = inflater.inflate( R.layout.item_nine_grid,parent,false );
         ViewHolder viewHolder = new ViewHolder( convertView );
         return viewHolder;
@@ -47,7 +48,20 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
         nineGridTestModel = mList.get( position );
         holder.layout.setIsShowAll( nineGridTestModel.isShowAll );
         holder.layout.setUrlList( nineGridTestModel.urlList );
-        Glide.with( mContext ).load(nineGridTestModel.image).into( holder.mImageView );
+        holder.layout.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, CommentActivity.class );
+                intent.putExtra("question_name",nineGridTestModel.name);
+                intent.putExtra( "question_image",nineGridTestModel.imageUri );
+                intent.putExtra( "question_time",nineGridTestModel.time );
+                intent.putExtra( "question_detail",nineGridTestModel.detail );
+                intent.putExtra( "question_country_image",nineGridTestModel.country_image );
+                mContext.startActivity(intent);
+            }
+        } );
+
+        Glide.with( mContext ).load(nineGridTestModel.imageUri).into( holder.mImageView );
         holder.contact_name.setText( nineGridTestModel.name );
         holder.time.setText( nineGridTestModel.time );
         holder.mImageView.setOnClickListener( new View.OnClickListener() {
@@ -59,6 +73,14 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
                 mContext.startActivity( intent );
             }
         } );
+        holder.question_detail.setText( nineGridTestModel.detail );
+        holder.country_picture.setImageResource( nineGridTestModel.country_image );
+        holder.comment.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        } );
     }
 
     @Override
@@ -68,9 +90,9 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         NineGridTestLayout layout;
-        ImageView mImageView;
-        TextView contact_name;
-        TextView time;
+        ImageView mImageView,country_picture,comment;
+        TextView contact_name,time,question_detail,like_size;
+        ShineButton mShineButton;
 
         public ViewHolder(View itemView) {
             super( itemView );
@@ -78,6 +100,11 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
             mImageView = (ImageView) itemView.findViewById( R.id.image );
             contact_name = (TextView) itemView.findViewById( R.id.name );
             time = (TextView) itemView.findViewById( R.id.time );
+            question_detail = (TextView) itemView.findViewById( R.id.detail);
+            mShineButton = (ShineButton) itemView.findViewById( R.id.po_image1 );
+            like_size = (TextView) itemView.findViewById( R.id.like_size );
+            country_picture = (ImageView) itemView.findViewById( R.id.country_picture );
+            comment = (ImageView) itemView.findViewById( R.id.comment );
         }
     }
 

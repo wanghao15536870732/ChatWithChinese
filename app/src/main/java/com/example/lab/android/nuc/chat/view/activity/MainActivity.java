@@ -8,7 +8,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.text.IDNA;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,8 +34,7 @@ import android.widget.Toast;
 
 
 import com.alibaba.fastjson.JSON;
-import com.example.lab.android.nuc.chat.Base.Contacts.UserInfo;
-import com.example.lab.android.nuc.chat.Base.Stu_Tea.GetTeacher;
+import com.example.lab.android.nuc.chat.Base.contacts.UserInfo;
 import com.example.lab.android.nuc.chat.utils.views.ActionSheetDialog;
 import com.example.lab.android.nuc.chat.utils.views.CustomTabView;
 import com.example.lab.android.nuc.chat.view.fragment.ChatFragment;
@@ -44,9 +42,7 @@ import com.example.lab.android.nuc.chat.view.fragment.CommunityFragment;
 import com.example.lab.android.nuc.chat.view.fragment.PracticeFragment;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Translation.Glossary.MyWordRecycleViewActivity;
-import com.example.lab.android.nuc.chat.Translation.activity.IDActivity;
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.callback.Callback;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 

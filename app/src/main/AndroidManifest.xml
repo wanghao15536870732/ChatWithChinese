@@ -116,12 +116,6 @@
             android:name=".view.activity.ContactActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".view.activity.Question_Add_Activity"
-            tools:ignore="InnerclassSeparator" />
-        <activity
-            android:name=".view.activity.Question_detail_Activity"
-            tools:ignore="InnerclassSeparator" />
-        <activity
             android:name=".Translation.activity.Main_Voice_Activity"
             tools:ignore="InnerclassSeparator" />
         <activity
@@ -196,6 +190,10 @@
             android:theme="@style/RegisterActivityTheme" />
         <activity android:name=".view.activity.VoiceChatActivity_1"/>
         <activity android:name=".view.activity.FaceDetectorActivity"/>
+        <activity android:name=".view.activity.CommentActivity"
+            android:theme="@style/CommentTheme"
+            android:windowSoftInputMode="adjustPan|adjustResize"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

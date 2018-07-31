@@ -3,7 +3,6 @@ package com.example.lab.android.nuc.chat.view.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,10 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lab.android.nuc.chat.Base.Contacts.Contact;
 import com.example.lab.android.nuc.chat.Communication.AlertDialog;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
-import com.example.lab.android.nuc.chat.Communication.widget.PlayButton;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.makeramen.roundedimageview.RoundedImageView;

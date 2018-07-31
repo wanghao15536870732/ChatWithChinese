@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.lab.android.nuc.chat.Base.JSON.FaceText;
+import com.example.lab.android.nuc.chat.Base.json.FaceText;
 import com.example.lab.android.nuc.chat.R;
 
 import java.util.List;
