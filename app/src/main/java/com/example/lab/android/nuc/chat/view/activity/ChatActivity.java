@@ -66,26 +66,29 @@ public class ChatActivity extends Activity {
         tvExperience.setText(experience);
         Glide.with(this).load(picurl).into(roundedImageView);
         switch (language) {
-            case "cn":
+            case "汉语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_cn));
                 break;
             case "ch":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_ch));
                 break;
-            case "de":
+            case "德语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_de));
                 break;
             case "ea":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_ea));
                 break;
-            case "gb":
+            case "英语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_gb));
                 break;
-            case "hm":
+            case "fa":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_hm));
                 break;
             case "lr":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_lr));
+                break;
+            case "法语":
+                ivCountry.setImageDrawable(getDrawable(R.drawable.country_gr));
                 break;
             default:
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_cn));

@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.VoiceChatActivity_1;
 import com.example.lab.android.nuc.chat.view.activity.dynamic_item_activity;
 import com.example.lab.android.nuc.chat.view.adapter.NineGridTest2Adapter;
 import com.example.lab.android.nuc.chat.view.adapter.model.NineGridTestModel;
@@ -199,11 +200,13 @@ public class DynamicsFragment extends Fragment {
             }
         } );
 
+
+
         mActionModel = (FloatingActionButton) view.findViewById( R.id.action_b );
         mActionModel.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity( new Intent( getContext(), VoiceChatActivity_1.class ) );
                 mFloatingActionsMenu.toggle();
             }
         } );

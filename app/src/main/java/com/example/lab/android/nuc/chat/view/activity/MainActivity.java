@@ -25,6 +25,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +34,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.alibaba.fastjson.JSON;
+import com.example.lab.android.nuc.chat.Base.Contacts.UserInfo;
+import com.example.lab.android.nuc.chat.Base.Stu_Tea.GetTeacher;
 import com.example.lab.android.nuc.chat.utils.views.ActionSheetDialog;
 import com.example.lab.android.nuc.chat.utils.views.CustomTabView;
 import com.example.lab.android.nuc.chat.view.fragment.ChatFragment;
@@ -41,6 +45,10 @@ import com.example.lab.android.nuc.chat.view.fragment.PracticeFragment;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Translation.Glossary.MyWordRecycleViewActivity;
 import com.example.lab.android.nuc.chat.Translation.activity.IDActivity;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.Callback;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -50,13 +58,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CustomTabView.OnTabCheckListener, NavigationView.OnNavigationItemSelectedListener{
 
-
+    private UserInfo userInfo;
     private NavigationView mNavigationView;
-
+    public static File NEWFILE;
     private ImageView change_head_image;
-    private Uri imageuri;
+    private Uri imageuri,imageUri;
     public static final int TAKE_PHOTO = 1;
     public static final int CHOOSE_PHOTO = 2;
+    public static final int FACE_TEST = 3;
     private CustomTabView mCustomTabView;
     private List<Fragment> mFragments = new ArrayList<>();
     private TextView ni_cheng,mother_language,learn_language,account,email;
@@ -65,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_main);
-
+        http();
         mFragments.add(new PracticeFragment());
         mFragments.add(new ChatFragment());
         mFragments.add(new CommunityFragment());
@@ -79,6 +88,19 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void http(){
+        OkGo.<String>post( "http://47.95.7.169:8080/login")
+                .tag(this)
+                .isMultipart(true)
+                .execute( new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        userInfo = JSON.parseObject(response.body(), UserInfo.class);
+                        Log.e("userInfo", response.body());
+                    }
+                } );
 
     }
 
@@ -134,6 +156,14 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
                                         } else {
                                             openAlbum();
                                         }
+                                    }
+                                } )
+                        .addSheetItem( "人脸识别拍照", ActionSheetDialog.SheetItemColor.Blue,
+                                new ActionSheetDialog.OnSheetItemClickListener() {
+                                    @Override
+                                    public void onClick(int which) {
+                                        Intent intent = new Intent( MainActivity.this,FaceDetectorActivity.class );
+                                        startActivityForResult( intent,FACE_TEST );
                                     }
                                 } ).show();
             }
@@ -276,6 +306,10 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
                     }
                 }
                 break;
+            case FACE_TEST:
+                if (requestCode == RESULT_OK){
+
+                }
             default:
                 break;
 
@@ -340,5 +374,18 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         learn_language.setText( InformationActivity.LEARN_LANGUAGE );
         account.setText( InformationActivity.ACCOUNT );
         email.setText( InformationActivity.EMAIL );
+        if (NEWFILE != null){
+            if (Build.VERSION.SDK_INT >= 24){
+                imageUri = FileProvider.getUriForFile( MainActivity.this,"com.example.cameraalbumtest.fileprovider",NEWFILE );
+            }else {
+                imageUri = Uri.fromFile( NEWFILE );
+            }
+            try {
+                Bitmap bitmap = BitmapFactory.decodeStream( getContentResolver().openInputStream( imageUri ) );
+                change_head_image.setImageBitmap( bitmap );
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

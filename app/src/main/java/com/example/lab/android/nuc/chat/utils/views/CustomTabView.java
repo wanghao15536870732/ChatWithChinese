@@ -22,10 +22,6 @@ import com.example.lab.android.nuc.chat.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by zhouwei on 17/4/25.
- */
-
 public class CustomTabView extends LinearLayout implements View.OnClickListener{
     private List<View> mTabViews;
     private List<Tab> mTabs;

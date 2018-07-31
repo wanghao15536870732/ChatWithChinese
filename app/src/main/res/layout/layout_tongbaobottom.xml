@@ -132,5 +132,50 @@
                 android:text="语音通话"
                 android:textColor="@color/text_color3" />
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/voice_to_text_bottom_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/ic_voicetotext" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="语音转文字"
+                android:textColor="@color/text_color3" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/text_to_voice_bottom_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/ic_text_to_voice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="文字转语音"
+                android:textColor="@color/text_color3" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

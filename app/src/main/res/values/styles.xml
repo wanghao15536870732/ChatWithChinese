@@ -10,6 +10,7 @@
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
 
+
     <style name="RegisterActivityTheme" parent="AppTheme">
         <item name="android:statusBarColor">@color/transparent</item>
     </style>
@@ -18,6 +19,11 @@
         <item name="android:statusBarColor">#f9b516</item>
     </style>
 
+    <style name="FloatActionButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:colorAccent">@color/fab_color</item>
+        <item name="backgroundTint">@color/fab_color</item>
+
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 

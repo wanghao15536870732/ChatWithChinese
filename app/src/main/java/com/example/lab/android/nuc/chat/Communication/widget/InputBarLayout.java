@@ -40,7 +40,7 @@ public class InputBarLayout extends LinearLayout {
     private AudioRecordButton voiceBtn;
     private LinearLayout llyEmojiGroup;
     private TextView tvSend;
-    private ChatBottomView cbvOther;
+    private  ChatBottomView cbvOther;
 
     private CircleIndicator ciBanner;
 
@@ -84,7 +84,6 @@ public class InputBarLayout extends LinearLayout {
         tvSend = (TextView) findViewById(R.id.tv_send);
         cbvOther = (ChatBottomView) findViewById(R.id.cbv_other);
         ciBanner = (CircleIndicator) findViewById(R.id.ci_banner);
-
 
         initListener(context);
     }
