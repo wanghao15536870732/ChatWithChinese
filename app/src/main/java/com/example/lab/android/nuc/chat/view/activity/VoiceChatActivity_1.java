@@ -2,8 +2,6 @@ package com.example.lab.android.nuc.chat.view.activity;
 
 
 import android.os.Bundle;
-import android.app.Activity;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -20,10 +18,7 @@ import com.iflytek.cloud.RecognizerListener;
 import com.iflytek.cloud.RecognizerResult;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechError;
-import com.iflytek.cloud.SpeechRecognizer;
-import com.iflytek.cloud.SpeechSynthesizer;
 import com.iflytek.cloud.SpeechUtility;
-import com.iflytek.cloud.SynthesizerListener;
 import com.iflytek.cloud.ui.RecognizerDialog;
 import com.iflytek.cloud.ui.RecognizerDialogListener;
 
@@ -36,7 +31,7 @@ public class VoiceChatActivity_1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_voice_chat_1 );
+        setContentView( R.layout.activity_voice_to_text );
         // 语音配置对象初始化(如果只使用 语音识别 或 语音合成 时都得先初始化这个)
         SpeechUtility.createUtility(VoiceChatActivity_1.this, SpeechConstant.APPID + "=5ad97691");
         initView();

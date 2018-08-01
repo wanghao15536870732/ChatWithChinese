@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.lab.android.nuc.chat.Base.json.Question;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.view.activity.VoiceChatActivity_1;
 import com.example.lab.android.nuc.chat.view.activity.dynamic_item_activity;
@@ -22,6 +23,9 @@ import com.example.lab.android.nuc.chat.view.adapter.NineGridTest2Adapter;
 import com.example.lab.android.nuc.chat.view.adapter.model.NineGridTestModel;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 import com.sackcentury.shinebuttonlib.ShineButton;
 
 import java.util.ArrayList;
@@ -196,6 +200,14 @@ public class DynamicsFragment extends Fragment {
         model9.detail = "论在大连外国语大学学习阿拉伯语始终什么样的体验？阿拉伯语手写容易练成么？";
         model9.country_image = R.drawable.country_lr;
         mList.add(model9);
+
+        OkGo.<String>post( "http://47.95.7.169:8080/getQuestion")
+                .execute( new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+
+                    }
+                } );
     }
 
     //图片数据的url;

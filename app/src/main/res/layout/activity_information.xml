@@ -327,7 +327,8 @@
             android:textColor="@color/white"
             android:padding="8dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/bt_selector" />
+            android:background="@drawable/bt_selector"
+            android:layout_marginBottom="50dp"/>
 
     </LinearLayout>
 

@@ -9,9 +9,7 @@ import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechUtility;
 
 /**
- * 功能:
- * 修改时间：
- * 修改备注：
+ *
  */
 
 public class MyApplication_1 extends Application {

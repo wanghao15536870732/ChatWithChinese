@@ -26,11 +26,16 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.permissions.RxPermissions;
 import com.luck.picture.lib.tools.PictureFileUtils;
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import com.example.lab.android.nuc.chat.R;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.callback.StringCallback;
+import com.lzy.okgo.model.Response;
 
 public class dynamic_item_activity extends AppCompatActivity {
 
@@ -75,10 +80,10 @@ public class dynamic_item_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder dialog = new AlertDialog.Builder( dynamic_item_activity.this );
-                dialog.setTitle( "" );
-                dialog.setMessage( "保留此次编辑?" );
+                dialog.setIcon( R.drawable.logo );
+                dialog.setMessage( "退出此次编辑?" );
                 dialog.setCancelable( true );
-                dialog.setPositiveButton( "", new DialogInterface.OnClickListener() {
+                dialog.setPositiveButton( "确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         finish();
@@ -95,9 +100,35 @@ public class dynamic_item_activity extends AppCompatActivity {
             }
         } );
         sendView.setOnClickListener( new View.OnClickListener() {
+
+            //获取当前时间
+            @SuppressLint("SimpleDateFormat")
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat( "MM月dd日 HH:mm:ss" );
+            Date date = new Date( System.currentTimeMillis() );
+
             @Override
             public void onClick(View v) {
-
+                OkGo.<String>post( "http://47.95.7.169:8080/setQuestion" )
+                        .params( "UserID","12" )
+                        .params( "name","Wanda" )
+                        .params( "quesTitle","语言学习" )
+                        .params( "questionDetial", mEditText.getText().toString())
+                        .params( "questionTime", simpleDateFormat.format( date ))
+                        .params( "picture","http://p8nssbtwi.bkt.clouddn.com/teacher_3.jpg" )
+                        .params( "country","汉语" )
+                        .params( "questionNumber","9" )
+                        .execute( new StringCallback() {
+                            @Override
+                            public void onSuccess(Response<String> response) {
+                                finish();
+                                Toast.makeText( dynamic_item_activity.this, "发表成功", Toast.LENGTH_SHORT ).show();
+                            }
+                            @Override
+                            public void onError(Response<String> response) {
+                                super.onError( response );
+                                Toast.makeText( dynamic_item_activity.this, "发表失败!请重试！", Toast.LENGTH_SHORT ).show();
+                            }
+                        } );
             }
         } );
 

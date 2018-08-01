@@ -1,10 +1,11 @@
 package com.example.lab.android.nuc.chat.Base.contacts;
 
 public class UserInfo {
+
     private String eamil;
     private String interest;
     private String languageLevel;
-    public static String name;
+    private String name;
     private String nativeLanguage;
     private String studyLanguage;
     private String toGoal;

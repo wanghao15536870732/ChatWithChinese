@@ -28,7 +28,7 @@
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/translation"
+                android:background="@drawable/ic_translation"
                 android:visibility="gone"/>
             <ImageView
                 android:id="@+id/iv_voice"

@@ -2,13 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/share"
+        android:id="@+id/share_app"
         android:title="Share"
         android:icon="@drawable/ic_menu_send"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/more"
-        android:title="More"
-        android:icon="@drawable/ic_more"
-        app:showAsAction="never"/>
+        android:id="@+id/scan"
+        android:title="scan"
+        android:icon="@drawable/ic_scan"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/my_QR_code"
+        android:title="add"
+        android:icon="@drawable/ic_qr_code"
+        app:showAsAction="always"/>
+
+
 </menu>

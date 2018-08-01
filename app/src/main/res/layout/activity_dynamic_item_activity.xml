@@ -6,43 +6,48 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/toobar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="5dp">
 
-        <ImageView
-            android:id="@+id/toolbar_back"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/back2"
-            android:layout_margin="10dp"
-            android:layout_alignParentLeft="true"/>
-
-        <TextView
-            android:id="@+id/toolbar_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="发表"
-            android:textSize="16sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_margin="10dp"
-            android:textColor="@color/green_normal"/>
-    </RelativeLayout>
     <ScrollView
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="0dp">
+
+
+            <RelativeLayout
+                android:id="@+id/toobar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="1dp">
+
+                <ImageView
+                    android:id="@+id/toolbar_back"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/back2"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/toolbar_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="发表"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/green_normal"/>
+            </RelativeLayout>
+
 
             <EditText
                 android:id="@+id/et_content"
