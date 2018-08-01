@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.Base.Search.SearchTag;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.utils.views.DragBubbleView;
 import com.example.lab.android.nuc.chat.view.fragment.MessageFragment;
 import com.example.lab.android.nuc.chat.R;
@@ -32,6 +33,9 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         this.mArrayList = arrayList;
         this.mOnRecyclerviewItemClickListener = mOnRecyclerviewItemClickListener;
     }
+
+    private static int PHOTO;
+    private static String NAME = "name";
 
     @NonNull
     @Override
@@ -52,6 +56,8 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         SearchTag searchTag = mArrayList.get(position);
                         Intent intent = new Intent(mContext, ServiceChatActivity.class);
                         intent.putExtra(ServiceChatActivity.CONTACT_NAME, searchTag.title);
+                        intent.putExtra( ServiceChatActivity.CONTACT_IMAGE,searchTag.photo );
+                        ChatConst.TAG = 0;
                         mContext.startActivity(intent);
                     }
                 });
@@ -67,6 +73,8 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         SearchTag searchTag = mArrayList.get(position);
                         Intent intent = new Intent(mContext, ServiceChatActivity.class);
                         intent.putExtra(ServiceChatActivity.CONTACT_NAME, searchTag.title);
+                        intent.putExtra( ServiceChatActivity.CONTACT_IMAGE,searchTag.photo );
+                        ChatConst.TAG = 0;
                         mContext.startActivity(intent);
                     }
                 });
@@ -86,18 +94,32 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         SearchTag searchTag = mArrayList.get(position);
                         Intent intent = new Intent(mContext, ServiceChatActivity.class);
                         intent.putExtra(ServiceChatActivity.CONTACT_NAME, searchTag.title);
+                        intent.putExtra( ServiceChatActivity.CONTACT_IMAGE,searchTag.photo );
+                        ChatConst.TAG = 0;
                         mContext.startActivity(intent);
                     }
                 });
                 Glide.with(mContext).load(mContext.getDrawable(mArrayList.get(position).photo)).into(((ViewHolder) holder).message_image);
+                ChatConst.NEW_DRAWABLE = mContext.getDrawable(mArrayList.get(position).photo);
 //                ((ViewHolder) holder).message_image.setImageResource(mArrayList.get(position).photo);
                 ((ViewHolder) holder).message_name.setText(mArrayList.get(position).title);
                 ((ViewHolder) holder).soontext.setText(mArrayList.get(position).about);
                 ((ViewHolder) holder).message_time.setText(mArrayList.get(position).time);
                 ((ViewHolder) holder).itemView.setTag(position);
-                ((ViewHolder) holder).mDragBubbleView.setText( "6");
+                ((ViewHolder) holder).mDragBubbleView.setText(mArrayList.get( position ).message_num);
                 break;
             case WithoutImage:
+                ((ViewHolder) holder).message_item.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        SearchTag searchTag = mArrayList.get(position);
+                        Intent intent = new Intent(mContext, ServiceChatActivity.class);
+                        intent.putExtra(ServiceChatActivity.CONTACT_NAME, searchTag.title);
+                        intent.putExtra( ServiceChatActivity.CONTACT_IMAGE,searchTag.photo );
+                        ChatConst.TAG = 0;
+                        mContext.startActivity(intent);
+                    }
+                });
                 Glide.with(mContext).load(mContext.getDrawable(mArrayList.get(position).photo)).into(((ViewHolder) holder).message_image);
                 ((ViewHolder) holder).message_name.setText(mArrayList.get(position).title);
                 ((ViewHolder) holder).soontext.setText(mArrayList.get(position).about);

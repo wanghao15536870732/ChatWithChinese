@@ -28,7 +28,7 @@
                 android:layout_height="29dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="5dp"
-                android:background="@drawable/translation"
+                android:background="@drawable/ic_translation"
                 android:visibility="gone"/>
             <ImageView
                 android:id="@+id/iv_voice"
@@ -141,7 +141,7 @@
             <com.example.lab.android.nuc.chat.Communication.widget.ChatBottomView
                 android:id="@+id/cbv_other"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="240dp"
                 android:visibility="gone" />
 
         </FrameLayout>

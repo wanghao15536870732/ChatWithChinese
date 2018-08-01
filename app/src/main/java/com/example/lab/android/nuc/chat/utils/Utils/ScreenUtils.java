@@ -6,8 +6,6 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.example.lab.android.nuc.chat.view.fragment.QuestionFragment;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -35,9 +33,6 @@ public class ScreenUtils {
     }
 
 
-    public static int getScreenW(QuestionFragment questionFragment) {
-        return mScreenW;
-    }
 
 
 
@@ -46,9 +41,6 @@ public class ScreenUtils {
     }
 
 
-    public static int dip2px(QuestionFragment questionFragment, float dpValue) {
-        return (int) (dpValue * mDensity + 0.5f);
-    }
 
 
 

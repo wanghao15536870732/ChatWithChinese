@@ -37,7 +37,6 @@ public class MessageFragment extends Fragment implements SearchView.OnQueryTextL
     private DragBubbleView mDragBubbleView;
 
 
-
     public static  Fragment newInstance(){
         Bundle bundle = new Bundle();
         MessageFragment messageFragment = new MessageFragment();
@@ -84,14 +83,14 @@ public class MessageFragment extends Fragment implements SearchView.OnQueryTextL
     }
     private void initQuestion() {
         mSearchTagArrayList = new ArrayList<>(  );
-        mSearchTagArrayList.add(new SearchTag("Abbott","李沙：[图片]",R.drawable.picture_1,0,"下午8:29"));
-        mSearchTagArrayList.add(new SearchTag("李沙","Abbott：ni hao",R.drawable.picture_2,0,"下午7:22"));
-        mSearchTagArrayList.add(new SearchTag("Abraham","Baron：[图片]",R.drawable.picture_3,0,"下午1:19"));
-        mSearchTagArrayList.add(new SearchTag("Baron","Baron：What？",R.drawable.picture_4,0,"下午6:01"));
-        mSearchTagArrayList.add(new SearchTag("Bruno","Abraham：[图片]",R.drawable.picture_5,0,"下午8:29"));
-        mSearchTagArrayList.add(new SearchTag("Borg","Baron：see you",R.drawable.picture_6,0,"下午7:22"));
-        mSearchTagArrayList.add(new SearchTag("Christopher","Christopher：[图片]",R.drawable.picture_7,0,"下午1:19"));
-        mSearchTagArrayList.add(new SearchTag("Derrick","Derrick：Have a dinner？",R.drawable.picture_8,0,"下午6:01"));
+        mSearchTagArrayList.add(new SearchTag("Abbott","李沙：[图片]",R.drawable.picture_1,0,"下午8:29","2"));
+        mSearchTagArrayList.add(new SearchTag("李沙","Abbott：ni hao",R.drawable.picture_2,0,"下午7:22","1"));
+        mSearchTagArrayList.add(new SearchTag("Abraham","Baron：[图片]",R.drawable.picture_3,0,"下午1:19","3"));
+        mSearchTagArrayList.add(new SearchTag("Baron","Baron：What？",R.drawable.picture_4,0,"下午6:01","10"));
+        mSearchTagArrayList.add(new SearchTag("Bruno","Abraham：[图片]",R.drawable.picture_5,0,"下午8:29","14"));
+        mSearchTagArrayList.add(new SearchTag("Borg","Baron：see you",R.drawable.picture_6,0,"下午7:22","99+"));
+        mSearchTagArrayList.add(new SearchTag("Christopher","Christopher：[图片]",R.drawable.picture_7,0,"下午1:19","2"));
+        mSearchTagArrayList.add(new SearchTag("Derrick","Derrick：Have a dinner？",R.drawable.picture_8,0,"下午6:01","1"));
 
     }
     @Override

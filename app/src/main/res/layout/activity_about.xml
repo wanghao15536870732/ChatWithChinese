@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.AboutActivity"
+    android:background="@drawable/ic_background01">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo"/>
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="V　1.0.0"
+        />
+
+    <View
+        android:id="@+id/line01"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/app_version"
+        android:alpha="0.6"
+        android:layout_marginTop="25dp"
+        android:fitsSystemWindows="true"
+        />
+
+    <TextView
+        android:id="@+id/version_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_version"
+        android:layout_marginTop="32dp"
+        android:text="版本更新　　　　　　　　"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已经是最新版本＞"
+        android:textSize="14sp"
+        android:layout_toRightOf="@+id/version_up"
+        android:layout_below="@+id/app_version"
+        android:layout_marginTop="45dp"/>
+
+    <View
+        android:id="@+id/line02"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/version_up"
+        android:alpha="0.6"
+        android:layout_marginTop="5dp"
+        android:fitsSystemWindows="true"
+
+        />
+
+</RelativeLayout>

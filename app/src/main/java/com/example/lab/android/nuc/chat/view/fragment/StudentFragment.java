@@ -81,12 +81,7 @@ public class StudentFragment extends Fragment {
         for (int i = 0; i < teacherInfo.size(); i++) {
             mItems.add(new Student(teacherInfo.get(i)));
         }
-
         mAdapter.setItems(mItems);
         mAdapter.notifyDataSetChanged();
-
-
     }
-
-
 }

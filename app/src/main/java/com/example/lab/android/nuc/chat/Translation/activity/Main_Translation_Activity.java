@@ -184,8 +184,6 @@ public class Main_Translation_Activity extends AppCompatActivity
 
             @Override
             public void onClick(View view) {
-
-
                 String[] strs = readerVlaue();
                 if (strs == null) {
                     ToastUtil.showToast(Main_Translation_Activity.this,"请先设置appid和密钥");

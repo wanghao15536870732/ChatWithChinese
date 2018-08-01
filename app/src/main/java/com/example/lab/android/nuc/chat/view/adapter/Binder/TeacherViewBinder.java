@@ -37,7 +37,7 @@ public class TeacherViewBinder extends ItemViewBinder<Teacher, TeacherViewBinder
 
 
     @Override
-    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull Teacher teacher) {
+    protected void onBindViewHolder(@NonNull ViewHolder holder, @NonNull final Teacher teacher) {
         setTeacher = teacher.getSetTeacher();
         initView();
         root.setOnClickListener(new View.OnClickListener() {
@@ -73,26 +73,29 @@ public class TeacherViewBinder extends ItemViewBinder<Teacher, TeacherViewBinder
         options.placeholder(R.drawable.ic_user_pic);
         Glide.with(root.getContext()).load(setTeacher.getPicurl()).into(roundRectangleImageView);
         switch (setTeacher.getLanguage()) {
-            case "cn":
+            case "汉语":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_cn));
                 break;
             case "ch":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_ch));
                 break;
-            case "de":
+            case "德语":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_de));
                 break;
             case "ea":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_ea));
                 break;
-            case "gb":
+            case "英语":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_gb));
                 break;
-            case "hm":
+            case "fa":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_hm));
                 break;
             case "lr":
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_lr));
+                break;
+            case "法语":
+                ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_gr));
                 break;
             default:
                 ivCountry.setImageDrawable(root.getContext().getDrawable(R.drawable.country_cn));

@@ -12,7 +12,6 @@
     </android.support.v7.widget.RecyclerView>
 
 
-
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/main_actions_menu"
         android:layout_width="wrap_content"
@@ -20,8 +19,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        fab:fab_addButtonColorNormal="@color/blue_normal"
-        fab:fab_addButtonColorPressed="@color/blue_pressed"
+        fab:fab_addButtonColorNormal="@color/fab_color"
+        fab:fab_addButtonColorPressed="@color/blue_normal"
         fab:fab_addButtonPlusIconColor="@color/white"
         android:layout_marginBottom="16dp"
         android:layout_marginRight="16dp"
@@ -84,10 +83,10 @@
 
     <LinearLayout
         android:id="@+id/comment_listView"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/pureWhite"
+        android:background="@color/transparent"
         android:elevation="8dp"
         android:visibility="gone">
 

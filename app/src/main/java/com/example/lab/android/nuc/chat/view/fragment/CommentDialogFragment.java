@@ -2,6 +2,7 @@ package com.example.lab.android.nuc.chat.view.fragment;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.lab.android.nuc.chat.Base.JSON.Comment;
+import com.example.lab.android.nuc.chat.Base.json.Comment;
 import com.example.lab.android.nuc.chat.R;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -199,5 +200,10 @@ public class CommentDialogFragment extends DialogFragment implements View.OnClic
     public void onCancel(DialogInterface dialog) {
         dataCallback.setCommentText(commentEditText.getText().toString());
         super.onCancel(dialog);
+    }
+
+    @Override
+    public int show(FragmentTransaction transaction, String tag) {
+        return super.show( transaction, tag );
     }
 }

@@ -5,24 +5,72 @@
     android:orientation="horizontal"
     android:background="@color/colorPrimary">
 
-    <ImageView
-        android:id="@+id/question_add_back"
-        android:layout_width="?attr/actionBarSize"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_before"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_margin="6dp"/>
+    <ImageButton
+        android:id="@+id/new_return"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_new_back" />
 
     <TextView
-        android:id="@+id/contact_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="聊天"
+        android:textColor="#ffffff"
+        android:layout_toRightOf="@+id/new_return"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:text="@string/question_detail_actionBar"
-        android:textSize="26sp"
-        android:textColor="#ffffff"/>
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/question_detail_actionBar"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:fitsSystemWindows="true"/>
 
+        <TextView
+            android:id="@+id/line_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contact_name"
+            android:text="手机在线 - 4G"
+            android:layout_margin="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:fitsSystemWindows="true"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_new_search"
+        android:layout_toLeftOf="@+id/people_detail"
+        android:layout_centerInParent="true"
+        android:fitsSystemWindows="true"/>
+    <ImageView
+        android:id="@+id/people_detail"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_new_people"
+        android:layout_margin="12dp"
+        android:fitsSystemWindows="true"/>
 
 
 </RelativeLayout>

@@ -3,10 +3,27 @@ package com.example.lab.android.nuc.chat.Translation.BaseEnum;
 import java.util.List;
 
 /**
- * 功能:
- * 修改时间：
- * 修改备注：
+ * 解析 语音听写返回结果Json格式字符串 的模板类（多重嵌套Json）
+ * <p/>
+ * 语音识别结果Json数据格式（单条数据）：
+ * {"sn":1,"ls":true,"bg":0,"ed":0,"ws":[
+ * {"bg":0,"cw":[{"w":"今天","sc":0}]},
+ * {"bg":0,"cw":[{"w":"的","sc":0}]},
+ * {"bg":0,"cw":[{"w":"天气","sc":0}]},
+ * {"bg":0,"cw":[{"w":"怎么样","sc":0}]},
+ * {"bg":0,"cw":[{"w":"。","sc":0}]}
+ * ]}
+ * <p/>
+ * sn  number :第几句
+ * ls   boolean: 是否最后一句
+ * bg  number :开始
+ * ed  number :结束
+ * ws  array :词
+ * cw   array :中文分词
+ * w  string :单字
+ * sc  number :分数
  */
+
 
 public class DictationResult {
     private String sn;

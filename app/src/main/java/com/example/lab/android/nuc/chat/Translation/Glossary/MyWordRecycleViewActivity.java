@@ -41,6 +41,7 @@ public class MyWordRecycleViewActivity extends AppCompatActivity {
         if (actionBar != null) {
             // Show the Up button in the action bar.
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle( "单词本" );
         }
 
         myOpenHelper=new MyOpenHelper(getApplicationContext());

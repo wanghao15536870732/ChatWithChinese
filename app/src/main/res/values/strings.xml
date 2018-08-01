@@ -52,9 +52,11 @@
 
     <string name="appid">5ad97691</string>
     <string name="introduce">I have a TEFL certificate, but have not put it to good use just yet.</string>
-    <string name="plan">2018/6/19 上午10:00-上午12:00
-        2018/6/19 下午13:00-下午17:00\n\n2018/6/20 上午10:00-上午12:00\n\n2018/6/20 下午13:00-下午17:00</string>
+    <string name="plan">2018/6/19 上午10:00 -上午12:00\n\n
+        2018/6/19 下午13:00 -下午17:00\n\n2018/6/20 上午10:00 -上午12:00\n\n2018/6/20 下午13:00 -下午17:00</string>
     <string name="text_detail">翻着我们的照片，想念若隐若现，去年的冬天，我们笑得很甜...... —— 哎哟，不错哦!</string>
     <string name="dynamic_time">10分钟前</string>
     <string name="ai_te">\u0040</string>
+    <string name="text_voice">1. 默认通道名称为demoChannel1.   2. 仅支持1v1语音调用.  3.等待远程用户...</string>
+    <string name="text_video">1. 默认通道名称为demoChannel1.   2. 仅支持1v1视频调用.  3.等待远程用户...</string>
 </resources>

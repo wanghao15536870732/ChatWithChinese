@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/side_nav_bar"
-    android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -16,17 +15,111 @@
         android:id="@+id/imageView"
         android:layout_width="65dp"
         android:layout_height="65dp"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
         app:srcCompat="@drawable/logo"
-        android:layout_margin="5dp"/>
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="fitCenter"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Yi Lu Yu Ban"
-        android:layout_margin="5dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Y Lu Y Ban"
+        android:layout_below="@+id/imageView" />
+    <TextView
+        android:id="@+id/Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9b516"
+        android:textSize="12sp"
+        android:text="账号："
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginTop="25dp"/>
+    <TextView
+        android:id="@+id/new_Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:text="1484290617"
+        android:layout_toRightOf="@+id/Info"
+        android:layout_marginTop="25dp"/>
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9b516"
+        android:textSize="12sp"
+        android:text="邮箱："
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginTop="55dp"/>
+    <TextView
+        android:id="@+id/new_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:text="hyyyrwang@gmail.com"
+        android:layout_toRightOf="@+id/email"
+        android:layout_marginTop="55dp"/>
+    <TextView
+        android:id="@+id/nicheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9b516"
+        android:textSize="12sp"
+        android:text="昵称："
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginTop="85dp" />
+    <TextView
+        android:id="@+id/new_nicheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:text="末年之夏"
+        android:layout_toRightOf="@+id/nicheng"
+        android:layout_marginTop="85dp" />
+    <TextView
+        android:id="@+id/mother_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9b516"
+        android:textSize="12sp"
+        android:text="母语："
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_marginTop="115dp" />
+    <TextView
+        android:id="@+id/new_mother_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/mother_language"
+        android:layout_marginTop="115dp"
+        android:text="汉语"/>
+    <TextView
+        android:id="@+id/learn_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f9b516"
+        android:textSize="12sp"
+        android:text="最近在学:"
+        android:layout_toRightOf="@+id/new_mother_language"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="115dp" />
 
+    <TextView
+        android:id="@+id/new_learn_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:text="英语"
+        android:layout_toRightOf="@+id/learn_language"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="115dp" />
 
-</LinearLayout>
+</RelativeLayout>

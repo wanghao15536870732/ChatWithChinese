@@ -1,17 +1,21 @@
 package com.example.lab.android.nuc.chat.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Toast;
 
 
+import com.example.lab.android.nuc.chat.Communication.ui.ImageBrowserActivity;
+import com.example.lab.android.nuc.chat.Communication.utils.Constants;
 import com.example.lab.android.nuc.chat.utils.Utils.ImageLoaderUtil;
 import com.example.lab.android.nuc.chat.utils.views.RatioImageView;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
+import java.io.File;
 import java.util.List;
 
 public class NineGridTestLayout extends NineGridLayout {
@@ -75,6 +79,10 @@ public class NineGridTestLayout extends NineGridLayout {
 
     @Override
     protected void onClickImage(int i, String url, List<String> urlList) {
-        Toast.makeText(mContext, "点击了图片" + url, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mContext, "点击了图片" + url, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), ImageBrowserActivity.class);
+//        intent.putExtra( Constants.IMAGE_LOCAL_PATH,);
+        intent.putExtra(Constants.IMAGE_URL, url);
+        getContext().startActivity(intent);
     }
 }

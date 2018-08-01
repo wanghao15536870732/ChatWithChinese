@@ -19,18 +19,37 @@
         android:layout_marginLeft="5dp"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/name"
+        <RelativeLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="马骕骎"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="马骕骎"
+                android:layout_alignParentLeft="true"
+                android:textColor="#f9b516" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/country_picture"
+                android:layout_width="20dp"
+                android:layout_height="19dp"
+                android:src="@drawable/country_cn"
+                android:scaleType="centerInside"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
             android:text="@string/text_detail" />
 
         <com.example.lab.android.nuc.chat.view.adapter.NineGridTestLayout
@@ -45,78 +64,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp">
+
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="10分钟前" />
 
-            <TextView
-                android:id="@+id/smile_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-            <com.sackcentury.shinebuttonlib.ShineButton
-                android:id="@+id/po_image3"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@android:color/darker_gray"
-                app:btn_color="@android:color/darker_gray"
-                app:btn_fill_color="@color/colorPrimary"
-                app:allow_random_color="true"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="5dp"
-                app:siShape="@raw/smile"
-                android:layout_toLeftOf="@id/smile_size"/>
-
-            <TextView
-                android:id="@+id/heart_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="5"
-                android:layout_toLeftOf="@id/po_image3"/>
-
-
-            <com.sackcentury.shinebuttonlib.ShineButton
-                android:id="@+id/po_image2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@android:color/darker_gray"
-                app:btn_color="@android:color/darker_gray"
-                app:btn_fill_color="#F44336"
-                app:allow_random_color="true"
-                app:siShape="@raw/heart"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@+id/po_image3"
-                android:layout_toStartOf="@+id/po_image3" />
-
-            <TextView
-                android:id="@+id/like_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/po_image2"
-                android:text="4"/>
 
             <com.sackcentury.shinebuttonlib.ShineButton
                 android:id="@+id/po_image1"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:src="@android:color/darker_gray"
                 app:btn_color="@android:color/darker_gray"
                 app:btn_fill_color="@color/orange"
                 app:allow_random_color="true"
                 app:siShape="@raw/like"
-                android:layout_marginRight="15dp"
-                android:layout_toLeftOf="@id/po_image2"
-                android:layout_toStartOf="@id/po_image2"
-                android:layout_marginEnd="15dp" />
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/time"
+                android:layout_marginLeft="50dp" />
+            <TextView
+                android:id="@+id/like_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/po_image1"/>
 
+            <ImageView
+                android:id="@+id/comment"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toRightOf="@+id/like_size"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/ic_comment"
+                />
+            <ImageView
+                android:id="@+id/transmmit"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_toRightOf="@+id/comment"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/ic_trans"/>
 
         </RelativeLayout>
+
 
     </LinearLayout>
 </LinearLayout>

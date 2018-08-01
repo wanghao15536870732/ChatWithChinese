@@ -3,6 +3,7 @@ package com.example.lab.android.nuc.chat.view.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.Communication.AlertDialog;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -54,30 +56,36 @@ public class ChatActivity extends Activity {
         tvName.setText(name);
         tvScore.setText(score);
         tvTitle.setText(type);
+        Log.e( "Plain_1", plain );
+        plain.replace( "\n","\n");
+        Log.e( "Plain",plain );
         tvPlan.setText(plain);
         tvExperience.setText(experience);
         Glide.with(this).load(picurl).into(roundedImageView);
         switch (language) {
-            case "cn":
+            case "汉语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_cn));
                 break;
             case "ch":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_ch));
                 break;
-            case "de":
+            case "德语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_de));
                 break;
             case "ea":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_ea));
                 break;
-            case "gb":
+            case "英语":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_gb));
                 break;
-            case "hm":
+            case "fa":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_hm));
                 break;
             case "lr":
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_lr));
+                break;
+            case "法语":
+                ivCountry.setImageDrawable(getDrawable(R.drawable.country_gr));
                 break;
             default:
                 ivCountry.setImageDrawable(getDrawable(R.drawable.country_cn));
@@ -89,6 +97,8 @@ public class ChatActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ServiceChatActivity.class);
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, name);
+                intent.putExtra( ServiceChatActivity.CONTACT_IMAGE, picurl);
+                ChatConst.TAG = 1;
                 startActivity(intent);
             }
         });

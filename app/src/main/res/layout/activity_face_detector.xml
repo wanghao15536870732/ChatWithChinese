@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.example.lab.android.nuc.chat.Face.CameraPreview
+        android:id="@+id/face_detector_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.example.lab.android.nuc.chat.Face.FaceRectView
+        android:id="@+id/face_detector_face"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <Button
+        android:id="@+id/face_detector_take_photo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/ic_new_camera" />
+
+    <TextView
+        android:id="@+id/face_detector_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"/>
+</FrameLayout>
