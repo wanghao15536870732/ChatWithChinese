@@ -398,8 +398,6 @@ public class Main_Translation_Activity extends AppCompatActivity {
     }
 
 
-
-
     public void setTsId(int tsId) {
         this.TsId = tsId;
     }
