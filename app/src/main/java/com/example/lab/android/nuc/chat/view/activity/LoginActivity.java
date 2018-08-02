@@ -3,10 +3,12 @@ package com.example.lab.android.nuc.chat.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView register;
     Button button;
     String n, p;
+    private ImageView iv_see_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,14 @@ public class LoginActivity extends AppCompatActivity {
         register = findViewById(R.id.register);
         uesr_name = findViewById(R.id.user_name_input);
         password = findViewById(R.id.password_input);
+        password.setInputType( InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD );
+        iv_see_password = (ImageView) findViewById( R.id.ic_see_password );
+        iv_see_password.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setPasswordVisibility();
+            }
+        } );
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,5 +94,18 @@ public class LoginActivity extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void setPasswordVisibility(){
+        if (iv_see_password.isSelected()){
+            iv_see_password.setSelected( false );
+            //密码不可见
+            password.setInputType( InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            iv_see_password.setImageResource( R.mipmap.ic_unopen );
+        }else {
+            iv_see_password.setSelected( true );
+            password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            iv_see_password.setImageResource( R.mipmap.ic_open );
+        }
     }
 }

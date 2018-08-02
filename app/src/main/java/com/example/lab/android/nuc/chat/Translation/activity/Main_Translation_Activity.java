@@ -13,6 +13,7 @@ import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -63,8 +64,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Main_Translation_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Main_Translation_Activity extends AppCompatActivity{
 
 
     public static final String TRANSLATION_TEXT = "translation_detail";
@@ -109,6 +109,13 @@ public class Main_Translation_Activity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //添加返回按钮
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            // Show the Up button in the action bar.
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle( "翻译" );
+        }
 
         //解决android.os.NetworkOnMainThreadException
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
@@ -343,17 +350,6 @@ public class Main_Translation_Activity extends AppCompatActivity
                 setOgId(j);
             }
         });
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        KeyBoardUtils.hideKeyBoard( this,mEtInput );
     }
 
 
@@ -378,30 +374,6 @@ public class Main_Translation_Activity extends AppCompatActivity
         }
         super.onBackPressed();
         finish();
-    }
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-
-        } else if (id == R.id.nav_setting) {
-            Intent intent = new Intent(Main_Translation_Activity.this, IDActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_help) {
-
-        }else if (id == R.id.nav_word) {
-            Intent intent = new Intent(Main_Translation_Activity.this, MyWordRecycleViewActivity.class);
-            startActivity(intent);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer( GravityCompat.START);
-        return true;
     }
 
 
@@ -975,6 +947,16 @@ public class Main_Translation_Activity extends AppCompatActivity
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected( item );
     }
 }
 

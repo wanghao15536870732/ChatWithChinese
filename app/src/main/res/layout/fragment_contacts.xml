@@ -36,7 +36,7 @@
             <Button
                 android:id="@+id/country_selector"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
@@ -45,7 +45,7 @@
                 android:gravity="center"
                 android:text="国家"
                 android:textColor="#2d4059"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 tools:ignore="NewApi" />
         </LinearLayout>
 

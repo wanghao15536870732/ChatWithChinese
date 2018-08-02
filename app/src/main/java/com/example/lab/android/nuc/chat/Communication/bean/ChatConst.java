@@ -26,5 +26,6 @@ public class ChatConst {
     public static String RESPONSE_HEAD_IMAGE = "response_head_image";
     public static int RESPONSE_HEAD_IMAGEVIEW = 0;
     public static Drawable NEW_DRAWABLE = null;
+
     public static int TAG = 0;
 }

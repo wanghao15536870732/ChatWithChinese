@@ -28,12 +28,18 @@
 
     </style>
 
+    <style name="TranslationTheme" parent="RegisterActivityTheme">
+        <item name="android:statusBarColor">@color/color_theme</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/color_theme</item>
         <item name="colorPrimaryDark">#63b8ff</item>
     </style>
+
+
 
 
     <style name="WordTheme" parent="Theme.AppCompat.Light.DarkActionBar">
