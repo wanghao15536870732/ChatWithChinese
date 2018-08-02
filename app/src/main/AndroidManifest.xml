@@ -148,16 +148,24 @@
         <activity android:name=".view.activity.LocationActivity" />
         <activity
             android:name=".view.activity.ChatActivity"
-            android:theme="@style/ChatTheme" />
+            android:theme="@style/ChatTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:hardwareAccelerated="true"/>
         <activity android:name=".view.activity.ChangePassword" />
-        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.MainActivity"
+            android:hardwareAccelerated="true"/>
         <activity
             android:name=".view.activity.RegisterActivity"
             android:theme="@style/RegisterActivityTheme" />
-        <activity android:name=".Practice.Test.Ise_Demo" />
-        <activity android:name=".Practice.Test.Ise_Demo_Zi" />
-        <activity android:name=".Practice.Test.Ise_Demo_Zh" />
-        <activity android:name=".Practice.Test.Ise_Demo_Sentence" />
+        <activity android:name=".Practice.Test.Ise_Demo"
+            android:hardwareAccelerated="true"/>
+        <activity android:name=".Practice.Test.Ise_Demo_Zi"
+            android:hardwareAccelerated="true"/>
+        <activity android:name=".Practice.Test.Ise_Demo_Zh"
+            android:hardwareAccelerated="true"/>
+        <activity android:name=".Practice.Test.Ise_Demo_Sentence"
+            android:hardwareAccelerated="true"/>
         <activity android:name=".view.activity.TopicActivity" />
 
         <provider

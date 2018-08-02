@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f9b516">
+    android:background="#ffffff">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,134 +13,170 @@
         <RelativeLayout
             android:id="@+id/re_1"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_teacher_info"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/te2" />
 
             <ImageButton
+                android:alpha="0.7"
                 android:id="@+id/ib_return"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
                 android:background="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_left" />
+                android:src="@drawable/ic_left"
+                android:stateListAnimator="@null" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/ib_return"
-                android:text="Teacher Info"
-                android:textColor="#454545"
-                android:textSize="30sp" />
+            <RelativeLayout
+                android:id="@+id/re_in"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="290dp"
+                android:background="#ffffff">
 
+                <TextView
+                    android:id="@+id/tv_teacher_name_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Teacher - Name"
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_teacher_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_teacher_name_info"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="金牌讲师"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/tv_teacher_title"
+                    android:layout_marginTop="18dp"
+                    android:background="#11000000"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_score_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="15dp"
+                        android:text="4.88/5.0"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/tv_score_info"
+                        android:layout_below="@+id/tv_score_info"
+                        android:layout_marginLeft="10dp"
+                        android:text="SCORE"
+                        android:textSize="15sp" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_country"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:layout_alignTop="@+id/tv_score_info"
+                        android:layout_marginLeft="100dp"
+                        android:layout_toRightOf="@+id/tv_score_info"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/country_cn" />
+
+                    <TextView
+                        android:id="@+id/tv_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_country"
+                        android:layout_marginLeft="80dp"
+                        android:layout_toRightOf="@+id/tv_score_info"
+
+                        android:text="LANGUAGE" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bt_course"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/re_in"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="165dp"
+                android:background="#56a991"
+                android:text="Connect"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:alpha="0.7"
+                android:id="@+id/bt_message"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/ib_return"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_chat_tc" />
         </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/re2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/re_1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#ffffff">
-
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/iv_teacher_info"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/te2"
-                app:riv_border_color="#ffffff"
-                app:riv_border_width="0dp"
-                app:riv_corner_radius="20dp"
-                app:riv_mutate_background="true"
-                app:riv_oval="true" />
+            android:layout_below="@+id/re_1">
 
             <TextView
-                android:id="@+id/tv_teacher_name_info"
+                android:id="@+id/tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/iv_teacher_info"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/iv_teacher_info"
-                android:text="Teacher - Name"
-                android:textColor="#000000"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/tv_teacher_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_teacher_name_info"
-                android:layout_below="@id/tv_teacher_name_info"
-                android:text="金牌讲师"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_score_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/tv_teacher_name_info"
-                android:layout_below="@+id/tv_teacher_title"
-                android:text="4.88/5.0 score" />
-
-            <TextView
-                android:id="@+id/tv_language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_teacher_name_info"
-                android:layout_below="@+id/tv_score_info"
-                android:text="语言：" />
-
-            <ImageView
-                android:id="@+id/iv_country"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignTop="@+id/tv_language"
-                android:layout_toRightOf="@+id/tv_language"
-                android:scaleType="centerInside"
-                android:src="@drawable/country_cn" />
-
-            <Button
-                android:id="@+id/bt_teacher_introduce"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/iv_teacher_info"
-                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:background="#5b5b5b"
                 android:text="个人介绍"
-                android:textColor="#ffffff"
+                android:textColor="#4b4b4b"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/bt_course"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/bt_teacher_introduce"
-                android:layout_centerHorizontal="true"
+            <View
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:background="#5b5b5b"
-                android:text="课程"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:alpha="0.7" />
 
-            <Button
-                android:id="@+id/bt_message"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/bt_course"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="30dp"
-                android:layout_marginTop="10dp"
-                android:background="#5b5b5b"
-                android:text="消息"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
-
+            <cn.jzvd.JZVideoPlayerStandard
+                android:id="@+id/videoplayer"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/line6" />
         </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/re3"
@@ -150,7 +186,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:background="#11000000">
 
             <TextView
                 android:id="@+id/tv4"
@@ -193,7 +229,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="#ffffff">
+            android:background="#11000000">
 
             <TextView
                 android:id="@+id/tv5"

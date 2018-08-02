@@ -24,6 +24,7 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
     private Context mContext;
     private List<NineGridTestModel> mList;
     protected LayoutInflater inflater;
+    private View convertView;
     NineGridTestModel nineGridTestModel;
 
     public NineGridTest2Adapter(Context context){
@@ -38,19 +39,21 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
-        View convertView = inflater.inflate( R.layout.item_nine_grid,parent,false );
+        convertView = inflater.inflate( R.layout.item_nine_grid,parent,false );
         ViewHolder viewHolder = new ViewHolder( convertView );
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         nineGridTestModel = mList.get( position );
         holder.layout.setIsShowAll( nineGridTestModel.isShowAll );
         holder.layout.setUrlList( nineGridTestModel.urlList );
-        holder.layout.setOnClickListener( new View.OnClickListener() {
+        convertView.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                nineGridTestModel = mList.get( position );
+
                 Intent intent = new Intent(mContext, CommentActivity.class );
                 intent.putExtra("question_name",nineGridTestModel.name);
                 intent.putExtra( "question_image",nineGridTestModel.imageUri );

@@ -68,6 +68,7 @@ dependencies {
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     implementation 'com.novaapps:FloatingActionMenu:1.0'
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.12'
     implementation files('libs/qiniu-java-sdk-7.2.13.jar')
     implementation files('libs/qiniu-android-sdk-7.3.12.jar')
     configurations {

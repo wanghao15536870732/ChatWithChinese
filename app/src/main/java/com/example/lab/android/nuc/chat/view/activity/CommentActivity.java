@@ -44,9 +44,8 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     private static final String TAG = "CommentActivity";
 
     private CircleImageView image;
-    private TextView name,detail,time,title;
+    private TextView name, detail, time, title;
     private RoundedImageView country;
-
 
 
     private android.support.v7.widget.Toolbar toolbar;
@@ -121,12 +120,12 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comment );
+        setContentView(R.layout.activity_comment);
         initView();
     }
 
     private void initView() {
-        toolbar = (Toolbar) findViewById( R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_lv_comment);
         bt_comment = (TextView) findViewById(R.id.detail_page_do_comment);
         bt_comment.setOnClickListener(this);
@@ -137,43 +136,43 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         collapsingToolbar.setTitle("详情");
         commentsList = generateTestData();
         initExpandableListView(commentsList);
-        image = (CircleImageView) findViewById( R.id.detail_page_userLogo );
-        name = (TextView) findViewById( R.id.detail_page_userName );
-        time = (TextView) findViewById( R.id.detail_page_time );
-        detail = (TextView) findViewById( R.id.detail_page_story );
-        country = (RoundedImageView) findViewById( R.id.country_comment );
-        title = (TextView) findViewById( R.id.detail_page_title );
+        image = (CircleImageView) findViewById(R.id.detail_page_userLogo);
+        name = (TextView) findViewById(R.id.detail_page_userName);
+        time = (TextView) findViewById(R.id.detail_page_time);
+        detail = (TextView) findViewById(R.id.detail_page_story);
+        country = (RoundedImageView) findViewById(R.id.country_comment);
+        title = (TextView) findViewById(R.id.detail_page_title);
         Intent intent = getIntent();
-        String NAME = intent.getStringExtra( "question_name" );
-        String IMAGE = intent.getStringExtra( "question_image" );
-        String TIME = intent.getStringExtra( "question_time" );
-        String DETAIL = intent.getStringExtra( "question_detail" );
-        int COUNTRY_IMAGE = intent.getIntExtra( "question_country_image" ,1);
-        name.setText( NAME );
-        time.setText( TIME );
-        detail.setText( DETAIL );
-        Glide.with( this ).load( IMAGE ).into( image );
-        Log.e( "wang",String.valueOf(  COUNTRY_IMAGE ));
-        Glide.with( this ).load( COUNTRY_IMAGE ).into( country );
+        String NAME = intent.getStringExtra("question_name");
+        String IMAGE = intent.getStringExtra("question_image");
+        String TIME = intent.getStringExtra("question_time");
+        String DETAIL = intent.getStringExtra("question_detail");
+        int COUNTRY_IMAGE = intent.getIntExtra("question_country_image", 1);
+        name.setText(NAME);
+        time.setText(TIME);
+        detail.setText(DETAIL);
+        Glide.with(this).load(IMAGE).into(image);
+        Log.e("wang", String.valueOf(COUNTRY_IMAGE));
+        Glide.with(this).load(COUNTRY_IMAGE).into(country);
 //        country.setImageResource( COUNTRY_IMAGE );
     }
 
     /**
      * 初始化评论和回复列表
      */
-    private void initExpandableListView(final List<CommentDetailBean> commentList){
+    private void initExpandableListView(final List<CommentDetailBean> commentList) {
         expandableListView.setGroupIndicator(null);
         //默认展开所有回复
         adapter = new CommentExpandAdapter(this, commentList);
         expandableListView.setAdapter(adapter);
-        for(int i = 0; i<commentList.size(); i++){
+        for (int i = 0; i < commentList.size(); i++) {
             expandableListView.expandGroup(i);
         }
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int groupPosition, long l) {
                 boolean isExpanded = expandableListView.isGroupExpanded(groupPosition);
-                Log.e(TAG, "onGroupClick: 当前的评论id>>>"+commentList.get(groupPosition).getId());
+                Log.e(TAG, "onGroupClick: 当前的评论id>>>" + commentList.get(groupPosition).getId());
 //                if(isExpanded){
 //                    expandableListView.collapseGroup(groupPosition);
 //                }else {
@@ -187,7 +186,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int groupPosition, int childPosition, long l) {
-                Toast.makeText(CommentActivity.this,"点击了回复", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CommentActivity.this, "点击了回复", Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
@@ -204,9 +203,10 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
     /**
      * func:生成测试数据
+     *
      * @return 评论数据
      */
-    private List<CommentDetailBean> generateTestData(){
+    private List<CommentDetailBean> generateTestData() {
         Gson gson = new Gson();
         commentBean = gson.fromJson(testJson, CommentBean.class);
         List<CommentDetailBean> commentList = commentBean.getData().getList();
@@ -215,7 +215,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }
@@ -224,7 +224,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        if(view.getId() == R.id.detail_page_do_comment){
+        if (view.getId() == R.id.detail_page_do_comment) {
 
             showCommentDialog();
         }
@@ -233,9 +233,9 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     /**
      * func:弹出评论框
      */
-    private void showCommentDialog(){
+    private void showCommentDialog() {
         dialog = new BottomSheetDialog(this);
-        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
+        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout, null);
         final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
         final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
         dialog.setContentView(commentView);
@@ -244,7 +244,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
          */
         View parent = (View) commentView.getParent();
         BottomSheetBehavior behavior = BottomSheetBehavior.from(parent);
-        commentView.measure(0,0);
+        commentView.measure(0, 0);
         behavior.setPeekHeight(commentView.getMeasuredHeight());
 
         bt_comment.setOnClickListener(new View.OnClickListener() {
@@ -252,16 +252,16 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View view) {
                 String commentContent = commentText.getText().toString().trim();
-                if(!TextUtils.isEmpty(commentContent)){
+                if (!TextUtils.isEmpty(commentContent)) {
 
                     //commentOnWork(commentContent);
                     dialog.dismiss();
-                    CommentDetailBean detailBean = new CommentDetailBean("小明", commentContent,"刚刚");
+                    CommentDetailBean detailBean = new CommentDetailBean("小明", commentContent, "刚刚");
                     adapter.addTheCommentData(detailBean);
-                    Toast.makeText(CommentActivity.this,"评论成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommentActivity.this, "评论成功", Toast.LENGTH_SHORT).show();
 
-                }else {
-                    Toast.makeText(CommentActivity.this,"评论内容不能为空", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CommentActivity.this, "评论内容不能为空", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -273,10 +273,10 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
-                    bt_comment.setBackgroundColor( Color.parseColor("#FFB568"));
-                }else {
-                    bt_comment.setBackgroundColor( Color.parseColor("#D8D8D8"));
+                if (!TextUtils.isEmpty(charSequence) && charSequence.length() > 2) {
+                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+                } else {
+                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
                 }
             }
 
@@ -291,9 +291,9 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     /**
      * func:弹出回复框
      */
-    private void showReplyDialog(final int position){
+    private void showReplyDialog(final int position) {
         dialog = new BottomSheetDialog(this);
-        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout,null);
+        View commentView = LayoutInflater.from(this).inflate(R.layout.comment_dialog_layout, null);
         final EditText commentText = (EditText) commentView.findViewById(R.id.dialog_comment_et);
         final Button bt_comment = (Button) commentView.findViewById(R.id.dialog_comment_bt);
         commentText.setHint("回复 " + commentsList.get(position).getNickName() + " 的评论:");
@@ -302,15 +302,15 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View view) {
                 String replyContent = commentText.getText().toString().trim();
-                if(!TextUtils.isEmpty(replyContent)){
+                if (!TextUtils.isEmpty(replyContent)) {
 
                     dialog.dismiss();
-                    ReplyDetailBean detailBean = new ReplyDetailBean("小红",replyContent);
+                    ReplyDetailBean detailBean = new ReplyDetailBean("小红", replyContent);
                     adapter.addTheReplyData(detailBean, position);
                     expandableListView.expandGroup(position);
-                    Toast.makeText(CommentActivity.this,"回复成功", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(CommentActivity.this,"回复内容不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommentActivity.this, "回复成功", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(CommentActivity.this, "回复内容不能为空", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -322,10 +322,10 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!TextUtils.isEmpty(charSequence) && charSequence.length()>2){
-                    bt_comment.setBackgroundColor( Color.parseColor("#FFB568"));
-                }else {
-                    bt_comment.setBackgroundColor( Color.parseColor("#D8D8D8"));
+                if (!TextUtils.isEmpty(charSequence) && charSequence.length() > 2) {
+                    bt_comment.setBackgroundColor(Color.parseColor("#FFB568"));
+                } else {
+                    bt_comment.setBackgroundColor(Color.parseColor("#D8D8D8"));
                 }
             }
 
