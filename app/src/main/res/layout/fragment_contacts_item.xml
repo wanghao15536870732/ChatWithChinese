@@ -71,7 +71,7 @@
                             android:gravity="center"
                             android:text="白玉京"
                             android:textColor="#000000"
-                            android:textSize="18sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView

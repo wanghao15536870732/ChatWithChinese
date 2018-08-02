@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="248dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/teaser"
+                    android:src="@drawable/comment_logo"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="parallax" />
 

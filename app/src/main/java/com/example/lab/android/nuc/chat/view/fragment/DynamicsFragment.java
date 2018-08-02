@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,9 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.lab.android.nuc.chat.Base.json.Question;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.view.activity.VoiceChatActivity_1;
+import com.example.lab.android.nuc.chat.view.activity.VoiceToTextActivity;
 import com.example.lab.android.nuc.chat.view.activity.dynamic_item_activity;
 import com.example.lab.android.nuc.chat.view.adapter.NineGridTest2Adapter;
 import com.example.lab.android.nuc.chat.view.adapter.model.NineGridTestModel;
@@ -66,8 +64,8 @@ public class DynamicsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate( R.layout.fragment_dynamics,container,false);
         initListData();
-        initView(view);
         initFloatButton( view );
+        initView(view);
         return view;
     }
 
@@ -97,8 +95,9 @@ public class DynamicsFragment extends Fragment {
         mRecyclerView.setLayoutManager( mLayoutManager );
         mAdapter = new NineGridTest2Adapter( getContext() );
         mAdapter.setList( mList );
-        mRecyclerView.setAdapter( mAdapter );
         mRecyclerView.addItemDecoration( new DividerItemDecoration( getContext(),DividerItemDecoration.VERTICAL ));
+        mRecyclerView.setAdapter( mAdapter );
+
     }
 
 
@@ -106,7 +105,6 @@ public class DynamicsFragment extends Fragment {
     private void initListData() {
         NineGridTestModel model1 = new NineGridTestModel();
         model1.urlList.add(mUrls[0]);
-        model1.image = R.drawable.picture_1;
         model1.name = "Abbott";
         model1.imageUri = imageUrls[0];
         model1.time = "今天 21:08";
@@ -116,7 +114,6 @@ public class DynamicsFragment extends Fragment {
 
         NineGridTestModel model2 = new NineGridTestModel();
         model2.urlList.add(mUrls[4]);
-        model2.image = R.drawable.picture_2;
         model2.imageUri = imageUrls[7];
         model2.time = "今天 20:50";
         model2.name = "李太阳";
@@ -133,7 +130,6 @@ public class DynamicsFragment extends Fragment {
             model4.urlList.add(mUrls[i]);
         }
         model4.isShowAll = false;
-        model4.image = R.drawable.picture_4;
         model4.imageUri = imageUrls[1];
         model4.name ="Pery";
         model4.time = "今天 12:40";
@@ -261,7 +257,7 @@ public class DynamicsFragment extends Fragment {
         mActionModel.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity( new Intent( getContext(), VoiceChatActivity_1.class ) );
+                startActivity( new Intent( getContext(), VoiceToTextActivity.class ) );
                 mFloatingActionsMenu.toggle();
             }
         } );

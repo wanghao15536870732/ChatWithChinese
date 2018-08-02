@@ -1,4 +1,4 @@
-package com.example.lab.android.nuc.chat.Base.message;
+package com.example.lab.android.nuc.chat.Base.Message;
 
 public class Msg {
 

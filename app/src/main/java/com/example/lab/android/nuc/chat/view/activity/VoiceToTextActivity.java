@@ -26,14 +26,14 @@ import java.util.List;
 
 import com.example.lab.android.nuc.chat.R;
 
-public class VoiceChatActivity_1 extends AppCompatActivity {
+public class VoiceToTextActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_voice_to_text );
         // 语音配置对象初始化(如果只使用 语音识别 或 语音合成 时都得先初始化这个)
-        SpeechUtility.createUtility(VoiceChatActivity_1.this, SpeechConstant.APPID + "=5ad97691");
+        SpeechUtility.createUtility(VoiceToTextActivity.this, SpeechConstant.APPID + "=5ad97691");
         initView();
     }
     /**
@@ -56,7 +56,7 @@ public class VoiceChatActivity_1 extends AppCompatActivity {
             public void onClick(View v) {
 
                 // 有交互动画的语音识别器
-                iatDialog = new RecognizerDialog(VoiceChatActivity_1.this, mInitListener);
+                iatDialog = new RecognizerDialog(VoiceToTextActivity.this, mInitListener);
 
                 iatDialog.setListener(new RecognizerDialogListener() {
                     String resultJson = "[";//放置在外边做类的变量则报错，会造成json格式不对（？）
@@ -143,7 +143,7 @@ public class VoiceChatActivity_1 extends AppCompatActivity {
         public void onInit(int code) {
             Log.d(TAG, "SpeechRecognizer init() code = " + code);
             if (code != ErrorCode.SUCCESS) {
-                Toast.makeText(VoiceChatActivity_1.this, "初始化失败，错误码：" + code, Toast.LENGTH_SHORT).show();
+                Toast.makeText(VoiceToTextActivity.this, "初始化失败，错误码：" + code, Toast.LENGTH_SHORT).show();
             }
         }
     };

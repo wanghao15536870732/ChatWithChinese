@@ -1,4 +1,5 @@
-package com.example.lab.android.nuc.chat.Base.message;
+package com.example.lab.android.nuc.chat.Base.Message;
+
 
 public class ChatMessageBean {
 
@@ -7,7 +8,7 @@ public class ChatMessageBean {
     private String imageUrl;
     private String imageIconUrl;
     private String imageLocal;
-    private @ChatConst.SendState int sendState;
+    private  int sendState;
     public String getImageUrl() {
         return imageUrl;
     }
