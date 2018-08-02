@@ -97,8 +97,7 @@ public class ChatActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ServiceChatActivity.class);
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, name);
-                intent.putExtra( ServiceChatActivity.CONTACT_IMAGE, picurl);
-                ChatConst.TAG = 1;
+                intent.putExtra( "contact_image_uri", picurl);
                 startActivity(intent);
             }
         });

@@ -134,7 +134,7 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("详情");
+        collapsingToolbar.setTitle("问题详情");
         commentsList = generateTestData();
         initExpandableListView(commentsList);
         image = (CircleImageView) findViewById( R.id.detail_page_userLogo );
@@ -144,11 +144,11 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
         country = (RoundedImageView) findViewById( R.id.country_comment );
         title = (TextView) findViewById( R.id.detail_page_title );
         Intent intent = getIntent();
-        String NAME = intent.getStringExtra( "question_name" );
-        String IMAGE = intent.getStringExtra( "question_image" );
-        String TIME = intent.getStringExtra( "question_time" );
-        String DETAIL = intent.getStringExtra( "question_detail" );
-        int COUNTRY_IMAGE = intent.getIntExtra( "question_country_image" ,1);
+        String NAME = intent.getStringExtra( "comment_name" );
+        String IMAGE = intent.getStringExtra( "comment_image" );
+        String TIME = intent.getStringExtra( "comment_time" );
+        String DETAIL = intent.getStringExtra( "comment_detail" );
+        int COUNTRY_IMAGE = intent.getIntExtra( "comment_country_image" ,1);
         name.setText( NAME );
         time.setText( TIME );
         detail.setText( DETAIL );

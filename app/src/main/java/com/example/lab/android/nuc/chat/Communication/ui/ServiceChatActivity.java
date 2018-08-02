@@ -160,11 +160,7 @@ public class ServiceChatActivity extends AppCompatActivity {
         contact_name = (TextView) findViewById( R.id.contact_name );
         Intent intent = getIntent();
         String contactname = intent.getStringExtra( CONTACT_NAME );
-        if (intent.getStringExtra( CONTACT_IMAGE ) != null ){
-            ChatConst.RESPONSE_HEAD_IMAGE = intent.getStringExtra( CONTACT_IMAGE );
-        }else {
-            ChatConst.RESPONSE_HEAD_IMAGEVIEW = intent.getIntExtra( CONTACT_IMAGE,0 );
-        }
+        ChatConst.RESPONSE_HEAD_IMAGE = intent.getStringExtra( "contact_image_uri" );
         contact_name.setText( contactname );
         contact_back.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -174,20 +170,6 @@ public class ServiceChatActivity extends AppCompatActivity {
         } );
     }
 
-//    //悬浮按钮的一些点击事件
-//    private void initFloatButton() {
-//        mFloatingActionsMenu = (FloatingActionsMenu) findViewById( R.id.main_actions_menu );
-//        /**
-//         * 添加动态
-//         */
-//        mActionMap = (FloatingActionButton) findViewById( R.id.action_a );
-//        mActionMap.setOnClickListener( new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        } );
-//    }
 
     @SuppressLint("ClickableViewAccessibility")
     private void initListener() {

@@ -29,18 +29,24 @@ public class Contact {
 
     private int line;
 
-    public Contact(String name, int ImageId,int onoffline,String learn_language,String mother_language,String language_level){
+    private String imageUri;
+
+    public Contact(String name, String imageUri,int onoffline,String learn_language,String mother_language,String language_level){
         this.name = name;
-        this.imageId = ImageId;
+        this.imageUri = imageUri;
         this.learn_language = learn_language;
         this.line = onoffline;
         this.mother_language = mother_language;
         this.language_level = language_level;
     }
 
+    public String getImageUri() {
+        return imageUri;
+    }
 
-
-
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
 
     public int getImageId() {
         return imageId;

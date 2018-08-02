@@ -130,7 +130,8 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.activity.Main_Translation_Activity"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:theme="@style/TranslationTheme"/>
         <activity android:name=".view.activity.PhotoSelectorActivity" />
         <activity android:name=".view.activity.BasePhotoPreviewActivity" />
         <activity android:name=".view.activity.PhotoPreviewActivity" />
@@ -191,7 +192,7 @@
         <activity
             android:name=".view.activity.VoiceChatActivity"
             android:theme="@style/RegisterActivityTheme" />
-        <activity android:name=".view.activity.VoiceChatActivity_1"/>
+        <activity android:name=".view.activity.VoiceToTextActivity"/>
         <activity android:name=".view.activity.FaceDetectorActivity"/>
         <activity android:name=".view.activity.CommentActivity"
             android:theme="@style/CommentTheme"

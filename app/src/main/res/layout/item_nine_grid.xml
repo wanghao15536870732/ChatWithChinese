@@ -11,6 +11,7 @@
         android:id="@+id/image"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:scaleType="centerCrop"
         android:background="@drawable/picture_11" />
 
     <LinearLayout

@@ -13,16 +13,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.bx.waveview.WaveView;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 
 import java.util.Locale;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
 
  public class VoiceChatActivity extends AppCompatActivity {
 
+     private CircleImageView mCircleImageView;
      private WaveView waveView;
      private static final String LOG_TAG = VoiceChatActivity.class.getSimpleName();
 
@@ -67,6 +71,8 @@ import io.agora.rtc.RtcEngine;
         if (checkSelfPermission( Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO)) {
             initAgoraEngineAndJoinChannel();
         }
+        mCircleImageView = (CircleImageView) findViewById( R.id.voice_people_image);
+        Glide.with( this ).load( ChatConst.RESPONSE_HEAD_IMAGE).into( mCircleImageView );
     }
 
      private void initAgoraEngineAndJoinChannel() {

@@ -36,21 +36,14 @@ public class ContactActivity extends AppCompatActivity {
 
     public static final String CONTACT_IAMGE_ID = "contact_image_id";
 
-
-    private String learnLanguage;
-    private String nativeLanguage;
-    private String languageLevel;
+    private String learnLanguage,nativeLanguage,languageLevel;
     private static String userID = "1";
     private Button Atbutton;
-    private TextView contact_name;
-    private TextView native_language;
-    private TextView learn_language;
-    private String interest_text;
-    private String toPerson_text;
-    private String toGoal_text;
-    private TextView interest;
-    private TextView toPerson;
-    private TextView toGoal;
+    private TextView contact_name,native_language,learn_language;
+    private String interest_text,toPerson_text,toGoal_text,imageUri;
+    private TextView interest,toPerson,toGoal;
+
+
 
     private UserBaseInfo info;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -60,13 +53,14 @@ public class ContactActivity extends AppCompatActivity {
         setContentView( R.layout.activity_contact );
         initView();
         //获取点击前的图片跟姓名
-         Intent intent = getIntent();
+        Intent intent = getIntent();
         final String contactName = intent.getStringExtra( CONTACT_NAME );
         final int contactNameId = intent.getIntExtra( CONTACT_IAMGE_ID, 0 );
         userID = intent.getStringExtra( USERID );
         learnLanguage = intent.getStringExtra( "learnLanguage" );
         nativeLanguage = intent.getStringExtra( "nativeLanguage" );
         languageLevel = intent.getStringExtra( "languageLevel" );
+        imageUri = intent.getStringExtra( "ImageUri" );
         contact_name.setText( contactName );
         native_language.setText( nativeLanguage );
         learn_language.setText( learnLanguage );
@@ -105,7 +99,7 @@ public class ContactActivity extends AppCompatActivity {
         collapsingToolbar.setTitle( contactName );
 
 
-        Glide.with( this ).load( contactNameId ).into( contactImageView );
+        Glide.with( this ).load( imageUri ).into( contactImageView );
 
         FloatingActionButton floatingActionButton_chat = (FloatingActionButton) findViewById( R.id.floatingActionBar_chat );
         floatingActionButton_chat.setOnClickListener( new View.OnClickListener() {
@@ -114,6 +108,7 @@ public class ContactActivity extends AppCompatActivity {
                 Intent intent = new Intent( ContactActivity.this, ServiceChatActivity.class );
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, contactName);
                 intent.putExtra(ServiceChatActivity.CONTACT_IMAGE, contactNameId );
+                intent.putExtra( "contact_image_uri",imageUri );
                 ChatConst.TAG  = 0;
                 startActivity( intent );
             }

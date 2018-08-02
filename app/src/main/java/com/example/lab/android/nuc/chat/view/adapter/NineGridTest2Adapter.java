@@ -52,11 +52,11 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, CommentActivity.class );
-                intent.putExtra("question_name",nineGridTestModel.name);
-                intent.putExtra( "question_image",nineGridTestModel.imageUri );
-                intent.putExtra( "question_time",nineGridTestModel.time );
-                intent.putExtra( "question_detail",nineGridTestModel.detail );
-                intent.putExtra( "question_country_image",nineGridTestModel.country_image );
+                intent.putExtra("comment_name",nineGridTestModel.name);
+                intent.putExtra( "comment_image",nineGridTestModel.imageUri );
+                intent.putExtra( "comment_time",nineGridTestModel.time );
+                intent.putExtra( "comment_detail",nineGridTestModel.detail );
+                intent.putExtra( "comment_country_image",nineGridTestModel.country_image );
                 mContext.startActivity(intent);
             }
         } );
@@ -70,6 +70,7 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
                 Intent intent = new Intent( mContext, ContactActivity.class );
                 intent.putExtra( ContactActivity.CONTACT_IAMGE_ID,nineGridTestModel.image );
                 intent.putExtra( ContactActivity.CONTACT_NAME,nineGridTestModel.name );
+                intent.putExtra( "ImageUri",nineGridTestModel.imageUri );
                 mContext.startActivity( intent );
             }
         } );

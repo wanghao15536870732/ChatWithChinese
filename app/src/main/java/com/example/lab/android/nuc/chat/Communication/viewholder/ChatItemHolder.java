@@ -68,12 +68,7 @@ public class ChatItemHolder extends CommonViewHolder {
         String userId = message.getUserId();
         nameView.setText(message.getUserName());
         if (isLeft) {
-            if (ChatConst.TAG == 0) {
-                Glide.with( getContext() ).load( ChatConst.RESPONSE_HEAD_IMAGEVIEW ).into( avatarView );
-            }else {
-                Glide.with( getContext() ).load( ChatConst.RESPONSE_HEAD_IMAGE ).into( avatarView );
-            }
-//            avatarView.setImageResource(R.mipmap.ic_head_01);
+            Glide.with( getContext() ).load( ChatConst.RESPONSE_HEAD_IMAGE ).into( avatarView );
         } else {
             avatarView.setImageResource(R.drawable.icon);
         }
