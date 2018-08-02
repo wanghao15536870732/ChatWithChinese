@@ -63,8 +63,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Main_Translation_Activity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Main_Translation_Activity extends AppCompatActivity {
 
 
     public static final String TRANSLATION_TEXT = "translation_detail";
@@ -343,15 +342,15 @@ public class Main_Translation_Activity extends AppCompatActivity
         });
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        KeyBoardUtils.hideKeyBoard( this,mEtInput );
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
+//        KeyBoardUtils.hideKeyBoard( this,mEtInput );
     }
 
 
@@ -379,28 +378,6 @@ public class Main_Translation_Activity extends AppCompatActivity
     }
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_home) {
-
-        } else if (id == R.id.nav_setting) {
-            Intent intent = new Intent(Main_Translation_Activity.this, IDActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_help) {
-
-        }else if (id == R.id.nav_word) {
-            Intent intent = new Intent(Main_Translation_Activity.this, MyWordRecycleViewActivity.class);
-            startActivity(intent);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer( GravityCompat.START);
-        return true;
-    }
 
 
     /***
