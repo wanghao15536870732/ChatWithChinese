@@ -15,9 +15,6 @@ import com.example.lab.android.nuc.chat.R;
 import java.util.ArrayList;
 
 
-/**
- * Created by ljb on 2018/4/19.
- */
 
 public class LinearAdapter extends RecyclerView.Adapter<LinearAdapter.LinearViewHolder> {
 

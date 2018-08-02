@@ -46,7 +46,7 @@ public class NineGridTest2Adapter extends RecyclerView.Adapter<NineGridTest2Adap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         nineGridTestModel = mList.get( position );
         holder.layout.setIsShowAll( nineGridTestModel.isShowAll );
         holder.layout.setUrlList( nineGridTestModel.urlList );

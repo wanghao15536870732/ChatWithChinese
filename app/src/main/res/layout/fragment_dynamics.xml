@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,10 +8,12 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager">
 
         </android.support.v7.widget.RecyclerView>
 
@@ -21,67 +24,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         fab:fab_addButtonColorNormal="@color/fab_color"
         fab:fab_addButtonColorPressed="@color/blue_normal"
         fab:fab_addButtonPlusIconColor="@color/white"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_gravity="bottom|right|end"
         fab:fab_labelStyle="@style/menu_labels_style">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_dynamic"
             fab:fab_addButtonColorNormal="@color/fab_color"
             fab:fab_addButtonColorPressed="@color/blue_normal"
             fab:fab_addButtonSize="mini"
             fab:fab_colorNormal="@color/fab_color"
             fab:fab_colorPressed="@color/blue_normal"
             fab:fab_size="mini"
-            android:src="@drawable/ic_dynamic"
-            fab:fab_title="动态"/>
+            fab:fab_title="动态" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu_gallery"
             fab:fab_addButtonColorNormal="@color/fab_color"
             fab:fab_addButtonColorPressed="@color/blue_normal"
             fab:fab_addButtonSize="mini"
             fab:fab_colorNormal="@color/fab_color"
             fab:fab_colorPressed="@color/blue_normal"
             fab:fab_size="mini"
-            android:src="@drawable/ic_menu_gallery"
-            fab:fab_title="相册"/>
+            fab:fab_title="相册" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/video"
             fab:fab_addButtonColorNormal="@color/fab_color"
             fab:fab_addButtonColorPressed="@color/blue_normal"
             fab:fab_addButtonSize="mini"
             fab:fab_colorNormal="@color/fab_color"
             fab:fab_colorPressed="@color/blue_normal"
             fab:fab_size="mini"
-            android:src="@drawable/video"
             fab:fab_title="拍摄" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/action_d"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_sign_in"
             fab:fab_addButtonColorNormal="@color/fab_color"
             fab:fab_addButtonColorPressed="@color/blue_normal"
             fab:fab_addButtonSize="mini"
             fab:fab_colorNormal="@color/fab_color"
             fab:fab_colorPressed="@color/blue_normal"
             fab:fab_size="mini"
-            android:src="@drawable/ic_sign_in"
             fab:fab_title="签到" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
@@ -97,20 +100,20 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_margin="10dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/icon"/>
+            android:layout_margin="10dp"
+            android:src="@drawable/icon" />
 
         <TextView
             android:id="@+id/tv_comment_fake_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="添加评论..."
-            android:textColorHint="@color/textHint"
-            android:textColor="@color/primary_text"
+            android:ellipsize="end"
             android:gravity="center_vertical"
+            android:hint="添加评论..."
             android:maxLines="1"
-            android:ellipsize="end"/>
+            android:textColor="@color/primary_text"
+            android:textColorHint="@color/textHint" />
     </LinearLayout>
 
 </RelativeLayout>

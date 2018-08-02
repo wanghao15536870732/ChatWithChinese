@@ -95,7 +95,8 @@ public class Main_Translation_Activity extends AppCompatActivity {
     private String url="";
 
     final String[] array = new String[]{"自动","中文","英文","文言文",
-            "日语","韩语","法语","俄语","泰语","阿拉伯语","越南语","希腊语"};
+            "日语","韩语","法语","俄语","泰语","阿拉伯语","越南语",
+            "希腊语","西班牙语","葡萄牙语","德语","意大利语","捷克语","匈牙利语"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -245,30 +246,41 @@ public class Main_Translation_Activity extends AppCompatActivity {
 
                 switch (j){
                     case 0:
+
+                        //自动
                         content.setFrom("auto");
                         break;
 
                     case 1:
+                        //中文
                         content.setFrom("zh");
                         break;
 
                     case 2:
+                        //英文
                         content.setFrom("en");
                         break;
 
                     case 3:
+                        //文言文
                         content.setFrom("wyw");
                         break;
 
                     case 4:
+                        //日语
                         content.setFrom("jp");
                         break;
+
                     case 5:
+                        //韩语
                         content.setFrom( "kor" );
                         break;
+
                     case 6:
+                        //法语
                         content.setFrom( "fra" );
                         break;
+
                         //"俄语"
                     case 7:
                         content.setFrom( "ru" );
@@ -293,6 +305,37 @@ public class Main_Translation_Activity extends AppCompatActivity {
                     case 11:
                         content.setFrom( "el" );
                         break;
+
+                        //西班牙语
+                    case 12:
+                        content.setFrom( "spa" );
+                        break;
+
+                        //葡萄牙语
+                    case 13:
+                        content.setFrom( "pt" );
+                        break;
+
+                        //德语
+                    case 14:
+                        content.setFrom( "de" );
+                        break;
+
+                        //意大利语
+                    case 15:
+                        content.setFrom( "it" );
+                        break;
+
+                        //捷克语
+                    case 16:
+                        content.setFrom( "cs" );
+                        break;
+
+                        //匈牙利语
+                    case 17:
+                        content.setFrom( "hu" );
+                        break;
+
                 }
 
                 switch (i) {
@@ -344,7 +387,38 @@ public class Main_Translation_Activity extends AppCompatActivity {
                     //"希腊语"
                     case 11:
                         content.setTo( "el" );
+
+                        //西班牙语
+                    case 12:
+                        content.setTo( "spa" );
                         break;
+
+                    //葡萄牙语
+                    case 13:
+                        content.setTo( "pt" );
+                        break;
+
+                    //德语
+                    case 14:
+                        content.setTo( "de" );
+                        break;
+
+                    //意大利语
+                    case 15:
+                        content.setTo( "it" );
+                        break;
+
+                    //捷克语
+                    case 16:
+                        content.setTo( "cs" );
+                        break;
+
+                    //匈牙利语
+                    case 17:
+                        content.setTo( "hu" );
+                        break;
+
+
                 }
                 setTsId(i);
                 setOgId(j);
@@ -648,7 +722,9 @@ public class Main_Translation_Activity extends AppCompatActivity {
 
     public void OriginalLanguage(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(Main_Translation_Activity.this);
-        builder.setTitle("选择语言").setSingleChoiceItems(array, OgId, new DialogInterface.OnClickListener() {
+        builder.setTitle("选择语言")
+                .setIcon( R.drawable.logo )
+                .setSingleChoiceItems(array, OgId, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 ToastUtil.showToast(Main_Translation_Activity.this,"已选择"+array[i]);
@@ -705,6 +781,30 @@ public class Main_Translation_Activity extends AppCompatActivity {
                     case "希腊语":
                         content.setFrom( "el" );
                         break;
+
+                    case "西班牙语":
+                        content.setFrom( "spa" );
+                        break;
+
+                    case "葡萄牙语":
+                        content.setFrom( "pt" );
+                        break;
+
+                    case "德语":
+                        content.setFrom( "de" );
+                        break;
+
+                    case "意大利语":
+                        content.setFrom( "it" );
+                        break;
+
+                    case "捷克语":
+                        content.setFrom( "cs" );
+                        break;
+
+                    case "匈牙利语":
+                        content.setFrom( "hu" );
+                        break;
                 }
                 dialogInterface.dismiss();
             }
@@ -712,6 +812,7 @@ public class Main_Translation_Activity extends AppCompatActivity {
     }
     public void TranLanguage(){
         AlertDialog.Builder builder = new AlertDialog.Builder(Main_Translation_Activity.this);
+        builder.setIcon( R.drawable.logo );
         builder.setTitle("请选择目标语言").setSingleChoiceItems(array, TsId, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -768,6 +869,30 @@ public class Main_Translation_Activity extends AppCompatActivity {
 
                     case "希腊语":
                         content.setTo( "el" );
+                        break;
+
+                    case "西班牙语":
+                        content.setTo( "spa" );
+                        break;
+
+                    case "葡萄牙语":
+                        content.setTo( "pt" );
+                        break;
+
+                    case "德语":
+                        content.setTo( "de" );
+                        break;
+
+                    case "意大利语":
+                        content.setTo( "it" );
+                        break;
+
+                    case "捷克语":
+                        content.setTo( "cs" );
+                        break;
+
+                    case "匈牙利语":
+                        content.setTo( "hu" );
                         break;
                 }
                 dialogInterface.dismiss();

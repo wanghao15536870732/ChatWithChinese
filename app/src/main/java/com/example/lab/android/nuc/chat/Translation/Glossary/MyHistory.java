@@ -4,10 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by ljb on 2018/4/19.
- */
-
 public class MyHistory extends SQLiteOpenHelper {
 
 

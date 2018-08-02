@@ -17,6 +17,9 @@ import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import cn.jzvd.JZVideoPlayer;
+import cn.jzvd.JZVideoPlayerStandard;
+
 
 public class ChatActivity extends Activity {
     private String teacherID;
@@ -30,9 +33,10 @@ public class ChatActivity extends Activity {
     private String type;
     private TextView tvName, tvScore, tvTitle, tvPlan, tvExperience;
     private ImageView ivCountry;
-    private RoundedImageView roundedImageView;
-    private Button btVideo, btMessage,btn_introduce, btn_ourse;
-    private ImageButton ibFinish;
+    private ImageView roundedImageView;
+    private Button btVideo;
+    private ImageButton ibFinish, btMessage;
+    private JZVideoPlayerStandard jzVideoPlayerStandard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +54,18 @@ public class ChatActivity extends Activity {
         type = intent.getStringExtra("type");
         initView();
         setView();
+        jzVideoPlayerStandard.setUp("http://p8nssbtwi.bkt.clouddn.com/video.mp4",
+                JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL);
+        Glide.with(this).load(picurl).into(jzVideoPlayerStandard.thumbImageView);
     }
 
     private void setView() {
         tvName.setText(name);
         tvScore.setText(score);
         tvTitle.setText(type);
-        Log.e( "Plain_1", plain );
-        plain.replace( "\n","\n");
-        Log.e( "Plain",plain );
+        Log.e("Plain_1", plain);
+        plain.replace("\n", "\n");
+        Log.e("Plain", plain);
         tvPlan.setText(plain);
         tvExperience.setText(experience);
         Glide.with(this).load(picurl).into(roundedImageView);
@@ -97,41 +104,19 @@ public class ChatActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(ChatActivity.this, ServiceChatActivity.class);
                 intent.putExtra(ServiceChatActivity.CONTACT_NAME, name);
+
                 intent.putExtra( "contact_image_uri", picurl);
                 startActivity(intent);
             }
         });
-        btn_introduce.setOnClickListener( new View.OnClickListener() {
+        btVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog( ChatActivity.this ).builder()
-                        .setMsg( "  My name is 李想 .And I am from dNo.047 OversNes eChinese Middle School of the North University of China." + "\n" +
-                                "  It is really a GREat honor to have this opportunity for an interview . "  + "\n" +
-                                "  I would like too answer what ever you maye raise , " + "\n" +
-                                "  and I hope I can make a good performance today .Nowe let me introduce myself briefly ." )
-                        .setNegativeButton( "SURE", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                            }
-                        } ).show();
+                Intent intent = new Intent(ChatActivity.this, VideoChatActivity.class);
+                intent.putExtra(ServiceChatActivity.CONTACT_NAME, teacherID);
+                ChatActivity.this.startActivity(intent);
             }
-        } );
-        btn_ourse.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog( ChatActivity.this ).builder()
-                        .setMsg( "  The use of adviser in this case is very rare, " +
-                                "which more commonly refers to thesis research " +
-                                "advisors/professors as in graduate programs." )
-                        .setNegativeButton( "SURE", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                            }
-                        } ).show();
-            }
-        } );
+        });
         ibFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,7 +136,20 @@ public class ChatActivity extends Activity {
         ivCountry = findViewById(R.id.iv_country);
         btMessage = findViewById(R.id.bt_message);
         ibFinish = findViewById(R.id.ib_return);
-        btn_introduce = findViewById( R.id.bt_teacher_introduce );
-        btn_ourse = findViewById( R.id.bt_course );
+        jzVideoPlayerStandard = findViewById(R.id.videoplayer);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (JZVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JZVideoPlayer.releaseAllVideos();
     }
 }

@@ -43,7 +43,7 @@ public class TeacherViewBinder extends ItemViewBinder<Teacher, TeacherViewBinder
         root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                setTeacher = teacher.getSetTeacher();
                 Intent intent = new Intent(root.getContext(), ChatActivity.class);
                 intent.putExtra("teacherID", setTeacher.getTeacherID());
                 intent.putExtra("name", setTeacher.getName());
@@ -69,8 +69,6 @@ public class TeacherViewBinder extends ItemViewBinder<Teacher, TeacherViewBinder
         tvName.setText(setTeacher.getName());
         tvScore.setText(setTeacher.getScore());
 
-        RequestOptions options = new RequestOptions();
-        options.placeholder(R.drawable.ic_user_pic);
         Glide.with(root.getContext()).load(setTeacher.getPicurl()).into(roundRectangleImageView);
         switch (setTeacher.getLanguage()) {
             case "汉语":
