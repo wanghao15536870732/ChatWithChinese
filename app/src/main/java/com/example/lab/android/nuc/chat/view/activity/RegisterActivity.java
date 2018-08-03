@@ -68,7 +68,6 @@ public class RegisterActivity extends AppCompatActivity {
     String s1, s2, s3;
     String a,n, p, ep, e, h, c, pi, id, g;
     int l;
-    TextView take_picture;
     ImageView picture;
     Uri imageuri;
     File path;
@@ -93,7 +92,6 @@ public class RegisterActivity extends AppCompatActivity {
         study_language = findViewById(R.id.study_language);
         level = findViewById(R.id.level);
         finish_button = findViewById(R.id.finish_button);
-        take_picture = findViewById(R.id.put_in_picture);
         picture = findViewById(R.id.picture);
         goal = findViewById(R.id.goal);
         final String[] ctype = new String[]{"汉语", "英语", "俄语", "西班牙语", "法语", "柬埔寨语", "捷克语", "匈牙利语"
@@ -143,30 +141,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
-        });
-        take_picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                File outputImage = new File(getExternalCacheDir(), "output_iamge.jpg");
-                try {
-                    if (outputImage.exists()) {
-                        outputImage.delete();
-                    }
-                    outputImage.createNewFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if (Build.VERSION.SDK_INT >= 24) {
-                    imageuri = FileProvider.getUriForFile(RegisterActivity.this,
-                            "com.example.cameraalbumtest.fileprovider", outputImage);
-                } else {
-                    imageuri = Uri.fromFile(outputImage);
-                }
-
-                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageuri);
-                startActivityForResult(intent, TAKE_PHOTO);
             }
         });
         picture.setOnClickListener(new View.OnClickListener() {
