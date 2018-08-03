@@ -119,7 +119,7 @@ public class ContactFragment extends Fragment implements SwipeRefreshLayout.OnCl
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPAge = getArguments().getInt(PAGE);
-        requestcontact();
+
         refreshContacts();
     }
 
@@ -250,6 +250,7 @@ public class ContactFragment extends Fragment implements SwipeRefreshLayout.OnCl
                     "泰语","汉语","中级水平")
     };
     private void refreshContacts(){
+        requestcontact();
         new Thread(new Runnable() {
             @Override
             public void run() {

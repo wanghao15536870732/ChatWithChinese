@@ -23,7 +23,6 @@ import java.util.List;
 
 /**
  * @Description: 工具类
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class FaceUtil {
 

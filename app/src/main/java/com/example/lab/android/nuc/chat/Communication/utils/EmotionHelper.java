@@ -15,9 +15,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by lzw on 14-9-25.
- */
 public class EmotionHelper {
     private static final int ONE_PAGE_SIZE = 24;
     public static List<List<String>> emojiGroups;

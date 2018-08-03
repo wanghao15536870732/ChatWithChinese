@@ -5,7 +5,6 @@ import android.hardware.Camera;
 
 /**
  * @Description: 识别代理类
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class DetectorProxy<T> {
     private CameraPreview mCameraPreview;

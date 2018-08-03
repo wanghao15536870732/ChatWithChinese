@@ -4,7 +4,6 @@ import android.hardware.Camera;
 
 /**
  * @Description: 识别接口
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public interface IFaceDetector<T> {
     void detector();

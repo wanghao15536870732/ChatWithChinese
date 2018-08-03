@@ -16,7 +16,6 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * @Description: 利用系统提供的FaceDetector实现人脸识别
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class SystemFaceDetector<T> extends BaseFaceDetector<T> {
 

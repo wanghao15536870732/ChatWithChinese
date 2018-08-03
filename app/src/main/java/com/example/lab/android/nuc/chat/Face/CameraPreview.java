@@ -14,7 +14,6 @@ import com.vise.log.ViseLog;
 
 /**
  * @Description: 自定义相机
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
     private SurfaceHolder mHolder;

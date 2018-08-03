@@ -57,7 +57,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/video_bottom_group"
+            android:id="@+id/send_video_bottom_group"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -68,16 +68,19 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/chat_add_video_normal" />
+                android:background="@drawable/ic_send_video" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="视频通话"
+                android:text="本地视频"
                 android:textColor="@color/text_color3" />
         </LinearLayout>
+
+
+
         <LinearLayout
             android:id="@+id/location_bottom_group"
             android:layout_width="0dp"
@@ -109,6 +112,30 @@
         android:orientation="horizontal"
         android:padding="10dp"
         android:weightSum="4">
+
+
+        <LinearLayout
+            android:id="@+id/video_bottom_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/chat_add_video_normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="视频通话"
+                android:textColor="@color/text_color3" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/voice_bottom_group"

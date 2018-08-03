@@ -28,14 +28,7 @@ import java.util.List;
 public class FileSaveUtil {
     public static final String SD_CARD_PATH = Environment.getExternalStorageDirectory().toString() + "/MAXI/";
 
-    //    public static final String saveFn = SD_CARD_PATH
-//            + "/user_chat_data/";
-//    public static final String savelistFn = SD_CARD_PATH
-//            + "/user_chat_data/chatList/";
-//    public static final String savechannelFn = SD_CARD_PATH
-//            + "/user_chat_data/channel_id/";
-//    public static final String saveUnReadFn = SD_CARD_PATH
-//            + "/user_chat_data/UnRead/";
+
     public static final String voice_dir = SD_CARD_PATH
             + "/voice_data/";
 

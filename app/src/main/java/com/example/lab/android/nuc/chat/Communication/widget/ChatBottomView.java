@@ -19,6 +19,7 @@ public class ChatBottomView extends LinearLayout{
 	private LinearLayout voiceGroup;
 	private LinearLayout voiceTotextGroup;
 	private LinearLayout textTovoiceGroup;
+	private LinearLayout sendVideoGroup;
 	private HeadIconSelectorView.OnHeadIconClickListener onHeadIconClickListener;
 	public static final int FROM_CAMERA = 1;
 	public static final int FROM_GALLERY = 2;
@@ -27,6 +28,7 @@ public class ChatBottomView extends LinearLayout{
 	public static final int FROM_VOICE = 5;
 	public static final int FROM_VOICE_TO_TEXT = 6;
 	public static final int FROM_TEXT_TO_VOICE = 7;
+	public static final int FROM_SEND_VIDEO = 8;
 	public ChatBottomView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -43,6 +45,7 @@ public class ChatBottomView extends LinearLayout{
 		voiceGroup = (LinearLayout) baseView.findViewById( R.id.voice_bottom_group );
 		voiceTotextGroup = (LinearLayout) baseView.findViewById( R.id.voice_to_text_bottom_group );
 		textTovoiceGroup = (LinearLayout) baseView.findViewById( R.id.text_to_voice_bottom_group );
+		sendVideoGroup = (LinearLayout) baseView.findViewById( R.id.send_video_bottom_group );
 	}
 	private void init(){
 		cameraGroup.setOnClickListener(new OnClickListener() {
@@ -101,6 +104,14 @@ public class ChatBottomView extends LinearLayout{
 			public void onClick(View v) {
 				if (null != onHeadIconClickListener){
 					onHeadIconClickListener.onClick( FROM_TEXT_TO_VOICE );
+				}
+			}
+		} );
+		sendVideoGroup.setOnClickListener( new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (null != onHeadIconClickListener){
+					onHeadIconClickListener.onClick( FROM_SEND_VIDEO );
 				}
 			}
 		} );

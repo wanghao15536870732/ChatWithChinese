@@ -32,5 +32,6 @@ public class ImageBrowserActivity extends Activity {
                 finish();
             }
         });
+
     }
 }

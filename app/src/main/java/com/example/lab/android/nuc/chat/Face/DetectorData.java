@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 /**
  * @Description: 识别数据
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class DetectorData<T> implements Cloneable, Serializable {
     //原始数据

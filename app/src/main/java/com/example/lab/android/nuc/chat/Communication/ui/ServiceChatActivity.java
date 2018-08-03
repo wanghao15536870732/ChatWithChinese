@@ -206,12 +206,64 @@ public class ServiceChatActivity extends AppCompatActivity {
                     case ChatBottomView.FROM_GALLERY:// 相册
                         PictureSelector.create(ServiceChatActivity.this)
                                 .openGallery( PictureMimeType.ofImage())
-                                .imageSpanCount(4)// 每行显示个数
                                 .selectionMode(PictureConfig.SINGLE)
+                                .enablePreviewAudio( true )
+                                .openClickSound( true )
+                                .previewVideo( true )
                                 .previewImage(true)
                                 .compress(true)
                                 .isCamera(false)
-                                .forResult(PictureConfig.CHOOSE_REQUEST);
+                                .theme(R.style.picture_Sina_style)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
+                                .maxSelectNum(9)// 最大图片选择数量
+                                .minSelectNum(1)// 最小选择数量
+                                 .imageSpanCount(4)// 每行显示个数
+                                .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选
+                                .previewImage(true)// 是否可预览图片
+                                .previewVideo(true)// 是否可预览视频
+                                .enablePreviewAudio(true) // 是否可播放音频
+                                .isCamera(true)// 是否显示拍照按钮
+                                .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                                .enableCrop(false)// 是否裁剪
+                                .compress(true)// 是否压缩
+                                .synOrAsy(true)//同步true或异步false 压缩 默认同步
+                                .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                                .withAspectRatio(0, 0)// 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
+                                .hideBottomControls(true)// 是否显示uCrop工具栏，默认不显示
+                                .isGif(true)// 是否显示gif图片
+                                .freeStyleCropEnabled(true)// 裁剪框是否可拖拽
+                                .circleDimmedLayer(false)// 是否圆形裁剪
+                                .showCropFrame(true)// 是否显示裁剪矩形边框 圆形裁剪时建议设为false
+                                .showCropGrid(true)// 是否显示裁剪矩形网格 圆形裁剪时建议设为false
+                                .openClickSound(true)// 是否开启点击声音
+                                .minimumCompressSize(100)// 小于100kb的图片不压缩
+                                .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
+                        break;
+                    case ChatBottomView.FROM_SEND_VIDEO:  //视频发送
+                        PictureSelector.create(ServiceChatActivity.this)
+                                .openGallery( PictureMimeType.ofVideo())
+                                .selectionMode(PictureConfig.SINGLE)
+                                .enablePreviewAudio( true )
+                                .openClickSound( true )
+                                .previewVideo( true )
+                                .compress(true)
+                                .isCamera(false)
+                                .theme(R.style.picture_Sina_style)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
+                                .maxSelectNum(9)// 最大视频选择数量
+                                .minSelectNum(1)// 最小视频选择数量
+                                .imageSpanCount(4)// 每行显示个数
+                                .selectionMode(PictureConfig.MULTIPLE)// 多选 or 单选
+                                .previewVideo(true)// 是否可预览视频
+                                .enablePreviewAudio(true) // 是否可播放音频
+                                .isCamera(true)// 是否显示拍照按钮
+                                .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                                .enableCrop(false)// 是否裁剪
+                                .synOrAsy(true)//同步true或异步false 压缩 默认同步
+                                .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                                .withAspectRatio(0, 0)// 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
+                                .hideBottomControls(true)// 是否显示uCrop工具栏，默认不显示
+                                .isGif(true)// 是否显示gif图片
+                                .minimumCompressSize(100)// 小于100kb的图片不压缩
+                                .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
                         break;
                     case ChatBottomView.FROM_LOCATION: ///位置
                         Intent intent = new Intent( ServiceChatActivity.this, LocationActivity.class );
@@ -401,15 +453,14 @@ public class ServiceChatActivity extends AppCompatActivity {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片选择结果回调
                     List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
-                    LocalMedia media = selectList.get(0);
-                    String path = media.getPath();
-                    sendImage(path);
-                    // 例如 LocalMedia 里面返回三种path
-                    // 1.media.getPath(); 为原图path
-                    // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true
-                    // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true
-                    // 如果裁剪并压缩了，已取压缩路径为准，因为是先裁剪后压缩的
-//                    mDesignCenterView.refreshSelectedPicture(selectList);
+                    for(int i = 0;i < selectList.size();i ++){
+                        LocalMedia media = selectList.get(i);
+                        String path = media.getPath();
+                        sendImage(path);
+                    }
+                    break;
+                case PictureConfig.TYPE_VIDEO:
+
                     break;
                 case TAKE_TRANSLATION:
                     String result_translation = data.getStringExtra( TRANSLATION_RESULT );
@@ -460,14 +511,13 @@ public class ServiceChatActivity extends AppCompatActivity {
 
     private String filePath = "";
 
+    //发送图片
     protected void sendImage(final String filePath) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 chatRecyclerAdapter.addMessage(getTbub(userName, 0, ChatMessageType.ImageMessageType.getType(), null, null, null, filePath, null, null,
                         0f, ChatConst.COMPLETED));
-//                imageList.add(tblist.get(tblist.size() - 1).getImageLocal());
-//                imagePosition.put(tblist.size() - 1, imageList.size() - 1);
                 sendMessageHandler.sendEmptyMessage(SEND_OK);
                 ServiceChatActivity.this.filePath = filePath;
                 receriveHandler.sendEmptyMessageDelayed(1, 3000);

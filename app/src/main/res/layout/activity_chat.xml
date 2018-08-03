@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
+    android:background="#f9b516">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                     android:layout_height="100dp"
                     android:layout_below="@+id/tv_teacher_title"
                     android:layout_marginTop="18dp"
-                    android:background="#11000000"
+                    android:background="#11ffffff"
                     android:gravity="center_horizontal">
 
                     <TextView
@@ -157,7 +157,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="个人介绍"
-                android:textColor="#4b4b4b"
+                android:textColor="#ffffff"
                 android:textSize="20sp" />
 
             <View
@@ -186,7 +186,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="#11000000">
+            android:background="#ffffff">
 
             <TextView
                 android:id="@+id/tv4"
@@ -229,7 +229,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
-            android:background="#11000000">
+            android:background="#ffffff">
 
             <TextView
                 android:id="@+id/tv5"

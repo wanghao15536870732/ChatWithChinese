@@ -72,7 +72,7 @@ public class PhotoUtils {
     BitmapFactory.Options options = new BitmapFactory.Options();
     options.inJustDecodeBounds = true;
     BitmapFactory.decodeFile(path, options);
-    int inSampleSize = 1;
+    int inSampleSize = 4;
     int maxSize = 3000;
     if (options.outWidth > maxSize || options.outHeight > maxSize) {
       int widthScale = (int) Math.ceil(options.outWidth * 1.0 / maxSize);

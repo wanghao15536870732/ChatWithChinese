@@ -12,7 +12,6 @@ import com.vise.log.ViseLog;
 
 /**
  * @Description: 绘制人脸识别框
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public class FaceRectView extends SurfaceView implements SurfaceHolder.Callback {
 

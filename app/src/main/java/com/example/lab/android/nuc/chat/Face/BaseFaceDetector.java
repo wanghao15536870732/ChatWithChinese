@@ -4,7 +4,6 @@ import android.hardware.Camera;
 
 /**
  * @Description: 识别抽象类
- * @author: <a href="http://xiaoyaoyou1212.360doc.com">DAWI</a>
  */
 public abstract class BaseFaceDetector<T> implements IFaceDetector<T>, Runnable {
 
