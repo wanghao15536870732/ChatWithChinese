@@ -32,7 +32,12 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
+import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.example.lab.android.nuc.chat.R;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
@@ -42,6 +47,7 @@ import com.qiniu.android.storage.Configuration;
 import com.qiniu.android.storage.UpCompletionHandler;
 import com.qiniu.android.storage.UploadManager;
 import com.qiniu.util.Auth;
+import com.vise.utils.view.BitmapUtil;
 
 
 import org.json.JSONException;
@@ -50,6 +56,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -169,7 +176,39 @@ public class RegisterActivity extends AppCompatActivity {
                         PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(RegisterActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
                 } else {
-                    openAlbum();
+                    PictureSelector.create(RegisterActivity.this)
+                            .openGallery( PictureMimeType.ofImage())
+                            .selectionMode( PictureConfig.SINGLE)
+                            .enablePreviewAudio( true )
+                            .openClickSound( true )
+                            .previewVideo( true )
+                            .previewImage(true)
+                            .compress(true)
+                            .isCamera(false)
+                            .theme(R.style.picture_Sina_style)// 主题样式设置 具体参考 values/styles   用法：R.style.picture.white.style
+                            .maxSelectNum(9)// 最大图片选择数量
+                            .minSelectNum(1)// 最小选择数量
+                            .imageSpanCount(4)// 每行显示个数
+                            .selectionMode(PictureConfig.SINGLE)//单选
+                            .previewImage(true)// 是否可预览图片
+                            .previewVideo(true)// 是否可预览视频
+                            .enablePreviewAudio(true) // 是否可播放音频
+                            .isCamera(true)// 是否显示拍照按钮
+                            .isZoomAnim(true)// 图片列表点击 缩放效果 默认true
+                            .enableCrop(false)// 是否裁剪
+                            .compress(true)// 是否压缩
+                            .synOrAsy(true)//同步true或异步false 压缩 默认同步
+                            .glideOverride(160, 160)// glide 加载宽高，越小图片列表越流畅，但会影响列表图片浏览的清晰度
+                            .withAspectRatio(0, 0)// 裁剪比例 如16:9 3:2 3:4 1:1 可自定义
+                            .hideBottomControls(true)// 是否显示uCrop工具栏，默认不显示
+                            .isGif(true)// 是否显示gif图片
+                            .freeStyleCropEnabled(true)// 裁剪框是否可拖拽
+                            .circleDimmedLayer(false)// 是否圆形裁剪
+                            .showCropFrame(true)// 是否显示裁剪矩形边框 圆形裁剪时建议设为false
+                            .showCropGrid(true)// 是否显示裁剪矩形网格 圆形裁剪时建议设为false
+                            .openClickSound(true)// 是否开启点击声音
+                            .minimumCompressSize(100)// 小于100kb的图片不压缩
+                            .forResult(PictureConfig.CHOOSE_REQUEST);//结果回调onActivityResult code
                 }
             }
         });
@@ -302,6 +341,21 @@ public class RegisterActivity extends AppCompatActivity {
                         handleImageBeforeKitKat(data);
                     }
                 }
+                break;
+            case PictureConfig.CHOOSE_REQUEST:
+                // 图片选择结果回调
+                List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
+                LocalMedia media = selectList.get(0);
+                String path = media.getPath();
+                File file = new File( path );
+                Uri uri = Uri.fromFile( file );
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri );
+                    picture.setImageBitmap(bitmap);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
                 break;
             default:
                 break;
