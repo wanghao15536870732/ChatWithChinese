@@ -298,9 +298,9 @@ public class RegisterActivity extends AppCompatActivity {
             case TAKE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     try {
-                        Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageuri));
-                        picture.setImageBitmap(bitmap);
-                        path = new File(imageuri.getPath());
+                        Bitmap bitmap = BitmapFactory.decodeStream( getContentResolver().openInputStream( imageuri ) );
+                        picture.setImageBitmap( bitmap );
+                        path = new File( imageuri.getPath() );
 //                        putPicture();
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
@@ -310,26 +310,33 @@ public class RegisterActivity extends AppCompatActivity {
             case CHOOSE_PHOTO:
                 if (resultCode == RESULT_OK) {
                     if (Build.VERSION.SDK_INT >= 19) {
-                        handleImageOnKitKat(data);
+                        handleImageOnKitKat( data );
                     } else {
-                        handleImageBeforeKitKat(data);
+                        handleImageBeforeKitKat( data );
                     }
                 }
                 break;
             case PictureConfig.CHOOSE_REQUEST:
                 // 图片选择结果回调
-                List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
-                LocalMedia media = selectList.get(0);
-                String path = media.getPath();
-                File file = new File( path );
-                Uri uri = Uri.fromFile( file );
-                try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),uri );
-                    picture.setImageBitmap(bitmap);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                if (PictureSelector.obtainMultipleResult( data ) != null) {
+                    List<LocalMedia> selectList = PictureSelector.obtainMultipleResult( data );
+                    LocalMedia media = selectList.get( 0 );
+                    String path = media.getPath();
+                    File file = new File( path );
+                    Uri uri = Uri.fromFile( file );
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap( this.getContentResolver(), uri );
+                        if (bitmap == null) {
+                            picture.setImageResource( R.drawable.ic_add_black_24dp );
+                        } else {
+                            picture.setImageBitmap( bitmap );
+                        }
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }else {
+                    picture.setImageResource( R.drawable.ic_add_black_24dp);
                 }
-
                 break;
             default:
                 break;
