@@ -23,7 +23,7 @@ import com.example.lab.android.nuc.chat.Base.json.UserBaseInfo;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.utils.views.RoundRectangleImageView;
-import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.activity.ServiceChatActivity;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;

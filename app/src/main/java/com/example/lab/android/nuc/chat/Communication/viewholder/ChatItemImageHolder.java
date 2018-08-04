@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatMessageBean;
-import com.example.lab.android.nuc.chat.Communication.ui.ImageBrowserActivity;
+import com.example.lab.android.nuc.chat.Communication.activity.ImageBrowserActivity;
 import com.example.lab.android.nuc.chat.Communication.utils.Constants;
 import com.example.lab.android.nuc.chat.Communication.utils.PhotoUtils;
 

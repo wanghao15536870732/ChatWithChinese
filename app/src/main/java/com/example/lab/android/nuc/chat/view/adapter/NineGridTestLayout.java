@@ -5,17 +5,15 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Toast;
 
 
-import com.example.lab.android.nuc.chat.Communication.ui.ImageBrowserActivity;
+import com.example.lab.android.nuc.chat.Communication.activity.ImageBrowserActivity;
 import com.example.lab.android.nuc.chat.Communication.utils.Constants;
 import com.example.lab.android.nuc.chat.utils.Utils.ImageLoaderUtil;
 import com.example.lab.android.nuc.chat.utils.views.RatioImageView;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
-import java.io.File;
 import java.util.List;
 
 public class NineGridTestLayout extends NineGridLayout {

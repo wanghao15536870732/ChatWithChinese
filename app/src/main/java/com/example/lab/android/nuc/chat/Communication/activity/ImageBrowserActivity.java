@@ -1,4 +1,4 @@
-package com.example.lab.android.nuc.chat.Communication.ui;
+package com.example.lab.android.nuc.chat.Communication.activity;
 
 import android.app.Activity;
 import android.content.Intent;

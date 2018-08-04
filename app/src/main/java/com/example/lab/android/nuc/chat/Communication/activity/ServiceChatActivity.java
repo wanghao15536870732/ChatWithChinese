@@ -1,4 +1,4 @@
-package com.example.lab.android.nuc.chat.Communication.ui;
+package com.example.lab.android.nuc.chat.Communication.activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -660,7 +660,7 @@ public class ServiceChatActivity extends AppCompatActivity {
 
     }
 
-
+    /*-------------------------------语音转文字--------------------------*/
     private void voice_to_text(){
         // 有交互动画的语音识别器
         iatDialog = new RecognizerDialog(ServiceChatActivity.this, mInitListener);

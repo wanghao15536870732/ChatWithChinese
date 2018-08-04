@@ -24,7 +24,7 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.activity.ServiceChatActivity;
 
 import java.util.ArrayList;
 import java.util.List;

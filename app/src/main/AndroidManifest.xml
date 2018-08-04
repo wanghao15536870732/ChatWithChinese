@@ -136,9 +136,9 @@
         <activity android:name=".view.activity.BasePhotoPreviewActivity" />
         <activity android:name=".view.activity.PhotoPreviewActivity" />
         <activity
-            android:name=".Communication.ui.ServiceChatActivity"
+            android:name=".Communication.activity.ServiceChatActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".Communication.ui.ImageBrowserActivity" />
+        <activity android:name=".Communication.activity.ImageBrowserActivity" />
 
         <service
             android:name="com.baidu.location.f"

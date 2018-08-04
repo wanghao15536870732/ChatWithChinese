@@ -14,11 +14,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lab.android.nuc.chat.Base.Search.SearchTag;
-import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.utils.views.DragBubbleView;
 import com.example.lab.android.nuc.chat.view.fragment.MessageFragment;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
+import com.example.lab.android.nuc.chat.Communication.activity.ServiceChatActivity;
 
 import java.util.ArrayList;
 
@@ -132,22 +131,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
         }
     }
 
-    public class WithoutImageViewHolder extends RecyclerView.ViewHolder {
-        TextView soontext;
-        ImageView message_image;
-        TextView message_name;
-        TextView message_time;
-        CardView cardView;
-
-        public WithoutImageViewHolder(View itemView) {
-            super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.cardview2);
-            message_image = (ImageView) itemView.findViewById(R.id.friend_icon);
-            soontext = (TextView) itemView.findViewById(R.id.soonText);
-            message_name = (TextView) itemView.findViewById(R.id.friend_name);
-            message_time = (TextView) itemView.findViewById(R.id.time);
-        }
-    }
     public void setFilter(ArrayList<SearchTag> FilteredDataList) {
         mArrayList = FilteredDataList;
         notifyDataSetChanged();

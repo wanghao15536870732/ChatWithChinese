@@ -11,11 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lab.android.nuc.chat.Communication.AlertDialog;
-import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
-import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
-import com.makeramen.roundedimageview.RoundedImageView;
+import com.example.lab.android.nuc.chat.Communication.activity.ServiceChatActivity;
 
 import cn.jzvd.JZVideoPlayer;
 import cn.jzvd.JZVideoPlayerStandard;

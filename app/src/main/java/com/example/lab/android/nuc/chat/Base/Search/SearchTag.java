@@ -9,7 +9,7 @@ public class SearchTag {
         this.title = title;
         this.about = about;
         this.imageUri = imageUri;
-        this.viewtype=viewtype;
+        this.viewtype = viewtype;
         this.time = time;
         this.message_num = message_num;
     }

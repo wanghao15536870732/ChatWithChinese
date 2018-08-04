@@ -10,7 +10,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.lab.android.nuc.chat.Communication.ui.ServiceChatActivity;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.Communication.bean.ChatMessageBean;
