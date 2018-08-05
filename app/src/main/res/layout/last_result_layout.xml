@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/last_result_relative"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/result_background"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="评测结果"
+            android:textStyle="italic"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000"
+            android:textSize="30sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/last_score_relative"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignTop="@+id/last_result_relative"
+        android:layout_marginTop="60dp"
+        >
+
+        <TextView
+            android:id="@+id/last_tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test  Score:"
+            android:textAllCaps="false"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:layout_marginLeft="50dp"
+           />
+        <TextView
+            android:id="@+id/last_tv__score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/last_tv_score"
+            android:layout_marginLeft="170dp"
+            android:textSize="40dp"
+            android:textColor="#f70606"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/last_tishi_relative"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/last_score_relative"
+        android:layout_marginTop="70dp"
+        android:background="#53c9cecc"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="---以下内容还有瑕疵哦，要继续努力呦！"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/last_wrong_relative"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignTop="@+id/last_tishi_relative"
+        android:layout_marginTop="30dp"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/last_wrong_result_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/last_tieshi_relative"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/last_wrong_relative"
+        android:layout_marginTop="320dp"
+        android:background="#ebe9e6"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/xiaotieshi"
+            android:layout_alignRight="@+id/tv_tieshi"
+            android:layout_marginRight="60dp"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/last_tv_tieshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小贴士："
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            />
+        <TextView
+            android:id="@+id/last_tv_tieshi_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/last_tv_tieshi"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:text="宝剑锋从磨砺出，梅花香自苦寒来。"
+            android:textSize="17sp"
+            android:textColor="#000"
+            android:autoLink="all"
+
+
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

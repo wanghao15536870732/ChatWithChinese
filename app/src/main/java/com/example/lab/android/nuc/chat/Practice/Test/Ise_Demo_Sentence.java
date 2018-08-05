@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.lab.android.nuc.chat.Practice.Content.Result.Result;
 import com.example.lab.android.nuc.chat.Practice.Content.Xml.XmlResultParser;
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
+import com.example.lab.android.nuc.chat.Practice.Result_Activity.Day_Test_Activity_Sentence;
 import com.example.lab.android.nuc.chat.Practice.UI.Adapter.RecyclerViewAdapter_Sentence;
 import com.example.lab.android.nuc.chat.Practice.UI.PagingScrollHelper;
 import com.example.lab.android.nuc.chat.R;
@@ -41,6 +42,8 @@ import com.iflytek.sunflower.FlowerCollector;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Ise_Demo_Sentence  extends  AppCompatActivity{
@@ -66,6 +69,8 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
     private TextView tv_result_sentence,tv_more_sentence;
     private ImageView iv_getmore_sentence;
     private boolean flag = true;
+    private float  total_score [] = new float[12];
+    public  ArrayList<String> wrong_sentence = new ArrayList<>();
 
     // 评测语种
     private String language;
@@ -130,7 +135,7 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
     };
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.recycler_view);
@@ -141,8 +146,8 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
         sentence.add("海纳百川，有容乃大");
         sentence.add("己所不欲，勿施于人");
         sentence.add("举头望明月，低头思故乡");
-        sentence.add("人有悲欢离合，月有阴晴圆缺");
-        sentence.add("山重水复疑无路，柳暗花明又一村");
+        sentence.add("窈窕淑女，君子好逑");
+        sentence.add("少壮不努力，老大徒伤悲");
         sentence.add("少年强则国强");
         sentence.add("夕阳无限好，只是近黄昏");
         sentence.add("野火吹不尽，春风吹又生");
@@ -167,8 +172,8 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
         iv_k.add(R.drawable.ic_haina);
         iv_k.add(R.drawable.ic_jisuo);
         iv_k.add(R.drawable.ic_jutou);
-        iv_k.add(R.drawable.ic_renyou);
-        iv_k.add(R.drawable.ic_sanchong);
+        iv_k.add(R.drawable.guanguan);
+        iv_k.add(R.drawable.shaozhuang);
         iv_k.add(R.drawable.ic_shaonian);
         iv_k.add(R.drawable.ic_xiyang);
         iv_k.add(R.drawable.ic_yehuo);
@@ -242,19 +247,45 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
                             Log.e(TAG, "2" );
                             if (!TextUtils.isEmpty(mLastResult)){
                                 XmlResultParser resultParser = new XmlResultParser();
-                                Log.e(TAG, "onClick: ????" );
+
                                 Result result = resultParser.parse(mLastResult);
-                                Log.e(TAG, "3" );
+
                                 if (null != result){
-                                    Log.e(TAG, "5" );
+
                                     tv_result_sentence.setText(result.toString());
-                                    Log.e(TAG, "4 " );
+
+                                    total_score[position] = Float.parseFloat(result.toString());
+                                    if ( total_score[position] < 4.0){
+
+                                        wrong_sentence.add(sentence.get(position));
+                                        Log.e(TAG, "onClick: 99999999999999999" );
+
+                                    }
+
                                 }else{
                                     Toast.makeText(Ise_Demo_Sentence.this, "解析结果为空", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             flag = true;
-                            Log.e(TAG, "onClick:2 " );
+                            if (position == 9){
+ //                               Timer timer = new Timer();
+ //                               TimerTask timerTask = new TimerTask() {
+ //                                   @Override
+ //                                   public void run() {
+                                     //   Intent  intent = new Intent(Ise_Demo_Sentence.this,Day_Test_Activity_Sentence.class);
+//
+                                     //   intent.putStringArrayListExtra("wrong_sentence_List",wrong_sentence);
+//
+                                     //   startActivity(intent);
+
+                                        Intent intent = new Intent(Ise_Demo_Sentence.this, Day_Test_Activity_Sentence.class);
+                                        intent.putStringArrayListExtra("wrong_sentence_List",wrong_sentence);
+                                        Log.e(TAG, "run:5555555555555555 " );
+                                        startActivity(intent);
+                                    }
+  //                              };
+                                //timer.schedule(timerTask,2000);
+ //                           }
                         }
                         break;
                     case R.id.iv_shoucang:
@@ -402,16 +433,16 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
 
     private void initData_Sentence() {
         lists_sentence = new ArrayList<>();
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
-        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("曾经沧海难为水"," [céng jīng cāng hǎi nán wéi shuǐ ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("海纳百川，有容乃大","[ hǎi nà bǎi chuān ，yǒu róng nǎi dà ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("己所不欲，勿施于人","[ jǐ suǒ bù yù ，wù shī yú rén ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("举头望明月，低头思故乡","[ jǔ tóu wàng míng yuè ，dī tóu sī gù xiāng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("窈窕淑女，君子好逑","[ yǎo tiǎo shū nǚ ，jūn zǐ hǎo qiú ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少壮不努力，老大徒伤悲","[ shào zhuàng bù nǔ lì ，lǎo dà tú shāng bēi ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("少年强，则国强","[ shǎo/nián/qiáng ，zé/guó/qiáng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("夕阳无限好，只是近黄昏","[ xī yáng wú xiàn hǎo ，zhǐ shì jìn huáng hūn ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("野火吹不尽，春风吹又生","[ yě huǒ chuī bù jìn ，chūn fēng chuī yòu shēng ]",R.drawable.voice_background ));
+        lists_sentence.add(new DataBean_Sentence("有朋自远方来，不亦乐乎","[ yǒu péng zì yuǎn fāng lái ，bù yì lè hū ]",R.drawable.voice_background ));
     }
 
 }

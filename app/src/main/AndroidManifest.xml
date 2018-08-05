@@ -206,6 +206,10 @@
             android:theme="@style/CommentTheme"
             android:windowSoftInputMode="adjustPan|adjustResize"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Sentence"/>
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Ci"/>
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Word"/>
+        <activity android:name=".Practice.Result_Activity.Zong_Test"/>
     </application>
 
 </manifest>
