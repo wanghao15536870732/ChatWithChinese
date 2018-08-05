@@ -268,10 +268,10 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
                             }
                             flag = true;
                             if (position == 9){
- //                               Timer timer = new Timer();
- //                               TimerTask timerTask = new TimerTask() {
- //                                   @Override
- //                                   public void run() {
+                                Timer timer = new Timer();
+                                TimerTask timerTask = new TimerTask() {
+                                    @Override
+                                    public void run() {
                                      //   Intent  intent = new Intent(Ise_Demo_Sentence.this,Day_Test_Activity_Sentence.class);
 //
                                      //   intent.putStringArrayListExtra("wrong_sentence_List",wrong_sentence);
@@ -283,9 +283,9 @@ public class Ise_Demo_Sentence  extends  AppCompatActivity{
                                         Log.e(TAG, "run:5555555555555555 " );
                                         startActivity(intent);
                                     }
-  //                              };
-                                //timer.schedule(timerTask,2000);
- //                           }
+                                };
+                                timer.schedule(timerTask,2000);
+                            }
                         }
                         break;
                     case R.id.iv_shoucang:
