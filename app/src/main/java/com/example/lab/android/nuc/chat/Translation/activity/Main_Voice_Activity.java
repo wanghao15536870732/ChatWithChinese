@@ -8,8 +8,10 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +57,13 @@ public class Main_Voice_Activity extends AppCompatActivity {
         setContentView( R.layout.activity_main_voice );
         initView();
         setListen();
+        //添加返回按钮
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            // Show the Up button in the action bar.
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle( "语音合成" );
+        }
 
         //提取百度翻译的结果
         Intent intent = getIntent();
@@ -342,5 +351,15 @@ public class Main_Voice_Activity extends AppCompatActivity {
                 break;
             default:
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected( item );
     }
 }

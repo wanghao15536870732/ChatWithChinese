@@ -120,7 +120,8 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.activity.Main_Voice_Activity"
-            tools:ignore="InnerclassSeparator" />
+            tools:ignore="InnerclassSeparator"
+            android:theme="@style/WordTheme" />
         <activity
             android:name=".Translation.activity.IDActivity"
             tools:ignore="InnerclassSeparator" />
