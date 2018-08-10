@@ -55,7 +55,6 @@ public class dynamic_item_activity extends AppCompatActivity {
     private LinearLayout mLyTopic;
     private LinearLayout mLyAddArticle;
 
-
     //Toolbar
     private ImageView backView;
     private TextView sendView;

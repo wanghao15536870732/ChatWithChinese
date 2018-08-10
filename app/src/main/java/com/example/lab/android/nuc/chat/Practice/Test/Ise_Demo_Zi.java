@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.lab.android.nuc.chat.Practice.Content.Result.Result;
 import com.example.lab.android.nuc.chat.Practice.Content.Xml.XmlResultParser;
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
+import com.example.lab.android.nuc.chat.Practice.Result_Activity.Day_Test_Activity_Word;
 import com.example.lab.android.nuc.chat.Practice.UI.Adapter.RecyclerViewAdapter_Zi;
 import com.example.lab.android.nuc.chat.Practice.UI.PagingScrollHelper;
 import com.example.lab.android.nuc.chat.R;
@@ -41,6 +42,8 @@ import com.iflytek.sunflower.FlowerCollector;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Ise_Demo_Zi extends AppCompatActivity {
@@ -66,7 +69,8 @@ public class Ise_Demo_Zi extends AppCompatActivity {
     private ImageView iv_getmore_zi;
     private boolean flag = true;
     private Button ise_start_zi;
-
+    private float  total_score[] = new float[12];
+    public  ArrayList<String> wrong_word = new ArrayList<>();
     // 评测语种
     private String language;
     // 评测题型
@@ -244,13 +248,34 @@ public class Ise_Demo_Zi extends AppCompatActivity {
                                 if (null != result) {
                                     Log.e(TAG, "5");
                                     tv_result_zi.setText(result.toString());
-                                    Log.e(TAG, "4 ");
+
+                                    total_score[position] = Float.parseFloat(result.toString());
+
+                                    if ( total_score[position] < 4.0){
+                                        Log.e(TAG, "onClick: gggggggggggg" );
+                                        wrong_word.add(zi.get(position));
+//                                             lists.add(new Day_Test_Activity_Ci.DataBean(ci.get(position)));
+                                    }
+
                                 } else {
                                     Toast.makeText(Ise_Demo_Zi.this, "解析结果为空", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             flag = true;
-                            Log.e(TAG, "onClick:2 ");
+                            if (position == 9){
+                                Timer timer = new Timer();
+                                TimerTask timerTask = new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        Intent  intent =new Intent(Ise_Demo_Zi.this,Day_Test_Activity_Word.class);
+
+                                        intent.putStringArrayListExtra("wrong_word_List",wrong_word);
+
+                                        startActivity(intent);
+                                    }
+                                };
+                                timer.schedule(timerTask,2000);
+                            }
                         }
                         break;
                     case R.id.iv_shoucang:
@@ -392,12 +417,12 @@ public class Ise_Demo_Zi extends AppCompatActivity {
         lists_zi.add(new DataBean("禅", "[ chán ]", R.drawable.voice_background ));
         lists_zi.add(new DataBean("法", "[ fǎ ]", R.drawable.voice_background ));
         lists_zi.add(new DataBean("瓷", "[ cí ]", R.drawable.voice_background ));
-        lists_zi.add(new DataBean("仁", "[ rén ]", R.drawable.voice_background ));
-        lists_zi.add(new DataBean("智", "[ zhì ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("仁", "[ rén  ]", R.drawable.voice_background ));
         lists_zi.add(new DataBean("孝", "[ xiào ]", R.drawable.voice_background ));
         lists_zi.add(new DataBean("福", "[ fú ]", R.drawable.voice_background ));
-        lists_zi.add(new DataBean("德", "[ dé ]", R.drawable.voice_background ));
-        lists_zi.add(new DataBean("侠", "[ xiá ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("竹", "[ zhú  ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("梅", "[ méi  ]", R.drawable.voice_background ));
+        lists_zi.add(new DataBean("剑", "[ jiàn  ]", R.drawable.voice_background ));
     }
 
 }

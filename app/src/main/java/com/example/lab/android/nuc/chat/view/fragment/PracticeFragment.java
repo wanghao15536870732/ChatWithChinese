@@ -3,10 +3,12 @@ package com.example.lab.android.nuc.chat.view.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.lab.android.nuc.chat.Practice.Test.Ise_Demo;
 import com.example.lab.android.nuc.chat.Practice.Test.Ise_Demo_Sentence;
@@ -22,6 +24,7 @@ public class PracticeFragment extends Fragment implements View.OnClickListener {
     private Button sentenceButton;
     private Button systemButton;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,8 @@ public class PracticeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_practice, container, false);
         init();
+
+
         return root;
     }
 
@@ -45,6 +50,7 @@ public class PracticeFragment extends Fragment implements View.OnClickListener {
         wordButton.setOnClickListener(this);
         sentenceButton.setOnClickListener(this);
         systemButton.setOnClickListener(this);
+
     }
 
     @Override

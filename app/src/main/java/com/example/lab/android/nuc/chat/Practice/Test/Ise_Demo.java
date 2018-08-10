@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.example.lab.android.nuc.chat.Practice.Content.Result.Result;
 import com.example.lab.android.nuc.chat.Practice.Content.Xml.XmlResultParser;
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
+import com.example.lab.android.nuc.chat.Practice.Result_Activity.Day_Test_Activity_Ci;
 import com.example.lab.android.nuc.chat.Practice.UI.Adapter.RecyclerViewAdapter;
 import com.example.lab.android.nuc.chat.Practice.UI.PagingScrollHelper;
 import com.example.lab.android.nuc.chat.R;
@@ -41,8 +42,8 @@ import com.iflytek.sunflower.FlowerCollector;
 import java.util.ArrayList;
 
 import java.util.List;
-
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Ise_Demo extends AppCompatActivity {
@@ -67,7 +68,8 @@ public class Ise_Demo extends AppCompatActivity {
     private TextView tv_result,tv_more;
     private ImageView iv_getmore;
     private boolean flag = true;
-
+    private float  total_score[] = new float[12];
+    public  ArrayList<String> wrong_ci = new ArrayList<>();
 
     // 评测语种
     private String language;
@@ -233,22 +235,41 @@ public class Ise_Demo extends AppCompatActivity {
                         //         if (mSpeechEvaluator.isEvaluating()){
                                 mSpeechEvaluator.stopEvaluating();
                       //      }
-                             Log.e(TAG, "2" );
+
                                  if (!TextUtils.isEmpty(mLastResult)){
                                 XmlResultParser resultParser = new XmlResultParser();
-                                Log.e(TAG, "onClick: ????" );
+
                                 Result result = resultParser.parse(mLastResult);
-                                Log.e(TAG, "3" );
+
                                 if (null != result){
-                                    Log.e(TAG, "5" );
+
                                     tv_result.setText(result.toString());
-                                    Log.e(TAG, "4 " );
+                                    total_score[position] = Float.parseFloat(result.toString());
+                                    if ( total_score[position] < 4.0){
+                                        wrong_ci.add(ci.get(position));
+                                    }
+
+
                                 }else{
                                     Toast.makeText(Ise_Demo.this, "解析结果为空", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             flag = true;
-                            Log.e(TAG, "onClick:2 " );
+                            if (position == 9){
+                                Timer timer = new Timer();
+                                TimerTask timerTask = new TimerTask() {
+                                    @Override
+                                    public void run() {
+                                        Intent  intent =new Intent(Ise_Demo.this,Day_Test_Activity_Ci.class);
+
+                                        intent.putStringArrayListExtra("wrong_ci_List",wrong_ci);
+
+                                        startActivity(intent);
+                                        Log.e(TAG, "run: 6666666666" );
+                                    }
+                                };
+                                timer.schedule(timerTask,2000);
+                            }
                         }
                          break;
                     case R.id.iv_shoucang:
@@ -398,15 +419,15 @@ public class Ise_Demo extends AppCompatActivity {
 
     private void initData() {
         lists = new ArrayList<>();
-        lists.add(new DataBean("中国","[zhōng/guó]",R.drawable.voice_background ));
-        lists.add(new DataBean("亚洲","[yà/zhōu ]",R.drawable.voice_background ));
-        lists.add(new DataBean("和平","[hé/píng]",R.drawable.voice_background ));
-        lists.add(new DataBean("音乐","[hóng/qí ]",R.drawable.voice_background ));
-        lists.add(new DataBean("爱情", "[ài/qíng] ",R.drawable.voice_background ));
-        lists.add(new DataBean("友谊", "[yǒu/yì] ",R.drawable.voice_background ));
-        lists.add(new DataBean("亲人", "[qīn/rén]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("朋友", "[péng/yǒu]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("人生", "[péng/yǒu]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("命运", "[mìng/yùn] ",R.drawable.voice_background ));
+        lists.add(new DataBean("中国","[ zhōng guó ]",R.drawable.voice_background ));
+        lists.add(new DataBean("亚洲","[ yà zhōu ]",R.drawable.voice_background ));
+        lists.add(new DataBean("和平","[ hé píng ]",R.drawable.voice_background ));
+        lists.add(new DataBean("音乐","[ yīn yuè ]",R.drawable.voice_background ));
+        lists.add(new DataBean("爱情", "[ ài qíng ] ",R.drawable.voice_background ));
+        lists.add(new DataBean("亲人", "[ qīn rén ] ",R.drawable.voice_background ));
+        lists.add(new DataBean("朋友", "[ péng yǒu ]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("黄河", "[ huáng hé ]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("天空", "[ tiān kōng  ]  ",R.drawable.voice_background ));
+        lists.add(new DataBean("汽车", "[ tiān kōng  ] ",R.drawable.voice_background ));
     }
 }
