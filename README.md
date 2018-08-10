@@ -19,18 +19,18 @@
 一带一路不仅是经济的交流，更是文化的交流。无论哪点，都需要语言上的沟通才能更好的促进这一过程。教育部发文，要促进沿线国家语言沟通，要把中国打造成为深受沿线各国学子欢迎的留学目的地国。如何更快的提高广大学子们的口语，达到日常沟通的能力，这肯定是困扰他们的难题。为此，我们推出一款应用，让他们能够足不出户的练习口语(语伴和老师教学)。这个APP不是单向的即不是只能外国人学习普通话，而是多向的即国人可以学习其他国家的语言，甚至还能相互学习一带一路其他国家的语言。但是主要功能是学习普通话，在学习的同时传播中国传统文化，例如儒家文化，唐诗宋词。
 
 <div align="center">
-    
+
  # 一路语伴
- 
+
 <img src="https://github.com/wanghao15536870732/ChatWithEveryone/blob/master/logo_e.png" height="100px" width="100px"/>
 
 ## 一款辅助一带一路周边国家学汉语口语的app　
 
-<a href="https://pan.baidu.com/s/1n7p9W1kOxHOioGBFiJ5OCQ?raw=true">点击下载</a>
-   
+<a href="https://pan.baidu.com/s/16yJjwR4LX94ej7uEzddG0Q">点击下载</a>
+
 ## Feature (功能)
 
-</div>
+
 
 ||||
 |:--|:--|:--|
@@ -40,3 +40,58 @@
 |社群聊天||1.用户在注册时设定自己的学习目标，其他用户可根据推荐与其他取得联系</br>2.通讯分为六个类型,文本、语音、图片、音/视频、位置，两个辅助功能:语音&文本互相转换<br/>3.视频聊天每次限制时间5分钟，开通会员时间不受限制<br/>4.询问当地民俗文化以及经济发展状况</br>5.提供搜索功能，检索历史访问|
 |翻译||1.提供18种语言的相互翻译,并且每一次的翻译都会在下方列表中显示<br>2.单词的收藏功能，便于在单词本上查看<br>3.提供每一次翻译的收藏跟删除|
 |注册&登录||1.选择自己的母语和要学习的语言进行注册<br>2.可填写自己现有的语言水平<br>3.需要填写自己的个人信息，以及自己的学习需求<br>4.上传的头像必须是自己的照片（人脸识别）|
+
+
+</div>
+
+
+<div align="center">
+
+## 具体界面
+|||||
+|:--:|:--:|:--:|:--:|
+|登陆界面|![登陆界面](https://upload-images.jianshu.io/upload_images/9140378-ed8c35eab7b95f60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|注册界面|![注册界面](https://upload-images.jianshu.io/upload_images/9140378-c6572a7e70056888.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|语音测评界面|![测评界面](https://upload-images.jianshu.io/upload_images/9140378-f00c22ffc33ced93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|语音测评结果|![测评结果](https://upload-images.jianshu.io/upload_images/9140378-c39ee8892611cedd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|简约侧滑栏|![简约侧滑栏](https://upload-images.jianshu.io/upload_images/9140378-c7604a08d47b86f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|个人信息界面|![个人信息界面](https://upload-images.jianshu.io/upload_images/9140378-443a14a710b48a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|生词本界面|![生词本界面](https://upload-images.jianshu.io/upload_images/9140378-d691c895ab37c353.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|帮助界面|![帮助界面](https://upload-images.jianshu.io/upload_images/9140378-12c7ad4f0c8a9c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|设置界面|![设置界面](https://upload-images.jianshu.io/upload_images/9140378-528a5b26941bfb17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|聊天界面|![聊天界面](https://upload-images.jianshu.io/upload_images/9140378-a979e3737a11719f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|老师课程界面|![老师课程界面](https://upload-images.jianshu.io/upload_images/9140378-a975f13cbe44e45f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|消息界面|![消息界面](https://upload-images.jianshu.io/upload_images/9140378-647cc2c36b97fc6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)|
+|联系人界面|![联系人界面](https://upload-images.jianshu.io/upload_images/9140378-ebe4e5b234d26bae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|提问界面|![提问界面](https://upload-images.jianshu.io/upload_images/9140378-ffe16850000eb5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|问题详情|![问题详情](https://upload-images.jianshu.io/upload_images/9140378-aa5faff466f0c95c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|问题详情|![问题详情](https://upload-images.jianshu.io/upload_images/9140378-783b58ffa23f5f6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|添加问题|![添加问题](https://upload-images.jianshu.io/upload_images/9140378-6b202abcb1b8d375.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|聊天具体界面|![聊天具体界面](https://upload-images.jianshu.io/upload_images/9140378-d52766bfaa49b08c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+|翻译界面|![翻译界面](https://upload-images.jianshu.io/upload_images/9140378-415f1905a13f5910.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|语音合成|![语音合成界面](https://upload-images.jianshu.io/upload_images/9140378-c8422a084545649d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/240)|
+
+
+
+
+</div>
+
+
+
+
+# 收费及盈利
+### 收费
+视频指导部分
+- 用户需要包月购买与老师的通话时长
+- 用户可指定老师进行授课，但是需要额外给老师小费，并且需要老师同意。
+- 特聘教师获得的收费应该比学习者高
+社群部分
+- 用户付费延续视频通话时长
+- 用户提问给与回答者一定小费，改费用可抵现其他费用。
+
+### 盈利
+- 非付费用户，投放一定的谷歌广告。
+- 用户购买包月服务，抽成。
+- 用户延续视频通话时长的费用。
+
+### 支出
+- 服务器费用
+- 指导老师的费用
+- 用户给老师的小费
+- 用户给问题回答者的悬赏
+
+
+
+# 国家和地区
+![丝绸之路示意图](http://211.88.22.89:8080/wp-content/uploads/2015/12/6842469_090031366114_2.jpg)
+![海上丝绸之路示意图](http://211.88.22.89:8080/wp-content/uploads/2015/12/1421049003uD1LGpba.jpg)
