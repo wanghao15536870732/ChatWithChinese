@@ -57,4 +57,17 @@
     <declare-styleable name="NineGridLayout">
         <attr name="sapcing" format="dimension"/>
     </declare-styleable>
+    <!--reference：参考指定Theme中资源ID-->
+    <!--dimension：尺寸值-->
+    <!--Color：颜色-->
+    <declare-styleable name="RoundRectangleImageView">
+        <attr name="borderwidth" format="reference|dimension">
+        </attr>
+        <attr name="borderRadius" format="reference|dimension">
+        </attr>
+        <attr name="borderColor" format="reference|color">
+        </attr>
+        <attr name="hoverColor" format="reference|color">
+        </attr>
+    </declare-styleable>
 </resources>

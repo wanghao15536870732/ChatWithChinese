@@ -123,9 +123,6 @@
             tools:ignore="InnerclassSeparator"
             android:theme="@style/WordTheme" />
         <activity
-            android:name=".Translation.activity.IDActivity"
-            tools:ignore="InnerclassSeparator" />
-        <activity
             android:name=".Translation.Glossary.MyWordRecycleViewActivity"
             android:theme="@style/WordTheme"
             tools:ignore="InnerclassSeparator" />
@@ -202,7 +199,8 @@
             android:name=".view.activity.VoiceChatActivity"
             android:theme="@style/RegisterActivityTheme" />
         <activity android:name=".view.activity.VoiceToTextActivity"/>
-        <activity android:name=".view.activity.FaceDetectorActivity"/>
+        <activity android:name=".view.activity.FaceDetectorActivity"
+            android:theme="@style/RegisterActivityTheme"/>
         <activity android:name=".view.activity.CommentActivity"
             android:theme="@style/CommentTheme"
             android:windowSoftInputMode="adjustPan|adjustResize"

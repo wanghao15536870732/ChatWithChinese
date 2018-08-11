@@ -15,7 +15,7 @@
             android:id="@+id/friend_icon"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:src="@drawable/p1"
+            android:src="@drawable/icon"
             android:layout_margin="5dp" />
 
         <TextView
