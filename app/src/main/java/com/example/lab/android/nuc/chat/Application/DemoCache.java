@@ -2,13 +2,11 @@ package com.example.lab.android.nuc.chat.Application;
 
 import android.content.Context;
 
-import com.netease.nimlib.sdk.StatusBarNotificationConfig;
 class DemoCache {
     private static Context context;
 
     private static String account;
 
-    private static StatusBarNotificationConfig notificationConfig;
 
     public static void clear(){
         account = null;
@@ -20,13 +18,6 @@ class DemoCache {
     private static boolean  mainTaskLaunching;
     public static void setAccount(String account){
         DemoCache.account = account;
-    }
-    public static void setNotificationConfig(StatusBarNotificationConfig notificationConfig) {
-        DemoCache.notificationConfig = notificationConfig;
-    }
-
-    public static StatusBarNotificationConfig getNotificationConfig() {
-        return notificationConfig;
     }
 
     public static Context getContext() {

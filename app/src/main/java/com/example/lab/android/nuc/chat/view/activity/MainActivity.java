@@ -39,6 +39,10 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.baidu.ocr.sdk.OCR;
+import com.baidu.ocr.sdk.OnResultListener;
+import com.baidu.ocr.sdk.exception.OCRError;
+import com.baidu.ocr.sdk.model.AccessToken;
 import com.example.lab.android.nuc.chat.Base.contacts.UserInfo;
 import com.example.lab.android.nuc.chat.utils.views.ActionSheetDialog;
 import com.example.lab.android.nuc.chat.utils.views.CustomTabView;
@@ -66,7 +70,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CustomTabView.OnTabCheckListener, NavigationView.OnNavigationItemSelectedListener {
 
-
+    private AlertDialog.Builder alertDialog;
+    private boolean hasGotToken = false;
     private NavigationView mNavigationView;
     public static File NEWFILE;
     private ImageView change_head_image;
@@ -102,6 +107,9 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
         navigationView.setNavigationItemSelectedListener( this );
         initView();
         http();
+        alertDialog = new AlertDialog.Builder(this);
+        //文字提取初始化
+        initAccessToken();
     }
 
     private void http() {
@@ -468,5 +476,36 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
     public void shareBigimg(){
         ShareEntity testBean = new ShareEntity( "","");
         testBean.setShareBigImg(true);
+    }
+
+    /**
+     * 以license文件方式初始化
+     */
+    private void initAccessToken() {
+        OCR.getInstance(this).initAccessToken( new OnResultListener<AccessToken>() {
+            @Override
+            public void onResult(AccessToken accessToken) {
+                String token = accessToken.getAccessToken();
+                hasGotToken = true;
+            }
+
+            @Override
+            public void onError(OCRError error) {
+                error.printStackTrace();
+                alertText("licence方式获取token失败", error.getMessage());
+            }
+        }, getApplicationContext());
+    }
+
+    private void alertText(final String title, final String message) {
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                alertDialog.setTitle(title)
+                        .setMessage(message)
+                        .setPositiveButton("确定", null)
+                        .show();
+            }
+        });
     }
 }
