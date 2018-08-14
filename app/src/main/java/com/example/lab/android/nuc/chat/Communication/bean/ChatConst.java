@@ -8,7 +8,7 @@ import com.example.lab.android.nuc.chat.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-
+import java.util.ArrayList;
 
 
 public class ChatConst {
@@ -28,4 +28,6 @@ public class ChatConst {
     public static Drawable NEW_DRAWABLE = null;
 
     public static int TAG = 0;
+
+    public static ArrayList<String> notes;
 }

@@ -14,6 +14,7 @@ import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.baidu.ocr.sdk.OCR;
@@ -22,6 +23,7 @@ import com.baidu.ocr.sdk.exception.OCRError;
 import com.baidu.ocr.sdk.model.GeneralParams;
 import com.baidu.ocr.sdk.model.GeneralResult;
 import com.baidu.ocr.sdk.model.WordSimple;
+import com.example.lab.android.nuc.chat.Communication.bean.ChatConst;
 import com.example.lab.android.nuc.chat.R;
 import com.example.lab.android.nuc.chat.Communication.utils.Constants;
 import com.example.lab.android.nuc.chat.Communication.utils.PhotoUtils;
@@ -36,12 +38,14 @@ import java.io.IOException;
 public class ImageBrowserActivity extends Activity {
 
     private ImageView imageView;
+    private ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_image_brower_layout);
         imageView = (ImageView) findViewById( R.id.imageView);
+        mProgressBar = (ProgressBar) findViewById( R.id.progressbar);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         Intent intent = getIntent();
         final String path = intent.getStringExtra( Constants.IMAGE_LOCAL_PATH);
@@ -53,6 +57,12 @@ public class ImageBrowserActivity extends Activity {
                 finish();
             }
         });
+        imageView.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        } );
         imageView.setOnLongClickListener( new View.OnLongClickListener(){
 
             @Override
@@ -65,6 +75,7 @@ public class ImageBrowserActivity extends Activity {
                                 new ActionSheetDialog.OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
+                                        mProgressBar.setVisibility( View.VISIBLE );
                                         recGeneral( path );
                                     }
                                 } )
@@ -87,8 +98,8 @@ public class ImageBrowserActivity extends Activity {
         } );
     }
 
-    private void recGeneral(String filePath) {
-        GeneralParams param = new GeneralParams();
+    private void recGeneral(final String filePath) {
+        final GeneralParams param = new GeneralParams();
         param.setDetectDirection(true);
         param.setImageFile(new File(filePath));
         OCR.getInstance(this).recognizeGeneral(param, new OnResultListener<GeneralResult>() {
@@ -99,7 +110,11 @@ public class ImageBrowserActivity extends Activity {
                     sb.append(word.getWords());
                     sb.append("\n");
                 }
-                Toast.makeText( ImageBrowserActivity.this, sb.toString(), Toast.LENGTH_LONG ).show();
+                mProgressBar.setVisibility( View.GONE );
+                Intent intent = new Intent( ImageBrowserActivity.this,PictureTextActivity.class );
+                intent.putExtra( "path",filePath );
+                intent.putExtra( "text",sb.toString() );
+                startActivity( intent );
             }
 
             @Override

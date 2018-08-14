@@ -32,7 +32,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -120,23 +122,25 @@
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.activity.Main_Voice_Activity"
-            tools:ignore="InnerclassSeparator"
-            android:theme="@style/WordTheme" />
+            android:theme="@style/WordTheme"
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.Glossary.MyWordRecycleViewActivity"
             android:theme="@style/WordTheme"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Translation.activity.Main_Translation_Activity"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-            android:theme="@style/TranslationTheme"/>
+            android:theme="@style/TranslationTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".view.activity.PhotoSelectorActivity" />
         <activity android:name=".view.activity.BasePhotoPreviewActivity" />
         <activity android:name=".view.activity.PhotoPreviewActivity" />
         <activity
             android:name=".Communication.activity.ServiceChatActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".Communication.activity.ImageBrowserActivity" />
+        <activity
+            android:name=".Communication.activity.ImageBrowserActivity"
+            android:theme="@style/imageBrowser" />
 
         <service
             android:name="com.baidu.location.f"
@@ -147,24 +151,29 @@
         <activity android:name=".view.activity.LocationActivity" />
         <activity
             android:name=".view.activity.ChatActivity"
-            android:theme="@style/ChatTheme"
             android:configChanges="orientation|screenSize|keyboardHidden"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
-            android:hardwareAccelerated="true"/>
+            android:theme="@style/ChatTheme" />
         <activity android:name=".view.activity.ChangePassword" />
-        <activity android:name=".view.activity.MainActivity"
-            android:hardwareAccelerated="true"/>
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:hardwareAccelerated="true" />
         <activity
             android:name=".view.activity.RegisterActivity"
             android:theme="@style/RegisterActivityTheme" />
-        <activity android:name=".Practice.Test.Ise_Demo"
-            android:hardwareAccelerated="true"/>
-        <activity android:name=".Practice.Test.Ise_Demo_Zi"
-            android:hardwareAccelerated="true"/>
-        <activity android:name=".Practice.Test.Ise_Demo_Zh"
-            android:hardwareAccelerated="true"/>
-        <activity android:name=".Practice.Test.Ise_Demo_Sentence"
-            android:hardwareAccelerated="true"/>
+        <activity
+            android:name=".Practice.Test.Ise_Demo"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".Practice.Test.Ise_Demo_Zi"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".Practice.Test.Ise_Demo_Zh"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".Practice.Test.Ise_Demo_Sentence"
+            android:hardwareAccelerated="true" />
         <activity android:name=".view.activity.TopicActivity" />
 
         <provider
@@ -198,17 +207,22 @@
         <activity
             android:name=".view.activity.VoiceChatActivity"
             android:theme="@style/RegisterActivityTheme" />
-        <activity android:name=".view.activity.VoiceToTextActivity"/>
-        <activity android:name=".view.activity.FaceDetectorActivity"
-            android:theme="@style/RegisterActivityTheme"/>
-        <activity android:name=".view.activity.CommentActivity"
+        <activity android:name=".view.activity.VoiceToTextActivity" />
+        <activity
+            android:name=".view.activity.FaceDetectorActivity"
+            android:theme="@style/RegisterActivityTheme" />
+        <activity
+            android:name=".view.activity.CommentActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/CommentTheme"
-            android:windowSoftInputMode="adjustPan|adjustResize"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Sentence"/>
-        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Ci"/>
-        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Word"/>
-        <activity android:name=".Practice.Result_Activity.Zong_Test"/>
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Sentence" />
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Ci" />
+        <activity android:name=".Practice.Result_Activity.Day_Test_Activity_Word" />
+        <activity android:name=".Practice.Result_Activity.Zong_Test" />
+        <activity
+            android:name=".Communication.activity.PictureTextActivity"
+            android:theme="@style/WordTheme" />
     </application>
 
 </manifest>

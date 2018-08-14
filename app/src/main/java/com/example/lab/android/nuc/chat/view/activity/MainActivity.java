@@ -17,8 +17,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.ShareCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.view.GravityCompat;
@@ -38,7 +36,6 @@ import android.widget.Toast;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.baidu.ocr.sdk.OCR;
 import com.baidu.ocr.sdk.OnResultListener;
 import com.baidu.ocr.sdk.exception.OCRError;
@@ -57,7 +54,6 @@ import com.google.zxing.common.BitmapUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
-import com.vise.utils.view.BitmapUtil;
 import com.xyzlf.share.library.bean.ShareEntity;
 import com.xyzlf.share.library.interfaces.ShareConstant;
 import com.xyzlf.share.library.util.ShareUtil;
@@ -270,6 +266,7 @@ public class MainActivity extends AppCompatActivity implements CustomTabView.OnT
                 break;
             case R.id.nav_about:
                 startActivity( new Intent( MainActivity.this, AboutActivity.class ) );
+                break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById( R.id.drawer_layout_main );
         drawer.closeDrawer( GravityCompat.START );
