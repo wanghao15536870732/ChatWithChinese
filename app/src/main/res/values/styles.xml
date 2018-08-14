@@ -9,6 +9,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
+    <style name="imageBrowser" parent="AppTheme">
+        <item name="colorAccent">#f9b516</item>
+    </style>
 
 
     <style name="RegisterActivityTheme" parent="AppTheme">
