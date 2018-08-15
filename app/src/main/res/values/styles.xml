@@ -19,7 +19,7 @@
     </style>
 
     <style name="ChatTheme" parent="RegisterActivityTheme">
-        <item name="android:statusBarColor">#f9b516</item>
+
     </style>
     <style name="CommentTheme" parent="RegisterActivityTheme">
         <item name="android:statusBarColor">#000000</item>

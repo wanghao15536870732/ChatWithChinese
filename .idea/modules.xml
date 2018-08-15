@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ChatWithEveryone.iml" filepath="$PROJECT_DIR$/ChatWithEveryone.iml" />
-      <module fileurl="file://$PROJECT_DIR$/YiLuYuBan.iml" filepath="$PROJECT_DIR$/YiLuYuBan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChatWithChinese.iml" filepath="$PROJECT_DIR$/ChatWithChinese.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ocr_ui/ocr_ui.iml" filepath="$PROJECT_DIR$/ocr_ui/ocr_ui.iml" />
     </modules>

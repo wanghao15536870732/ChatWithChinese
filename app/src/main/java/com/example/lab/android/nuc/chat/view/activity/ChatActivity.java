@@ -2,9 +2,12 @@ package com.example.lab.android.nuc.chat.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -54,6 +57,12 @@ public class ChatActivity extends Activity {
         jzVideoPlayerStandard.setUp("http://p8nssbtwi.bkt.clouddn.com/video.mp4",
                 JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL);
         Glide.with(this).load(picurl).into(jzVideoPlayerStandard.thumbImageView);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            Window window = getWindow();
+            window.addFlags( WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(android.R.color.white));
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
     }
 
     private void setView() {

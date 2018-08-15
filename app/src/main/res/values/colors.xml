@@ -45,4 +45,6 @@
     <color name="green_normal">#37C000</color>
     <color name="color_f6">#f6f6f6</color>
     <color name="picture_list_sina_text_color">#00BFFF</color>
+    <color name="button_fous">#af1e4f</color>
+    <color name="button_nomarl">#b95779</color>
 </resources>
