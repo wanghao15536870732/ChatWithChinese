@@ -137,7 +137,8 @@
         <activity android:name=".view.activity.PhotoPreviewActivity" />
         <activity
             android:name=".Communication.activity.ServiceChatActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:hardwareAccelerated="true"/>
         <activity
             android:name=".Communication.activity.ImageBrowserActivity"
             android:theme="@style/imageBrowser" />

@@ -165,9 +165,7 @@ public class ContactActivity extends AppCompatActivity {
                         interest.setText( interest_text );
                         toPerson.setText( toPerson_text );
                         toGoal.setText( toGoal_text );
-
                     }
                 } );
-
     }
 }

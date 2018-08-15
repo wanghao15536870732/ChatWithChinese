@@ -31,7 +31,6 @@ public class PictureTextActivity extends AppCompatActivity {
         mTextView = (TextView) findViewById( R.id.text_view );
         mTextView.setSelected( true );
         mTextView.setTextIsSelectable( true );
-
         Intent intent = getIntent();
         String path = intent.getStringExtra( "path" );
         String text = intent.getStringExtra( "text" );
