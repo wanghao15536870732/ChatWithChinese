@@ -63,13 +63,13 @@ public class Ise_Demo extends AppCompatActivity {
     //private Card_View.DataBean dataBean;
     private String mResultText;
     private Toast mToast;
-    private  TextView kTextVeiw;
+    private TextView kTextVeiw;
     private Button ise_start;
-    private TextView tv_result,tv_more;
+    private TextView tv_result, tv_more;
     private ImageView iv_getmore;
     private boolean flag = true;
-    private float  total_score[] = new float[12];
-    public  ArrayList<String> wrong_ci = new ArrayList<>();
+    private float total_score[] = new float[12];
+    public ArrayList<String> wrong_ci = new ArrayList<>();
 
     // 评测语种
     private String language;
@@ -109,12 +109,12 @@ public class Ise_Demo extends AppCompatActivity {
                 builder.append(result.getResultString());
 
 
-               if (!TextUtils.isEmpty(builder)) {
-                   ise_start.setEnabled(true);
-                   mResultText = builder.toString();
-               }
+                if (!TextUtils.isEmpty(builder)) {
+                    ise_start.setEnabled(true);
+                    mResultText = builder.toString();
+                }
 
-               mLastResult = builder.toString();
+                mLastResult = builder.toString();
                 Toast.makeText(Ise_Demo.this, "此时请按下按钮", Toast.LENGTH_SHORT).show();
             }
         }
@@ -123,7 +123,7 @@ public class Ise_Demo extends AppCompatActivity {
         public void onError(SpeechError error) {
             if (error != null) {
                 Toast.makeText(Ise_Demo.this, "error:" + error.getErrorCode() + "," + error.getErrorDescription(), Toast.LENGTH_SHORT).show();
-           //     mResultText.setHint("请点击“开始评测”按钮");
+                //     mResultText.setHint("请点击“开始评测”按钮");
             } else {
                 Log.d(TAG, "evaluator over");
             }
@@ -136,9 +136,6 @@ public class Ise_Demo extends AppCompatActivity {
     };
 
 
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,18 +143,17 @@ public class Ise_Demo extends AppCompatActivity {
         setContentView(R.layout.recycler_view);
 
 
-       final ArrayList<String >ci = new ArrayList<>();
-       ci.add("中国");
-       ci.add("亚洲");
-       ci.add("和平");
-       ci.add("音乐");
-       ci.add("爱情");
-       ci.add("亲人");
-       ci.add("朋友");
-       ci.add("黄河");
-       ci.add("天空");
-       ci.add("汽车");
-
+        final ArrayList<String> ci = new ArrayList<>();
+        ci.add("中国");
+        ci.add("亚洲");
+        ci.add("和平");
+        ci.add("音乐");
+        ci.add("爱情");
+        ci.add("亲人");
+        ci.add("朋友");
+        ci.add("黄河");
+        ci.add("天空");
+        ci.add("汽车");
 
 
         final ArrayList<Integer> iv_k = new ArrayList<>();
@@ -171,8 +167,6 @@ public class Ise_Demo extends AppCompatActivity {
         iv_k.add(R.drawable.ic_huanghe);
         iv_k.add(R.drawable.ic_tiankong);
         iv_k.add(R.drawable.ic_qiche);
-
-
 
 
         initData();
@@ -197,9 +191,7 @@ public class Ise_Demo extends AppCompatActivity {
         mSpeechEvaluator = SpeechEvaluator.createEvaluator(Ise_Demo.this, null);
 
 
-
         mToast = Toast.makeText(Ise_Demo.this, "", Toast.LENGTH_LONG);
-
 
 
         recyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnRecyclerViewItemClickListener() {
@@ -220,82 +212,82 @@ public class Ise_Demo extends AppCompatActivity {
                 switch (view.getId()) {
 
                     case R.id.btn_test:
-                        if(flag){
+                        if (flag) {
                             Toast.makeText(Ise_Demo.this, "请朗读以上内容", Toast.LENGTH_SHORT).show();
                             setParams();
-                            for (int i = 0 ; i < ci.size() ; i++ ){
+                            for (int i = 0; i < ci.size(); i++) {
                                 mSpeechEvaluator.startEvaluating(ci.get(position), null, mEvaluatorListener);
                             }
                             ise_start.setText("按下停止");
                             flag = false;
                             Log.e(TAG, "onClick: 1");
-                        } else if(!flag ){
-                            Log.e(TAG, "onClick:>>>>>> " );
+                        } else if (!flag) {
+                            Log.e(TAG, "onClick:>>>>>> ");
                             ise_start.setText("测试");
-                        //         if (mSpeechEvaluator.isEvaluating()){
-                                mSpeechEvaluator.stopEvaluating();
-                      //      }
+                            //         if (mSpeechEvaluator.isEvaluating()){
+                            mSpeechEvaluator.stopEvaluating();
+                            //      }
 
-                                 if (!TextUtils.isEmpty(mLastResult)){
+                            if (!TextUtils.isEmpty(mLastResult)) {
                                 XmlResultParser resultParser = new XmlResultParser();
 
                                 Result result = resultParser.parse(mLastResult);
 
-                                if (null != result){
+                                if (null != result) {
 
                                     tv_result.setText(result.toString());
                                     total_score[position] = Float.parseFloat(result.toString());
-                                    if ( total_score[position] < 4.0){
+                                    if (total_score[position] < 4.0) {
                                         wrong_ci.add(ci.get(position));
                                     }
 
 
-                                }else{
+                                } else {
                                     Toast.makeText(Ise_Demo.this, "解析结果为空", Toast.LENGTH_SHORT).show();
                                 }
                             }
                             flag = true;
-                            if (position == 9){
+                            if (position == 9) {
                                 Timer timer = new Timer();
                                 TimerTask timerTask = new TimerTask() {
                                     @Override
                                     public void run() {
-                                        Intent  intent =new Intent(Ise_Demo.this,Day_Test_Activity_Ci.class);
+                                        Intent intent = new Intent(Ise_Demo.this, Day_Test_Activity_Ci.class);
 
-                                        intent.putStringArrayListExtra("wrong_ci_List",wrong_ci);
+                                        intent.putStringArrayListExtra("wrong_ci_List", wrong_ci);
 
                                         startActivity(intent);
-                                        Log.e(TAG, "run: 6666666666" );
+                                        Log.e(TAG, "run: 6666666666");
                                     }
                                 };
-                                timer.schedule(timerTask,2000);
+                                timer.schedule(timerTask, 2000);
                             }
                         }
-                         break;
+                        break;
                     case R.id.iv_shoucang:
                         DataSave dataSave = new DataSave(Ise_Demo.this);
-                         for(int i = 0 ; i < ci.size();i++){
-                             Log.e(TAG, "onClick: collect start" );
-                               dataSave.save("collect.txt",ci.get(position));
-                             Log.e(TAG, "onClick: collect succeed" );
-                         }
+                        for (int i = 0; i < ci.size(); i++) {
+                            Log.e(TAG, "onClick: collect start");
+                            dataSave.save("collect.txt", ci.get(position));
+                            Log.e(TAG, "onClick: collect succeed");
+                        }
                         Toast.makeText(Ise_Demo.this, "收藏成功！", Toast.LENGTH_SHORT).show();
- //                      Toast.makeText(Ise_Demo.this, "收藏这个词", Toast.LENGTH_SHORT).show();
-                          break;
+                        //                      Toast.makeText(Ise_Demo.this, "收藏这个词", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.tv_more:
-                     if (flag) {
+                        if (flag) {
                             flag = false;
                             tv_more.setText("点击获取更多");
                             iv_getmore.setVisibility(ImageView.VISIBLE);
 
-                           for(int i = 0 ; i < 10 ; i ++){
-                               iv_getmore.setImageResource(iv_k.get(position));
-                           }
+                            for (int i = 0; i < 10; i++) {
+                                iv_getmore.setImageResource(iv_k.get(position));
+                            }
 
                             tv_more.setText("点击收起");
 //                            chapterAdapter.notifyItemChanged(position);
                             Log.e("ggg", "VISIBLE: ");
-                        } else if (!flag){
+                        } else if (!flag) {
                             flag = true;
                             tv_more.setText("点击获取更多");
                             // iv_getmore.setVisibility(View.GONE);
@@ -311,7 +303,6 @@ public class Ise_Demo extends AppCompatActivity {
             }
         });
     }
-
 
 
     @Override
@@ -332,7 +323,6 @@ public class Ise_Demo extends AppCompatActivity {
             mSpeechEvaluator = null;
         }
     }
-
 
 
     private void setParams() {
@@ -389,7 +379,7 @@ public class Ise_Demo extends AppCompatActivity {
         int imageView;
 
 
-        DataBean(String textView1, String textView2,int gg) {
+        DataBean(String textView1, String textView2, int gg) {
             this.textView1 = textView1;
             this.textView2 = textView2;
             this.imageView = imageView;
@@ -419,15 +409,15 @@ public class Ise_Demo extends AppCompatActivity {
 
     private void initData() {
         lists = new ArrayList<>();
-        lists.add(new DataBean("中国","[ zhōng guó ]",R.drawable.voice_background ));
-        lists.add(new DataBean("亚洲","[ yà zhōu ]",R.drawable.voice_background ));
-        lists.add(new DataBean("和平","[ hé píng ]",R.drawable.voice_background ));
-        lists.add(new DataBean("音乐","[ yīn yuè ]",R.drawable.voice_background ));
-        lists.add(new DataBean("爱情", "[ ài qíng ] ",R.drawable.voice_background ));
-        lists.add(new DataBean("亲人", "[ qīn rén ] ",R.drawable.voice_background ));
-        lists.add(new DataBean("朋友", "[ péng yǒu ]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("黄河", "[ huáng hé ]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("天空", "[ tiān kōng  ]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("汽车", "[ tiān kōng  ] ",R.drawable.voice_background ));
+        lists.add(new DataBean("中国", "[ zhōng guó ]", R.drawable.voice_background));
+        lists.add(new DataBean("亚洲", "[ yà zhōu ]", R.drawable.voice_background));
+        lists.add(new DataBean("和平", "[ hé píng ]", R.drawable.voice_background));
+        lists.add(new DataBean("音乐", "[ yīn yuè ]", R.drawable.voice_background));
+        lists.add(new DataBean("爱情", "[ ài qíng ] ", R.drawable.voice_background));
+        lists.add(new DataBean("亲人", "[ qīn rén ] ", R.drawable.voice_background));
+        lists.add(new DataBean("朋友", "[ péng yǒu ]  ", R.drawable.voice_background));
+        lists.add(new DataBean("黄河", "[ huáng hé ]  ", R.drawable.voice_background));
+        lists.add(new DataBean("天空", "[ tiān kōng  ]  ", R.drawable.voice_background));
+        lists.add(new DataBean("汽车", "[ tiān kōng  ] ", R.drawable.voice_background));
     }
 }
