@@ -18,9 +18,12 @@ import android.widget.Toast;
 
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.MainActivity;
 import com.example.lab.android.nuc.chat.view.fragment.PracticeFragment;
 
 import java.util.ArrayList;
+
+import javax.security.auth.login.LoginException;
 
 public class Day_Test_Activity_Ci extends AppCompatActivity {
 
@@ -92,9 +95,12 @@ public class Day_Test_Activity_Ci extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
+
         super.onBackPressed();
-        Intent intent = new Intent(Day_Test_Activity_Ci.this, PracticeFragment.class);
+
+        Intent intent = new Intent(Day_Test_Activity_Ci.this, MainActivity.class);
         startActivity(intent);
+
     }
 
 }

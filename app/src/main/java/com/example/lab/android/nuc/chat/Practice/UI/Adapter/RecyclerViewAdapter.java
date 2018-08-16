@@ -54,6 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter implements View.On
             itemHolder.imageView.setTag(position);
             itemHolder.text_more.setTag(position);
             itemHolder.text_result.setTag(position);
+            itemHolder.setIsRecyclable(false);
             itemHolder.imageView_more.setTag(position);
             Ise_Demo.DataBean dataBean = dataBeanList.get(position);
             itemHolder.textView1.setText(dataBean.getText());
@@ -75,6 +76,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter implements View.On
 
        itemHolder.test.setOnClickListener(RecyclerViewAdapter.this);
        itemHolder.text_more.setOnClickListener(RecyclerViewAdapter.this);
+        itemHolder.setIsRecyclable(false);
     }
 
     public long getItemId(int i) {

@@ -52,7 +52,7 @@ public class RecyclerViewAdapter_Zi extends RecyclerView.Adapter implements View
             itemHolder.test.setTag(position);
             itemHolder.text_more.setTag(position);
             itemHolder.text_result.setTag(position);
-
+            itemHolder.setIsRecyclable(false);
 
             Ise_Demo_Zi.DataBean dataBean = dataBeanList.get(position);
             itemHolder.textView1.setText(dataBean.getText());
@@ -72,6 +72,7 @@ public class RecyclerViewAdapter_Zi extends RecyclerView.Adapter implements View
         itemHolder.imageView.setOnClickListener(RecyclerViewAdapter_Zi.this);
         itemHolder.test.setOnClickListener(RecyclerViewAdapter_Zi.this);
         itemHolder.text_more.setOnClickListener(RecyclerViewAdapter_Zi.this);
+        itemHolder.setIsRecyclable(false);
     }
 
     public long getItemId(int i) {

@@ -47,15 +47,14 @@ public class RecyclerViewAdapter_Zh extends RecyclerView.Adapter implements View
         ItemHolder itemHolder = (ItemHolder) holder;
         if (payloads.isEmpty()){
             itemHolder.itemView.setTag(position);
-            //   itemHolder.mIseStartButton.setTag(position);
-            //    itemHolder.btn2.setTag(position);
-            //    itemHolder.btn3.setTag(position);
+
             itemHolder.test.setTag(position);
             itemHolder.textView1.setTag(position);
             itemHolder.textView2.setTag(position);
             itemHolder.imageView.setTag(position);
             itemHolder.text_more.setTag(position);
             itemHolder.text_result.setTag(position);
+            itemHolder.setIsRecyclable(false);
             itemHolder.imageView_more.setTag(position);
             Ise_Demo_Zh.DataBean dataBean = dataBeanList.get(position);
             itemHolder.textView1.setText(dataBean.getText());
@@ -69,9 +68,6 @@ public class RecyclerViewAdapter_Zh extends RecyclerView.Adapter implements View
                     break;
             }
         }
-        //     itemHolder.mIseStartButton.setOnClickListener(RecyclerViewAdapter.this);
-        //    itemHolder.btn2.setOnClickListener(RecyclerViewAdapter.this);
-        //     itemHolder.btn3.setOnClickListener(RecyclerViewAdapter.this);
 
         itemHolder.textView1.setOnClickListener(RecyclerViewAdapter_Zh.this);
         itemHolder.textView2.setOnClickListener(RecyclerViewAdapter_Zh.this);
@@ -79,6 +75,7 @@ public class RecyclerViewAdapter_Zh extends RecyclerView.Adapter implements View
 
         itemHolder.test.setOnClickListener(RecyclerViewAdapter_Zh.this);
         itemHolder.text_more.setOnClickListener(RecyclerViewAdapter_Zh.this);
+        itemHolder.setIsRecyclable(false);
     }
 
     public long getItemId(int i) {

@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.MainActivity;
 import com.example.lab.android.nuc.chat.view.fragment.PracticeFragment;
 
 import java.util.ArrayList;
@@ -101,9 +102,8 @@ public class Zong_Test  extends AppCompatActivity {
 	public void onBackPressed() {
 
 		super.onBackPressed();
-		Intent intent = new Intent(Zong_Test.this, PracticeFragment.class);
+		Intent intent = new Intent(Zong_Test.this, MainActivity.class);
         Log.e(TAG, "onBackPressed: 444444444444444444");
-
 		startActivity(intent);
 
 	}

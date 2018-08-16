@@ -169,8 +169,8 @@ public class Ise_Demo extends AppCompatActivity {
         iv_k.add(R.drawable.ic_qingren);
         iv_k.add(R.drawable.ic_pengyou);
         iv_k.add(R.drawable.ic_huanghe);
-        iv_k.add(R.drawable.ic_tiankong);
-        iv_k.add(R.drawable.ic_qiche);
+        iv_k.add(R.drawable.pic_tiankong);
+        iv_k.add(R.drawable.pic_qiche);
 
 
 

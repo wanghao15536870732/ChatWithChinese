@@ -67,7 +67,10 @@ public class Request {
 
 
     private void getComment(){
-        OkGo.<String>post("http://47.95.7.169:8080/getComment" )
+        OkGo.
+
+
+                <String>post("http://47.95.7.169:8080/getComment" )
                 .tag( this )
                 .isMultipart( true )
                 .params( "questionNumber",questionNumber )

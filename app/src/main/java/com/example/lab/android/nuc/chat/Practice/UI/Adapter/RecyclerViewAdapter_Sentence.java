@@ -57,6 +57,7 @@ public class RecyclerViewAdapter_Sentence  extends RecyclerView.Adapter implemen
             itemHolder.imageView.setTag(position);
             itemHolder.text_more.setTag(position);
             itemHolder.text_result.setTag(position);
+            itemHolder.setIsRecyclable(false);
             itemHolder.imageView_more.setTag(position);
             itemHolder.test.setTag(position);
 
@@ -78,7 +79,7 @@ public class RecyclerViewAdapter_Sentence  extends RecyclerView.Adapter implemen
         itemHolder.imageView.setOnClickListener(RecyclerViewAdapter_Sentence.this);
         itemHolder.test.setOnClickListener(RecyclerViewAdapter_Sentence.this);
         itemHolder.text_more.setOnClickListener(RecyclerViewAdapter_Sentence.this);
-
+        itemHolder.setIsRecyclable(false);
 
     }
 
