@@ -428,6 +428,6 @@ public class Ise_Demo extends AppCompatActivity {
         lists.add(new DataBean("朋友", "[ péng yǒu ]  ",R.drawable.voice_background ));
         lists.add(new DataBean("黄河", "[ huáng hé ]  ",R.drawable.voice_background ));
         lists.add(new DataBean("天空", "[ tiān kōng  ]  ",R.drawable.voice_background ));
-        lists.add(new DataBean("汽车", "[ tiān kōng  ] ",R.drawable.voice_background ));
+        lists.add(new DataBean("汽车", "[ qì chē ] ",R.drawable.voice_background ));
     }
 }
