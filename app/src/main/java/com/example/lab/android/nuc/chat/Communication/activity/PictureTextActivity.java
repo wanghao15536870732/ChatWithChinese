@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.lab.android.nuc.chat.Communication.utils.Constants;
@@ -21,6 +22,7 @@ public class PictureTextActivity extends AppCompatActivity {
 
     private TextView mTextView;
 
+    private ScrollView mScrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class PictureTextActivity extends AppCompatActivity {
 
         mImageView = (ImageView) findViewById( R.id.image_view );
         mTextView = (TextView) findViewById( R.id.text_view );
+        mScrollView = (ScrollView) findViewById( R.id.scrollview );
+
         mTextView.setSelected( true );
         mTextView.setTextIsSelectable( true );
         Intent intent = getIntent();
@@ -44,6 +48,7 @@ public class PictureTextActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle( "文字识别" );
         }
+        mScrollView.smoothScrollTo( 0,0 );
     }
 
 
