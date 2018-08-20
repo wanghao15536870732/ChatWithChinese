@@ -19,11 +19,12 @@ import android.widget.Toast;
 
 import com.example.lab.android.nuc.chat.Practice.Data.DataSave;
 import com.example.lab.android.nuc.chat.R;
+import com.example.lab.android.nuc.chat.view.activity.MainActivity;
 import com.example.lab.android.nuc.chat.view.fragment.PracticeFragment;
 
 import java.util.ArrayList;
 
-public class Zong_Test  extends AppCompatActivity {
+public class Zong_Test extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Test_Adapter_Zh test_adapter_zh;
     private ArrayList<DataBean> lists_zh;
@@ -32,9 +33,7 @@ public class Zong_Test  extends AppCompatActivity {
     private float last_Test_Score = 0;
     private ImageView iv_star;
     public ArrayList<String> wrong_zh_List = new ArrayList<>();
-   private final String TAG = "Back On";
-
-
+    private final String TAG = "Back On";
 
 
     @Override
@@ -46,20 +45,19 @@ public class Zong_Test  extends AppCompatActivity {
         initData();
         recyclerView = findViewById(R.id.last_wrong_result_recyclerview);
 
-        last_score =findViewById(R.id.last_tv__score);
+        last_score = findViewById(R.id.last_tv__score);
 
-        last_Test_Score = getIntent().getFloatExtra("last_Test_Score",100);
+        last_Test_Score = getIntent().getFloatExtra("last_Test_Score", 100);
 
-        last_score.setText((int)last_Test_Score + "");
-
+        last_score.setText((int) last_Test_Score + "");
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
-        test_adapter_zh = new Test_Adapter_Zh(this,lists_zh);
+        test_adapter_zh = new Test_Adapter_Zh(this, lists_zh);
 
         //设置分割线
-        recyclerView.addItemDecoration(new RecycleViewDivider2(this,layoutManager.getOrientation()));
+        recyclerView.addItemDecoration(new RecycleViewDivider2(this, layoutManager.getOrientation()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(test_adapter_zh);
@@ -67,16 +65,16 @@ public class Zong_Test  extends AppCompatActivity {
         test_adapter_zh.setOnItemClickListener(new Test_Adapter_Zh.OnRecyclerViewItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Test_Adapter_Zh.ItemHolder itemHolder = (Test_Adapter_Zh.ItemHolder)recyclerView.findViewHolderForLayoutPosition(position);
+                Test_Adapter_Zh.ItemHolder itemHolder = (Test_Adapter_Zh.ItemHolder) recyclerView.findViewHolderForLayoutPosition(position);
 
                 iv_star = itemHolder.imageView;
 
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.star:
                         DataSave dataSave = new DataSave(Zong_Test.this);
                         dataSave.save("collect_text", String.valueOf(lists_zh.get(position)));
-                     Toast toast =  Toast.makeText(Zong_Test.this, "收藏成功", Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER,0,0);
+                        Toast toast = Toast.makeText(Zong_Test.this, "收藏成功", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                 }
             }
@@ -88,7 +86,7 @@ public class Zong_Test  extends AppCompatActivity {
 
         wrong_zh_List = getIntent().getStringArrayListExtra("wrong_zh_List");
 
-        for (int  i  = 0 ; i < wrong_zh_List.size();i++){
+        for (int i = 0; i < wrong_zh_List.size(); i++) {
             DataBean dataBean = new DataBean(wrong_zh_List.get(i));
             lists_zh.add(dataBean);
         }
@@ -96,16 +94,13 @@ public class Zong_Test  extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Zong_Test.this, MainActivity.class);
+        startActivity(intent);
+        super.onBackPressed();
 
-@Override
-	public void onBackPressed() {
 
-		super.onBackPressed();
-		Intent intent = new Intent(Zong_Test.this, PracticeFragment.class);
-        Log.e(TAG, "onBackPressed: 444444444444444444");
-
-		startActivity(intent);
-
-	}
+    }
 
 }

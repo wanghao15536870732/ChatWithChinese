@@ -43,6 +43,7 @@ public class RecyclerViewAdapter_Zi extends RecyclerView.Adapter implements View
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, List payloads) {
+        holder.setIsRecyclable(false);
         ItemHolder itemHolder = (ItemHolder) holder;
         if (payloads.isEmpty()) {
             itemHolder.itemView.setTag(position);

@@ -84,10 +84,15 @@ public class Day_Test_Activity_Word  extends AppCompatActivity{
     }
     @Override
     public void onBackPressed() {
+<<<<<<< HEAD
 
         super.onBackPressed();
+=======
+>>>>>>> 05f50784e4117ab6afb93c78a9a2d83fd4f5e2f5
         Intent intent = new Intent(Day_Test_Activity_Word.this, MainActivity.class);
         startActivity(intent);
+        super.onBackPressed();
+
     }
 
 }
